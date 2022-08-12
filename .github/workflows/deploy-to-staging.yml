@@ -23,13 +23,13 @@ jobs:
         with:
           node-version: 12.x
         
-      - name: install dependencies
+      - name: install dependencies 42
         run: npm install
   
       - name: build
         run: npm run build
 
-      - name: copy storybook-static to s3 bucket
+      - name: copy build to s3 bucket
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
           args: --acl public-read --delete
