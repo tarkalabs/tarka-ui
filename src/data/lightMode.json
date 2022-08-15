@@ -1,0 +1,597 @@
+{
+  "primary": {
+    "primary": {
+      "value": "hsla({hue.primary}, 100%, 42%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "primary-hover": {
+      "value": "hsla({hue.primary}, 100%, 47%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "on-primary": {
+      "value": "hsla({hue.primary}, 100%, 98%, 1)",
+      "type": "color"
+    },
+    "primary-alt": {
+      "value": "hsla({hue.primary}, 65%, 90%, 1)",
+      "type": "color",
+      "description": "A lower-emphasis version of the primary color."
+    },
+    "primary-alt-hover": {
+      "value": "hsla({hue.primary}, 65%, 86%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "on-primary-alt": {
+      "value": "hsla({hue.primary}, 100%, 20%, 1)",
+      "type": "color"
+    }
+  },
+  "secondary": {
+    "secondary": {
+      "value": "hsla({hue.secondary}, 40%, 50%, 1)",
+      "type": "color"
+    },
+    "secondary-hover": {
+      "value": "hsla({hue.secondary}, 40%, 55%, 1)",
+      "type": "color"
+    },
+    "on-secondary": {
+      "value": "hsla({hue.secondary}, 100%, 97%, 1)",
+      "type": "color"
+    },
+    "secondary-alt": {
+      "value": "hsla({hue.secondary}, 35%, 87%, 1)",
+      "type": "color",
+      "description": "A lower-emphasis version of the secondary color."
+    },
+    "secondary-alt-hover": {
+      "value": "hsla({hue.secondary}, 35%, 82%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "on-secondary-alt": {
+      "value": "hsla({hue.secondary}, 100%, 20%, 1)",
+      "type": "color"
+    }
+  },
+  "tertiary": {
+    "tertiary": {
+      "value": "hsla({hue.tertiary}, 30%, 44%, 1)",
+      "type": "color"
+    },
+    "tertiary-hover": {
+      "value": "hsla({hue.tertiary}, 30%, 49%, 1)",
+      "type": "color"
+    },
+    "on-tertiary": {
+      "value": "hsla({hue.tertiary}, 100%, 98%, 1)",
+      "type": "color"
+    },
+    "tertiary-alt": {
+      "value": "hsla({hue.tertiary}, 60%, 88%, 1)",
+      "type": "color",
+      "description": "A lower-emphasis version of the tertiary color."
+    },
+    "tertiary-alt-hover": {
+      "value": "hsla({hue.tertiary}, 60%, 84%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "on-tertiary-alt": {
+      "value": "hsla({hue.tertiary}, 81%, 18%, 1)",
+      "type": "color"
+    }
+  },
+  "success": {
+    "success": {
+      "value": "hsla({hue.success}, 75%, 32%, 1)",
+      "type": "color"
+    },
+    "on-success": {
+      "value": "hsla({hue.success}, 75%, 97%, 1)",
+      "type": "color"
+    },
+    "success-10": {
+      "value": "rgba({success.success}, 0.10)",
+      "type": "color"
+    },
+    "success-20": {
+      "value": "rgba({success.success}, 0.20)",
+      "type": "color",
+      "description": "Used as hover for elements with background of success-10."
+    }
+  },
+  "warning": {
+    "warning": {
+      "value": "hsla({hue.warning}, 100%, 61%, 1)",
+      "type": "color"
+    },
+    "warning-hover": {
+      "value": "hsla({hue.warning}, 100%, 54%, 1)",
+      "type": "color"
+    },
+    "on-warning": {
+      "value": "hsla({hue.warning}, 40%, 10%, 1)",
+      "type": "color"
+    },
+    "warning-10": {
+      "value": "rgba({warning.warning}, 0.10)",
+      "description": "Warning color at 10% opacity.",
+      "type": "color"
+    }
+  },
+  "error": {
+    "error": {
+      "value": "hsla({hue.error}, 75%, 46%, 1)",
+      "type": "color"
+    },
+    "error-hover": {
+      "value": "hsla({hue.error}, 75%, 50%, 1)",
+      "type": "color"
+    },
+    "on-error": {
+      "value": "hsla({hue.error}, 75%, 99%, 1)",
+      "type": "color"
+    },
+    "error-10": {
+      "value": "rgba({error.error}, 0.10)",
+      "type": "color",
+      "description": "Error color at 10% opacity."
+    }
+  },
+  "background": {
+    "background": {
+      "value": "hsla({hue.primary}, 17%, 93%, 1)",
+      "type": "color",
+      "description": "Page background color. Based on primary hue."
+    },
+    "on-background": {
+      "value": "hsla({hue.primary}, 17%, 11%, 1)",
+      "type": "color"
+    },
+    "background-scrim": {
+      "value": "linear-gradient(-90deg, rgba({background.background}, 1) 20%, rgba({background.background}, 0) 100%)",
+      "type": "color"
+    }
+  },
+  "surface": {
+    "surface": {
+      "value": "hsla({hue.primary}, 20%, 98%, 1)",
+      "type": "color"
+    },
+    "surface-hover": {
+      "value": "hsla({hue.primary}, 20%, 95%, 1)",
+      "type": "color",
+      "description": "Surface color dimmed by 3%"
+    },
+    "on-surface": {
+      "value": "hsla({hue.primary}, 9%, 11%, 1)",
+      "type": "color"
+    },
+    "surface-variant": {
+      "value": "hsla({hue.primary}, 30%, 94%, 1)",
+      "type": "color",
+      "description": "Used on surfaces to provide subtle separation."
+    },
+    "surface-variant-hover": {
+      "value": "hsla({hue.primary}, 30%, 91%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "surface-60": {
+      "value": "rgba({surface.surface}, 0.60)",
+      "description": "",
+      "type": "color"
+    },
+    "surface-scrim": {
+      "value": "linear-gradient(-90deg, rgba({surface.surface}, 1) 20%, rgba({surface.surface}, 0) 100%)",
+      "type": "color"
+    }
+  },
+  "utility": {
+    "outline": {
+      "value": "hsla({hue.primary}, 5%, 55%, 1)",
+      "type": "color"
+    },
+    "disabled-content": {
+      "value": "rgba({input.text}, 0.38)",
+      "description": "Color for disabled content, like text inside a disabled field.",
+      "type": "color"
+    },
+    "disabled-background": {
+      "value": "rgba({input.text}, 0.12)",
+      "description": "Color for the background, or container of disabled items.",
+      "type": "color"
+    },
+    "disabled-background-hover": {
+      "value": "rgba({input.text}, 0.20)",
+      "description": "",
+      "type": "color"
+    },
+    "link": {
+      "value": "hsla({hue.primary}, 100%, 60%, 1)",
+      "type": "color",
+      "description": ""
+    }
+  },
+  "input": {
+    "input-background": {
+      "value": "rgba({background.background}, .85)",
+      "type": "color",
+      "description": "Background color for input fields."
+    },
+    "text": {
+      "value": "{surface.on-surface}",
+      "description": "Text color with strong contrast.",
+      "type": "color"
+    },
+    "text-dim": {
+      "value": "rgba({input.text}, 0.70)",
+      "description": "Dimmed text color for less contrast. Input field labels, and lower-contrast titles.",
+      "type": "color"
+    }
+  },
+  "hue": {
+    "primary": {
+      "value": "240",
+      "description": "Hue value of primary color set.",
+      "type": "other"
+    },
+    "secondary": {
+      "value": "210",
+      "description": "Hue value of secondary color set.",
+      "type": "other"
+    },
+    "tertiary": {
+      "value": "300",
+      "description": "Hue value of teriary color set.",
+      "type": "other"
+    },
+    "success": {
+      "value": "145",
+      "description": "Hue value of success color set.",
+      "type": "other"
+    },
+    "error": {
+      "value": "353",
+      "description": "Hue value for error color set.",
+      "type": "other"
+    },
+    "warning": {
+      "value": "39",
+      "description": "Hue value of warning color set.",
+      "type": "other"
+    }
+  },
+  "constant": {
+    "light": {
+      "value": "hsla(0, 0%, 100%, 1)",
+      "type": "color"
+    },
+    "dark": {
+      "value": "hsla(0, 0%, 0%, 1)",
+      "type": "color"
+    }
+  },
+  "primary-font": {
+    "value": "Inter",
+    "type": "fontFamilies"
+  },
+  "size-1": {
+    "value": "40",
+    "type": "fontSizes"
+  },
+  "size-2": {
+    "value": "30",
+    "type": "fontSizes"
+  },
+  "size-3": {
+    "value": "24",
+    "type": "fontSizes"
+  },
+  "size-4": {
+    "value": "22",
+    "type": "fontSizes"
+  },
+  "size-5": {
+    "value": "18",
+    "type": "fontSizes"
+  },
+  "size-6": {
+    "value": "16",
+    "type": "fontSizes"
+  },
+  "size-7": {
+    "value": "14",
+    "type": "fontSizes"
+  },
+  "size-8": {
+    "value": "12",
+    "type": "fontSizes"
+  },
+  "heading": {
+    "size-1": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{bold}",
+        "lineHeight": "(round({size-1} * {line-height.regular})) + (round({size-1} * {line-height.regular}))%2",
+        "fontSize": "{size-1}",
+        "letterSpacing": "{tight-2}",
+        "paragraphSpacing": "(round({size-1} * {line-height.regular})) + (round({size-1} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-2": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{bold}",
+        "lineHeight": "(round({size-2} * {line-height.regular})) + (round({size-2} * {line-height.regular}))%2",
+        "fontSize": "{size-2}",
+        "letterSpacing": "{tight-2}",
+        "paragraphSpacing": "(round({size-2} * {line-height.regular})) + (round({size-2} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-3": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{semibold}",
+        "lineHeight": "(round({size-3} * {line-height.regular})) + (round({size-3} * {line-height.regular}))%2",
+        "fontSize": "{size-3}",
+        "letterSpacing": "{tight-1}",
+        "paragraphSpacing": "(round({size-3} * {line-height.regular})) + (round({size-3} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-4": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{semibold}",
+        "lineHeight": "(round({size-4} * {line-height.regular})) + (round({size-4} * {line-height.regular}))%2",
+        "fontSize": "{size-4}",
+        "letterSpacing": "{tight-1}",
+        "paragraphSpacing": "(round({size-4} * {line-height.regular})) + (round({size-4} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-5": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{semibold}",
+        "lineHeight": "(round({size-5} * {line-height.regular})) + (round({size-5} * {line-height.regular}))%2",
+        "fontSize": "{size-5}",
+        "letterSpacing": "{none}",
+        "paragraphSpacing": "(round({size-5} * {line-height.regular})) + (round({size-5} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-6": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{semibold}",
+        "lineHeight": "(round({size-6} * {line-height.regular})) + (round({size-6} * {line-height.regular}))%2",
+        "fontSize": "{size-6}",
+        "letterSpacing": "{none}",
+        "paragraphSpacing": "(round({size-6} * {line-height.regular})) + (round({size-6} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-7": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{semibold}",
+        "lineHeight": "(round({size-7} * {line-height.regular})) + (round({size-7} * {line-height.regular}))%2",
+        "fontSize": "{size-7}",
+        "letterSpacing": "{wider-1}",
+        "paragraphSpacing": "(round({size-7} * {line-height.regular})) + (round({size-7} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    }
+  },
+  "mobile": {
+    "heading": {
+      "size-1": {
+        "value": {
+          "fontFamily": "{primary-font}",
+          "fontWeight": "{bold}",
+          "lineHeight": "(round({mobile.size-1} * {line-height.regular})) + (round({mobile.size-1} * {line-height.regular}))%2",
+          "fontSize": "{mobile.size-1}",
+          "letterSpacing": "{tight-2}",
+          "paragraphSpacing": "(round({mobile.size-1} * {line-height.regular})) + (round({mobile.size-1} * {line-height.regular}))%2"
+        },
+        "type": "typography"
+      },
+      "size-2": {
+        "value": {
+          "fontFamily": "{primary-font}",
+          "fontWeight": "{bold}",
+          "lineHeight": "(round({mobile.size-2} * {line-height.regular})) + (round({mobile.size-2} * {line-height.regular}))%2",
+          "fontSize": "{mobile.size-2}",
+          "letterSpacing": "{tight-2}",
+          "paragraphSpacing": "(round({mobile.size-2} * {line-height.regular})) + (round({mobile.size-2} * {line-height.regular}))%2"
+        },
+        "type": "typography"
+      },
+      "size-3": {
+        "value": {
+          "fontFamily": "{primary-font}",
+          "fontWeight": "{bold}",
+          "lineHeight": "(round({mobile.size-3} * {line-height.regular})) + (round({mobile.size-3} * {line-height.regular}))%2",
+          "fontSize": "{mobile.size-3}",
+          "letterSpacing": "{tight-2}",
+          "paragraphSpacing": "(round({mobile.size-3} * {line-height.regular})) + (round({mobile.size-3} * {line-height.regular}))%2"
+        },
+        "type": "typography"
+      },
+      "size-4": {
+        "value": {
+          "fontFamily": "{primary-font}",
+          "fontWeight": "{bold}",
+          "lineHeight": "(round({mobile.size-4} * {line-height.regular})) + (round({mobile.size-4} * {line-height.regular}))%2",
+          "fontSize": "{mobile.size-4}",
+          "letterSpacing": "{tight-2}",
+          "paragraphSpacing": "(round({mobile.size-4} * {line-height.regular})) + (round({mobile.size-4} * {line-height.regular}))%2"
+        },
+        "type": "typography"
+      }
+    },
+    "size-1": {
+      "value": "30",
+      "type": "fontSizes"
+    },
+    "size-2": {
+      "value": "24",
+      "type": "fontSizes"
+    },
+    "size-3": {
+      "value": "22",
+      "type": "fontSizes"
+    },
+    "size-4": {
+      "value": "20",
+      "type": "fontSizes"
+    }
+  },
+  "body": {
+    "size-5": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{regular}",
+        "lineHeight": "(round({size-5} * {line-height.regular})) + (round({size-5} * {line-height.regular}))%2",
+        "fontSize": "{size-5}",
+        "letterSpacing": "{none}",
+        "paragraphSpacing": "(round({size-5} * {line-height.regular})) + (round({size-5} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-6": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{regular}",
+        "lineHeight": "(round({size-6} * {line-height.regular})) + (round({size-6} * {line-height.regular}))%2",
+        "fontSize": "{size-6}",
+        "letterSpacing": "{none}",
+        "paragraphSpacing": "(round({size-6} * {line-height.regular})) + (round({size-6} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-7": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{regular}",
+        "lineHeight": "(round({size-7} * {line-height.regular})) + (round({size-7} * {line-height.regular}))%2",
+        "fontSize": "{size-7}",
+        "letterSpacing": "{wider-1}",
+        "paragraphSpacing": "(round({size-7} * {line-height.regular})) + (round({size-7} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-8": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{regular}",
+        "lineHeight": "(round({size-8} * {line-height.regular})) + (round({size-8} * {line-height.regular}))%2",
+        "fontSize": "{size-8}",
+        "letterSpacing": "{wider-1}",
+        "paragraphSpacing": "(round({size-8} * {line-height.regular})) + (round({size-8} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    }
+  },
+  "button": {
+    "size-6": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{semibold}",
+        "lineHeight": "(round({size-6} * {line-height.regular})) + (round({size-6} * {line-height.regular}))%2",
+        "fontSize": "{size-6}",
+        "letterSpacing": "{none}",
+        "paragraphSpacing": "(round({size-6} * {line-height.regular})) + (round({size-6} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-7": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{semibold}",
+        "lineHeight": "(round({size-7} * {line-height.regular})) + (round({size-7} * {line-height.regular}))%2",
+        "fontSize": "{size-7}",
+        "letterSpacing": "{wider-1}",
+        "paragraphSpacing": "(round({size-7} * {line-height.regular})) + (round({size-7} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    },
+    "size-8": {
+      "value": {
+        "fontFamily": "{primary-font}",
+        "fontWeight": "{semibold}",
+        "lineHeight": "(round({size-8} * {line-height.regular})) + (round({size-8} * {line-height.regular}))%2",
+        "fontSize": "{size-8}",
+        "letterSpacing": "{wider-1}",
+        "paragraphSpacing": "(round({size-8} * {line-height.regular})) + (round({size-8} * {line-height.regular}))%2"
+      },
+      "type": "typography"
+    }
+  },
+  "bold": {
+    "value": "Bold",
+    "type": "fontWeights"
+  },
+  "semibold": {
+    "value": "Semi Bold",
+    "type": "fontWeights"
+  },
+  "regular": {
+    "value": "Regular",
+    "type": "fontWeights"
+  },
+  "line-height": {
+    "tight": {
+      "value": "1",
+      "type": "lineHeights"
+    },
+    "regular": {
+      "value": "1.2",
+      "type": "lineHeights"
+    },
+    "wide": {
+      "value": "1.5",
+      "type": "lineHeights"
+    }
+  },
+  "tight-2": {
+    "value": "-2%",
+    "type": "letterSpacing"
+  },
+  "tight-1": {
+    "value": "-1%",
+    "type": "letterSpacing"
+  },
+  "none": {
+    "value": "0%",
+    "type": "letterSpacing"
+  },
+  "border-regular": {
+    "value": "1.5",
+    "type": "borderWidth"
+  },
+  "border-thick": {
+    "value": "2",
+    "type": "borderWidth"
+  },
+  "wider-1": {
+    "value": "1%",
+    "type": "letterSpacing"
+  },
+  "wider-2": {
+    "value": "2%",
+    "type": "letterSpacing"
+  },
+  "card-radius": {
+    "value": "16",
+    "type": "borderRadius"
+  }
+}
