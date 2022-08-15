@@ -1,0 +1,223 @@
+{
+  "primary": {
+    "primary": {
+      "value": "hsla({hue.primary}, 100%, 66%, 1)",
+      "type": "color"
+    },
+    "primary-hover": {
+      "value": "hsla({hue.primary}, 100%, 62%, 1)",
+      "type": "color",
+      "description": "Primary with 14% opacity overlay of on-primary."
+    },
+    "on-primary": {
+      "value": "hsla({hue.primary}, 100%, 99%, 1)",
+      "type": "color"
+    },
+    "primary-alt": {
+      "value": "hsla({hue.primary}, 35%, 25%, 1)",
+      "type": "color",
+      "description": "A lower-emphasis version of the primary color."
+    },
+    "primary-alt-hover": {
+      "value": "hsla({hue.primary}, 35%, 30%, 1)",
+      "type": "color",
+      "description": "Primary-alt with 14% opacity on-primary-alt overlay."
+    },
+    "on-primary-alt": {
+      "value": "hsla({hue.primary}, 100%, 92%, 1)",
+      "type": "color"
+    }
+  },
+  "secondary": {
+    "secondary": {
+      "value": "hsla({hue.secondary}, 70%, 80%, 1)",
+      "type": "color",
+      "container": {
+        "value": "#004D67",
+        "type": "color"
+      }
+    },
+    "secondary-hover": {
+      "value": "hsla({hue.secondary}, 70%, 75%, 1)",
+      "type": "color",
+      "container": {
+        "value": "#004D67",
+        "type": "color"
+      }
+    },
+    "on-secondary": {
+      "value": "hsla({hue.secondary}, 100%, 17%, 1)",
+      "type": "color"
+    },
+    "secondary-alt": {
+      "value": "hsla({hue.secondary}, 35%, 25%, 1)",
+      "type": "color",
+      "description": "A lower-emphasis version of the secondary color."
+    },
+    "secondary-alt-hover": {
+      "value": "hsla({hue.secondary}, 35%, 30%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "on-secondary-alt": {
+      "value": "hsla({hue.secondary}, 100%, 92%, 1)",
+      "type": "color"
+    }
+  },
+  "tertiary": {
+    "tertiary": {
+      "value": "hsla({hue.tertiary}, 50%, 80%, 1)",
+      "type": "color"
+    },
+    "tertiary-hover": {
+      "value": "hsla({hue.tertiary}, 50%, 75%, 1)",
+      "type": "color"
+    },
+    "on-tertiary": {
+      "value": "hsla({hue.tertiary}, 80%, 20%, 1)",
+      "type": "color"
+    },
+    "tertiary-alt": {
+      "value": "hsla({hue.tertiary}, 30%, 25%, 1)",
+      "type": "color",
+      "description": "A lower-emphasis version of the tertiary color."
+    },
+    "tertiary-alt-hover": {
+      "value": "hsla({hue.tertiary}, 30%, 30%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "on-tertiary-alt": {
+      "value": "hsla({hue.tertiary}, 100%, 92%, 1)",
+      "type": "color"
+    }
+  },
+  "success": {
+    "success": {
+      "value": "hsla({hue.success}, 75%, 62%, 1)",
+      "type": "color"
+    },
+    "on-success": {
+      "value": "hsla({hue.success}, 100%, 11%, 1)",
+      "type": "color"
+    },
+    "success-20": {
+      "value": "rgba({success.success}, 0.20)",
+      "type": "color",
+      "description": "Used as hover color for elements with background of success-10."
+    },
+    "success-10": {
+      "value": "rgba({success.success}, 0.10)",
+      "type": "color"
+    }
+  },
+  "warning": {
+    "warning": {
+      "value": "hsla({hue.warning}, 100%, 61%, 1)",
+      "type": "color"
+    },
+    "on-warning": {
+      "value": "hsla({hue.warning}, 40%, 10%, 1)",
+      "type": "color"
+    },
+    "warning-hover": {
+      "value": "hsla({hue.warning}, 100%, 52%, 1)",
+      "type": "color"
+    },
+    "warning-10": {
+      "value": "rgba({warning.warning}, 0.10)",
+      "description": "Warning color at 10% opacity.",
+      "type": "color"
+    }
+  },
+  "error": {
+    "error": {
+      "value": "hsla({hue.error}, 73%, 48%, 1)",
+      "type": "color"
+    },
+    "on-error": {
+      "value": "hsla({hue.error}, 100%, 99%, 1)",
+      "type": "color"
+    },
+    "error-hover": {
+      "value": "hsla({hue.error}, 73%, 55%, 1)",
+      "type": "color"
+    },
+    "error-10": {
+      "value": "rgba({error.error}, 0.10)",
+      "type": "color",
+      "description": "Error color at 10% opacity."
+    }
+  },
+  "background": {
+    "background": {
+      "value": "hsla({hue.primary}, 15%, 7%, 1)",
+      "type": "color"
+    },
+    "on-background": {
+      "value": "hsla({hue.primary}, 17%, 95%, 1)",
+      "type": "color"
+    }
+  },
+  "surface": {
+    "on-surface": {
+      "value": "hsla({hue.primary}, 33%, 99%, 1)",
+      "type": "color"
+    },
+    "surface-variant": {
+      "value": "hsla({hue.primary}, 20%, 22%, 1)",
+      "type": "color",
+      "description": "Used on surfaces to provide subtle separation."
+    },
+    "surface": {
+      "value": "hsla({hue.primary}, 20%, 16%, 1)",
+      "type": "color"
+    },
+    "surface-60": {
+      "value": "rgba({surface.surface}, 0.60)",
+      "type": "color",
+      "description": ""
+    },
+    "surface-hover": {
+      "value": "hsla({hue.primary}, 20%, 20%, 1)",
+      "type": "color",
+      "description": ""
+    },
+    "surface-variant-hover": {
+      "value": "hsla({hue.primary}, 20%, 26%, 1)",
+      "type": "color",
+      "description": ""
+    }
+  },
+  "utility": {
+    "outline": {
+      "value": "hsla({hue.primary}, 5%, 55%, 1)",
+      "type": "color"
+    },
+    "disabled-content": {
+      "value": "rgba({input.text}, 0.38)",
+      "type": "color",
+      "description": "Color for disabled content, like text inside a disabled field."
+    },
+    "disabled-background": {
+      "value": "rgba({input.text}, 0.12)",
+      "type": "color",
+      "description": "Color for the background, or container of disabled items."
+    },
+    "disabled-background-hover": {
+      "value": "rgba({input.text}, 0.20)",
+      "type": "color",
+      "description": ""
+    },
+    "link": {
+      "value": "hsla({hue.primary}, 100%, 75%, 1)",
+      "type": "color"
+    }
+  },
+  "input": {
+    "input-background": {
+      "value": "rgba({background.background}, .6)",
+      "type": "color"
+    }
+  }
+}
