@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 import './FloatingActionButton.css';
-import lightMode from '../data/lightMode.json';
 import { ConstructionOutlined } from '@mui/icons-material';
-import { setUpTokens } from '../utils/ThemeParse'
+import { setUpTokens } from '../../utils/ThemeParse'
 
 interface props {
   size: "large" | "regular",
