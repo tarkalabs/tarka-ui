@@ -12,13 +12,13 @@ function getValueAtKeys(keys:string[]){
 }
 
 
-export function getBracketValue(stringIn:string){
+function getBracketValue(stringIn:string){
     let keys= stringIn.slice(1, -1).split('.');
     return getValueAtKeys(keys);
 }
 
 
-export function curlyScanner(stringIn:string):string{
+function curlyScanner(stringIn:string):string{
     let bracket = [];
     let found = false;
 

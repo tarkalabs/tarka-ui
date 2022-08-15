@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '../assets/images/Shape.png';
 import { FloatingActionButton } from '../components/FloatingActionButton';
 
 export default {
