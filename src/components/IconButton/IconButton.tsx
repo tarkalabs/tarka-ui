@@ -37,7 +37,7 @@ const IconButton: React.FC<props> = function ({ icon, type = "primary", badge, s
             </div>}
             <div className={`icon-button-button ${type} ${size}`}>
                 {icon && <img src={icon} />}
-                {!icon && (size === ('XS' || 'small') ? <CloseIconSmall/> : <CloseIconLarge/>)}
+                {!icon && ((size === 'XS' || size ==='small') ? <CloseIconSmall/> : <CloseIconLarge/>)}
             </div>
         </div>
     )
