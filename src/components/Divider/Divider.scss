@@ -1,14 +1,20 @@
 .divider{
-    background: fill var(--surface-surface-variant);
+    &.divider {
+        background: var(--surface-surface-variant);
+    
+        &.vertical {
+            float: left;
+            width: 1px;
+            height: 100%;
+        }
+    }
+
+    &.spacer {
+        height: var(--spacer-height);
+    }
 
     &.horizontal {
         width: 100%;
         height: 1px;
-    }
-
-    &.vertical {
-        float: left;
-        width: 1px;
-        height: 100%;
     }
 }

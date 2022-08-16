@@ -6,39 +6,38 @@ import { ReactComponent as PlusIcon } from '@icons/plus.svg';
 interface props {
     children?: React.ReactNode,
     type: "divider" | "spacer",
-    orientation: "horizontal" | "vertical",
-    tbPadding?: number,
-    lrPadding?: number,
+    tbMargin?: number,
+    lrMargin?: number,
 }
 
 type SpacerProps = 
     | {
         type: "spacer",
         height?: number,
+        orientation?: "horizontal",
     }
     | {
         type: "divider",
         height?: never,
+        orientation?: "horizontal" | "vertical",
     }
 
-const Divider: React.FC<props & SpacerProps> = ({ type, height, orientation, tbPadding, lrPadding }: props & SpacerProps) => {
-    generateTokens(['surface/on-surface', 'utility/disabled-content', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
-    'secondary/on-secondary', 'secondary/secondary-hover']);
+const Divider: React.FC<props & SpacerProps> = ({ type, height, orientation, tbMargin, lrMargin }: props & SpacerProps) => {
+    generateTokens(['surface/surface-variant']);
 
-  return (
-    <div className="divider">
+    return (
         <div 
-            className={`${type} ${orientation}`} 
+            className={`divider ${type} ${orientation ? orientation : ''}`}
             style={{
-                '--height': `${height}px`,
-                paddingTop: tbPadding,
-                paddingBottom: tbPadding,
-                paddingLeft: lrPadding,
-                paddingRight: lrPadding,
+                '--spacerHeight': height ? `${height}px` : undefined,
+                marginTop: tbMargin,
+                marginBottom: tbMargin,
+                marginLeft: lrMargin,
+                marginRight: lrMargin,
             } as React.CSSProperties}
-        />
-    </div>
-  );
+        >
+        </div>
+    );
 };
 
 export default Divider;
