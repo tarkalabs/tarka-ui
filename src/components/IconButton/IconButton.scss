@@ -5,11 +5,9 @@
     &.XL {
         left: 36px;
         top: 18px;
-        display: unset;
     }
 
     &.large {
-        display: unset;
         left: 28px;
         top: 12px;
     }
@@ -27,16 +25,17 @@
     &.primary {
         background-color: var(--primary-primary);
         fill: var(--primary-on-primary);
-        &:hover{
+
+        &:hover {
             background-color: var(--primary-primary-hover);
             outline: 1.5px var(--surface-on-surface) solid;
             outline-offset: -1.5px;
         }
     }
 
-    &.secondary{
+    &.secondary {
         background-color: var(--secondary-secondary);
-        fill:var(--secondary-on-secondary);
+        fill: var(--secondary-on-secondary);
     }
 
     &.ghost {
@@ -44,7 +43,7 @@
         fill: var(--surface-on-surface);
 
         &:hover {
-            background-color: rgba(0,0,0,.04);
+            background-color: rgba(0, 0, 0, .04);
         }
     }
 
@@ -77,7 +76,7 @@
 .disabled {
     .ghost {
         path {
-            fill:var(--utility-disabled-content);
+            fill: var(--utility-disabled-content);
         }
     }
 }

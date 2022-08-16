@@ -3,6 +3,7 @@ import PopUp from "../PopUp/PopUp";
 import './IconButton.css'
 import '../../utils/ThemeParse'
 import { setUpTokens } from "../../utils/ThemeParse";
+
 interface props {
     type?: "primary" | "secondary" | "ghost",
     icon?: string,
@@ -11,16 +12,15 @@ interface props {
     disabled: boolean
 }
 
-
-function createPopUp(size:string,numberIn:any){
-    if(size === 'XL' && numberIn){
-        return <PopUp size="regular" number={Number.isInteger(numberIn)?numberIn:undefined } />
+function createPopUp(size: string, numberIn: any) {
+    if (size === 'XL' && numberIn) {
+        return <PopUp size="regular" number={Number.isInteger(numberIn) ? numberIn : undefined} />
     }
-    else if(size === 'large' && numberIn){
+    else if (size === 'large' && numberIn) {
         return <PopUp size='small' />
     }
     return <></>
-    
+
 }
 
 const IconButton: React.FC<props> = function ({ icon, type = "primary", popup, size, disabled }) {
@@ -48,15 +48,10 @@ const IconButton: React.FC<props> = function ({ icon, type = "primary", popup, s
         defaultEle = largeIcon;
     }
 
-
-    /*
-    {Number.isInteger(popup) && <PopUp size='large' number={size === 'XL' ? popup : undefined} />}
-                {!Number.isInteger(popup) && <PopUp size="regular" />}
-                */
     return (
         <div className={`icon-button ${disabled && type === 'ghost' ? 'disabled' : ''}`}>
             {popup && <div className={`popup-container ${size}`}>
-                {createPopUp(size,popup)}
+                {createPopUp(size, popup)}
             </div>}
             <div className={`icon-button-button ${type} ${size}`}>
                 {icon && <img src={icon} />}
