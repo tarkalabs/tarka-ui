@@ -6,8 +6,10 @@ export default {
   component: Divider,
   decorators: [
     (Story) => (
-        <div style={{ width: '768px', height: '125px' }}>     
-            <Story />      
+        <div style={{ width: '768px', height: '125px' }}>
+            Lorem ipsum dolor sit amet. 
+            <Story />
+            Lorem ipsum dolor sit amet.      
         </div>
     )
 ],

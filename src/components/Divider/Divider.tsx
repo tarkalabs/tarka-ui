@@ -29,7 +29,7 @@ const Divider: React.FC<props & SpacerProps> = ({ type, height, orientation, tbM
         <div 
             className={`divider ${type} ${orientation ? orientation : ''}`}
             style={{
-                '--spacerHeight': height ? `${height}px` : undefined,
+                '--spacer-height': height ? `${height}px` : undefined,
                 marginTop: tbMargin,
                 marginBottom: tbMargin,
                 marginLeft: lrMargin,
