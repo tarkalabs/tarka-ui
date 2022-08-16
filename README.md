@@ -12,7 +12,7 @@
 - [x] Icon button
 - [x] Floating Action Button
 - [ ] Button
-- [ ] Rule line
+- [ ] Divider
 - [ ] Thumbnail
 - [ ] Breadcrumbs
 - [ ] Badge
