@@ -20,6 +20,6 @@
   height: 96px;
   width: 96px;
 }
-.FloatingActionButton img {
-  color: var(--primary-on-primary);
+.FloatingActionButton path {
+  fill: var(--primary-on-primary);
 }/*# sourceMappingURL=FloatingActionButton.css.map */
