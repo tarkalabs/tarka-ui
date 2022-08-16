@@ -23,7 +23,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-#storybook
+# storybook
 /storybook-static
-#react
+
+# react
 /build
+
+# scss
+/src/components/**/*.css.map
