@@ -52,7 +52,7 @@ export function getJSONValue(stringIn:string){
     return curlyScanner(jsonValue);
 }
 
-export function setUpTokens(tokenNames:string[]){
+export function generateTokens(tokenNames:string[]){
     let float:any = document.querySelector(':root');
     for(let token of tokenNames){
         float.style.setProperty(`--${token.replaceAll('/','-')}`,getJSONValue(token));

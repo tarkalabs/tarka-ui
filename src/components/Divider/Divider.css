@@ -1,0 +1,12 @@
+.divider {
+  background: fill var(--surface-surface-variant);
+}
+.divider.horizontal {
+  width: 100%;
+  height: 1px;
+}
+.divider.vertical {
+  float: left;
+  width: 1px;
+  height: 100%;
+}

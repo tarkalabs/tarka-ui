@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Badge from "../Badge/Badge";
 import './IconButton.css'
 import '../../utils/ThemeParse'
-import { setUpTokens } from "../../utils/ThemeParse";
+import { generateTokens } from "../../utils/ThemeParse";
 import {ReactComponent as CloseIconSmall} from "@icons/close/close-small.svg";
 import {ReactComponent as CloseIconLarge} from "@icons/close/close-large.svg";
 
@@ -27,7 +27,7 @@ function createBadge(size: string, numberIn: any) {
 
 const IconButton: React.FC<props> = function ({ icon, type = "primary", badge, size, disabled }) {
 
-    setUpTokens(['surface/on-surface', 'utility/disabled-content', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
+    generateTokens(['surface/on-surface', 'utility/disabled-content', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
         'secondary/on-secondary', 'secondary/secondary-hover']);
 
     return (
