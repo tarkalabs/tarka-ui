@@ -71,9 +71,15 @@
         width: 48px;
         height: 48px;
     }
+
+
 }
 
-.disabled {
+.icon-button.disabled {
+    .icon-button-button {
+        cursor:not-allowed;
+    }
+
     .ghost {
         path {
             fill: var(--utility-disabled-content);
