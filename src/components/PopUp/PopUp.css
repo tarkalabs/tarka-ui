@@ -1,0 +1,44 @@
+.pop-up {
+  background-color: var(--error-error);
+  color: var(--error-on-error);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pop-up.small {
+  min-width: 12px;
+  min-height: 12px;
+}
+.pop-up.regular {
+  min-width: 16px;
+  min-height: 16px;
+}
+.pop-up.regular div {
+  margin: 0 4px;
+  /* button/size-8 */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+}
+.pop-up.large {
+  min-width: 24px;
+  min-height: 24px;
+}
+.pop-up.large div {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height, or 129% */
+  text-align: center;
+  letter-spacing: 0.01em;
+  padding: 3px 7px;
+}/*# sourceMappingURL=PopUp.css.map */
