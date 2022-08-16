@@ -1,14 +1,16 @@
-.popup-container {
+.badge-container {
   position: relative;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-.popup-container.XL {
+
+.badge-container.XL {
   left: 36px;
   top: 18px;
 }
-.popup-container.large {
+
+.badge-container.large {
   left: 28px;
   top: 12px;
 }
@@ -18,46 +20,62 @@
   width: 20px;
   height: 20px;
   border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .icon-button-button.primary {
   background-color: var(--primary-primary);
   fill: var(--primary-on-primary);
 }
+
 .icon-button-button.primary:hover {
   background-color: var(--primary-primary-hover);
   outline: 1.5px var(--surface-on-surface) solid;
   outline-offset: -1.5px;
 }
+
 .icon-button-button.secondary {
   background-color: var(--secondary-secondary);
   fill: var(--secondary-on-secondary);
 }
+
 .icon-button-button.ghost {
   background-color: transparent;
   fill: var(--surface-on-surface);
 }
+
 .icon-button-button.ghost:hover {
   background-color: rgba(0, 0, 0, 0.04);
 }
+
 .icon-button-button.XS {
   width: 20px;
   height: 20px;
 }
+
 .icon-button-button.small {
   width: 24px;
   height: 24px;
 }
+
 .icon-button-button.regular {
   width: 32px;
   height: 32px;
 }
+
 .icon-button-button.large {
   width: 40px;
   height: 40px;
 }
+
 .icon-button-button.XL {
   width: 48px;
   height: 48px;
@@ -65,4 +83,5 @@
 
 .disabled .ghost path {
   fill: var(--utility-disabled-content);
-}/*# sourceMappingURL=IconButton.css.map */
+}
+/*# sourceMappingURL=IconButton.css.map */

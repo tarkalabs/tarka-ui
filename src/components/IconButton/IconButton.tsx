@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import PopUp from "../PopUp/PopUp";
+import Badge from "../Badge/Badge";
 import './IconButton.css'
 import '../../utils/ThemeParse'
 import { setUpTokens } from "../../utils/ThemeParse";
@@ -7,23 +7,23 @@ import { setUpTokens } from "../../utils/ThemeParse";
 interface props {
     type?: "primary" | "secondary" | "ghost",
     icon?: string,
-    popup?: any
+    badge?: any
     size: "XS" | "small" | "regular" | "large" | "XL"
     disabled: boolean
 }
 
-function createPopUp(size: string, numberIn: any) {
+function createBadge(size: string, numberIn: any) {
     if (size === 'XL' && numberIn) {
-        return <PopUp size="regular" number={Number.isInteger(numberIn) ? numberIn : undefined} />
+        return <Badge size="regular" number={Number.isInteger(numberIn) ? numberIn : undefined} />
     }
     else if (size === 'large' && numberIn) {
-        return <PopUp size='small' />
+        return <Badge size='small' />
     }
     return <></>
 
 }
 
-const IconButton: React.FC<props> = function ({ icon, type = "primary", popup, size, disabled }) {
+const IconButton: React.FC<props> = function ({ icon, type = "primary", badge, size, disabled }) {
 
     setUpTokens(['surface/on-surface', 'utility/disabled-content', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
         'secondary/on-secondary', 'secondary/secondary-hover']);
@@ -50,8 +50,8 @@ const IconButton: React.FC<props> = function ({ icon, type = "primary", popup, s
 
     return (
         <div className={`icon-button ${disabled && type === 'ghost' ? 'disabled' : ''}`}>
-            {popup && <div className={`popup-container ${size}`}>
-                {createPopUp(size, popup)}
+            {badge && <div className={`badge-container ${size}`}>
+                {createBadge(size, badge)}
             </div>}
             <div className={`icon-button-button ${type} ${size}`}>
                 {icon && <img src={icon} />}

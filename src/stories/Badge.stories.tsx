@@ -1,13 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import PopUp from '../components/PopUp/PopUp';
+import Badge from '../components/Badge/Badge';
 
 export default {
-  title: 'Example/popup',
-  component: PopUp,
-} as ComponentMeta<typeof PopUp>;
+  title: 'Example/Badge',
+  component: Badge,
+} as ComponentMeta<typeof Badge>;
 
-const Template: ComponentStory<typeof PopUp> = (args) => <PopUp {...args} />;
+const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
 
 export const WithContent = Template.bind({});
 WithContent.args={

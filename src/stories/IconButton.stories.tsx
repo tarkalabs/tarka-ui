@@ -8,21 +8,21 @@ export default {
 
 const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} />;
 
-export const NoPopUp = Template.bind({});
-NoPopUp.args = {
-    popup: null,
+export const NoBadge = Template.bind({});
+NoBadge.args = {
+    badge: null,
     size:'XS'
 }   
 
-export const PopUp = Template.bind({});
-PopUp.args = {
-    popup: 'blank',
+export const Badge = Template.bind({});
+Badge.args = {
+    badge: 'blank',
     size: 'large'
 }
 
 export const Numbered = Template.bind({});
 Numbered.args = {
-    popup: 2,
+    badge: 2,
     size:'XL'
 }
 
@@ -37,4 +37,11 @@ Disabled.args = {
     type:'ghost',
     size:'large',
     disabled:true
+}
+
+export const CustomIcon = Template.bind({});
+CustomIcon.args ={
+    icon:'https://www.w3schools.com/images/lamp.jpg',
+    size:'XL',
+    type:'primary'
 }

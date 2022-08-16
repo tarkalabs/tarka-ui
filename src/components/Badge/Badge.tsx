@@ -1,16 +1,16 @@
 import React from "react";
-import './PopUp.css'
+import './Badge.css'
 import '../../utils/ThemeParse'
 import { setUpTokens } from "../../utils/ThemeParse";
 interface props {
     number?: number,
     size: 'small' | 'regular' | 'large'
 }
-const PopUp: React.FC<props> = function ({ number, size }) {
+const Badge: React.FC<props> = function ({ number, size }) {
     setUpTokens(['error/error', 'error/on-error', 'button/size-7']);
 
     return (
-        <div className={`pop-up ${size}`}>
+        <div className={`badge ${size}`}>
 
             {size != 'small' && <div>{number} </div>}
 
@@ -18,4 +18,4 @@ const PopUp: React.FC<props> = function ({ number, size }) {
     )
 }
 
-export default PopUp;
+export default Badge;
