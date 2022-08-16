@@ -8,9 +8,30 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Basic = Template.bind({});
-Basic.args={
+console.log(__dirname);
+
+export const Primary = Template.bind({});
+Primary.args={
     size:'large',
-    type:'primary'
+    type:'primary',
+    startIcon: 'test'
 }
 
+export const Secondary = Template.bind({});
+Secondary.args={
+    size:'regular',
+    type:'secondary'
+}
+
+export const Outlined = Template.bind({});
+Outlined.args={
+    size:'small',
+    type:'outlined'
+}
+
+export const Ghost = Template.bind({});
+Ghost.args={
+    size:'XS',
+    type:'ghost',
+    endIcon: 'test'
+}
