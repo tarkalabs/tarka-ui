@@ -1,0 +1,14 @@
+.badge {
+    background-color: var(--success-success);
+    fill: var(--success-on-success);
+    width: fit-content;
+    border-radius: 100px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 16px;
+    min-height: 16px;
+}
