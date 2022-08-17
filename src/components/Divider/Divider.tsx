@@ -22,7 +22,7 @@ type SpacerProps =
         orientation?: "horizontal" | "vertical",
     }
 
-const Divider: React.FC<props & SpacerProps> = ({ type, height, orientation, tbMargin, lrMargin }: props & SpacerProps) => {
+const Divider: React.FC<props & SpacerProps> = ({ children, type, height, orientation, tbMargin, lrMargin }: props & SpacerProps) => {
     generateTokens(['surface/surface-variant']);
 
     return (
@@ -36,6 +36,7 @@ const Divider: React.FC<props & SpacerProps> = ({ type, height, orientation, tbM
                 marginRight: lrMargin,
             } as React.CSSProperties}
         >
+            {children}
         </div>
     );
 };
