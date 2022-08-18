@@ -19,10 +19,19 @@
   }
 }
 
+div.logo {
+  
+
+  > span {
+    color: $tarka-red;
+    font-size: 10rem;
+    font-family: logo;
+  }
+}
+
 h2.sbdocs {
-  @include text-attributes('heading', 1);
-  margin-top: 30vh;
-  margin-bottom: 100px;
+  @include text-attributes('heading', 3);
+  border: none;
 
   &:before{
     line-height: normal;
