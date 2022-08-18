@@ -11,7 +11,6 @@ interface props {
 const DocPage: React.FC<props> = ({ name, mdx }) => {
   return (
     <div className={`doc-page ${name}`}>
-
     </div>
   );
 };
