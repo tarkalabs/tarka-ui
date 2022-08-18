@@ -2,8 +2,8 @@ const path = require('path');
 
 module.exports = {
   "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+    "../src/stories/*.stories.mdx",
+    "../src/stories/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
     "@storybook/addon-links",
@@ -23,6 +23,7 @@ module.exports = {
       '@components': path.resolve(__dirname, "../src/components"),
       '@utils': path.resolve(__dirname, "../src/utils"),
       '@assets': path.resolve(__dirname, "../src/assets"),
+      '@data': path.resolve(__dirname, "../src/data"),
     };
     return config;
   }

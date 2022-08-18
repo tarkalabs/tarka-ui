@@ -1,39 +1,55 @@
-@import 'vars';
-@import 'fonts';
+@import "vars";
+@import "fonts";
 
 @for $i from 1 through 11 {
   .heading-size-#{$i} {
-    @include text-attributes('heading', $i);
+    @include text-attributes("heading", $i);
   }
 }
 
 @for $i from 6 through 11 {
   .body-jetbrains-size-#{$i} {
-    @include text-attributes('body-jetbrains', $i);
+    @include text-attributes("body-jetbrains", $i);
   }
 }
 
 @for $i from 8 through 11 {
   .body-opensans-size-#{$i} {
-    @include text-attributes('body-opensans', $i);
+    @include text-attributes("body-opensans", $i);
   }
 }
 
-div.logo {
-  
+div.story-template {
+  display: flex;
+  flex-flow: column;
+  padding: 5em 0.75em;
+  justify-content: center;
+  width: 100%;
 
-  > span {
-    color: $tarka-red;
-    font-size: 10rem;
-    font-family: logo;
+  .logo {
+    > div {
+      display: flex;
+      align-self: center;
+      justify-content: space-around;
+      flex-flow: row nowrap;
+      width: 100%;
+      height: auto;
+      flex: 0 0 50%;
+
+      > span {
+        @include text-attributes("heading", 1);
+        color: $tarka-red;
+        font-family: logo;
+      }
+    }
   }
 }
 
-h2.sbdocs {
-  @include text-attributes('heading', 3);
+h2 {
+  @include text-attributes("heading", 3);
   border: none;
 
-  &:before{
+  &:before {
     line-height: normal;
   }
-} 
+}

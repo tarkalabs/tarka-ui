@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...ar
 
 export function Docs() {
     return (
-        <StoryTemplate/>
+        <StoryTemplate name="iconbutton"/>
     );
 }
 
