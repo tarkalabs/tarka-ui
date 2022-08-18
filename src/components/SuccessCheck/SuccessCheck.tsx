@@ -8,7 +8,7 @@ const SuccessCheck: React.FC= function () {
     setUpTokens(['success/success', 'success/on-success']);
 
     return (
-        <div className="SuccessCheck">
+        <div className="success-check">
             <div className="success">
                 <CheckmarkIcon/>
             </div>
