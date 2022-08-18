@@ -1,10 +1,12 @@
-import React, { ReactNode} from "react";
+import React, { ReactNode } from "react";
 import './SocialIcons.css'
 import '../../utils/ThemeParse'
 import { setUpTokens } from "../../utils/ThemeParse";
 
 interface props {
-    icons: (
+  children: ReactNode,
+  classes: object,
+  icons: (
         'applemusic'| 
         'clubhouse' | 
         'facebook'  | 
@@ -18,16 +20,17 @@ interface props {
         'youtube'
     )[]
 }
-const SocialIcons: React.FC<props> = function ({ icons }) {
+const SocialIcons: React.FC<props> = function ({ classes, icons}) {
   setUpTokens(['surface/on-surface']);
 
   return (
-    <div className="SocialIcons">
+    <div className={`social-icons ${classes}`}>
         <div className="socials">
             {icons.map(icon => <img src={require(`@icons/social/${icon}.svg`)} alt=""></img>)}
         </div>
     </div>
   )
+
 }
 
 export default SocialIcons;

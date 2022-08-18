@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import SocialIcons from '../components/SocialIcons/SocialIcons';
 
 export default {
-  title: 'Example/SocialIcons',
+  title: 'Components/SocialIcons',
   component: SocialIcons,
 } as ComponentMeta<typeof SocialIcons>;
 
