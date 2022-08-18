@@ -13,7 +13,7 @@ export const FloatingActionButton: React.FC<props> = ({ size, icon }) => {
   setUpTokens(['primary/primary','surface/on-surface','primary/primary-hover','primary/on-primary']);
 
   return (
-    <button className={`FloatingActionButton ${size}`} type="button">
+    <button className={`floating-action-button ${size}`} type="button">
       {!icon && <PlusIcon/>}
 
     <img src={icon} />
