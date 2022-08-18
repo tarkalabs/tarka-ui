@@ -11,11 +11,11 @@
 ### Components TODO
 - [x] Icon button
 - [x] Floating Action Button
-- [ ] Button
+- [x] Button
 - [ ] Divider
 - [ ] Thumbnail
 - [ ] Breadcrumbs
-- [ ] Badge
+- [x] Badge
 - [ ] Mobile nav bar
 - [ ] Nav item
 - [ ] Social icons
