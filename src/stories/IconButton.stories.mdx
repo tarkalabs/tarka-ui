@@ -1,0 +1,41 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import LinkTo from '@storybook/addon-links/react';
+
+<Meta title='Components/IconButton' />
+
+## Appearance
+###### [`| Figma Reference |`](https://www.figma.com/file/P38agSWlZGpxD68uQdcRmp/Tarka-kit?node-id=17%3A9771)
+![eaf8326d1c7a1c5b08851210db40d7b4](https://user-images.githubusercontent.com/77284270/185224755-a10d5702-1b92-4424-8387-080ab926d735.png)
+
+## Properties
+###### [`| MUI Reference |`](https://mui.com/material-ui/api/icon-button/)
+<br/>
+
+* `children:` ReactNode
+* `classes:` object
+* `color:` 'primary' | 'secondary' | 'ghost'
+    * default: 'primary'
+* `disabled:` bool\*
+* `size:` 'XS' | 'small' | 'regular' | 'large' | 'XL'
+   * default: 'regular'
+* `showBadge:` bool
+    * default: false
+* `badge:` ReactComponent[&lt;Badge&gt;](https://github.com/tarkalabs/tarka-ui/wiki/Badge)
+* `sx:` Array<func | object> | func | object\*\*
+
+## Ancestors
+* &lt;<LinkTo kind="Components/BaseButton" target="_blank">BaseButton</LinkTo>/&gt;
+
+## Children
+* &lt;<LinkTo kind="Components/Badge" target="_blank">Badge</LinkTo>/&gt; 
+
+## Legend
+\*Requires default (see MUI Reference if not explicitly stated)<br/>
+\*\*Datatype not finalized
+
+## Demo
+<Canvas>
+    <Story name='Default'>
+        <div>Coming Soon</div>
+    </Story>
+</Canvas>
