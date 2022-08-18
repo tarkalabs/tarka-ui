@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { FloatingActionButton } from '../components/FloatingActionButton/FloatingActionButton';
 
 export default {
-  title: 'Example/FloatingActionButton',
+  title: 'Components/FloatingActionButton',
   component: FloatingActionButton,
 } as ComponentMeta<typeof FloatingActionButton>;
 

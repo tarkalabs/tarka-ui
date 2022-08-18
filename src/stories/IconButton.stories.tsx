@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import IconButton from '../components/IconButton/IconButton';
 export default {
-    title: 'Example/IconButton',
+    title: 'Components/IconButton',
     component: IconButton,
 } as ComponentMeta<typeof IconButton>;
 
