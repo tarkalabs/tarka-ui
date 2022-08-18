@@ -1,0 +1,20 @@
+// Media Query Ranges
+$mobile-small-up: 569px !default;
+$mobile-up: 769px !default;
+$tablet-up: 1025px !default;
+$desktop-small-up: 1441px !default;
+$desktop-up: 1921px !default;
+
+$mobile-small: 568px !default;
+$mobile: 768px !default;
+$tablet: 1024px !default;
+$desktop-small: 1440px !default;
+$desktop: 1920px !default;
+
+$mobile-small-and-up: 'only screen and (min-width: #{$mobile-small-up})' !default;
+$mobile-and-up: 'only screen and (min-width: #{$mobile-up})' !default;
+$tablet-and-up: 'only screen and (min-width: #{$tablet-up})' !default;
+$desktop-small-and-up: 'only screen and (min-width: #{$desktop-small-up})' !default;
+$desktop-and-up: 'only screen and (min-width: #{$desktop-up})' !default;
+
+$breakpoints: $mobile-small-and-up, $mobile-and-up, $tablet-and-up, $desktop-small-and-up, $desktop-and-up;

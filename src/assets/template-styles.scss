@@ -1,0 +1,30 @@
+@import 'vars';
+@import 'fonts';
+
+@for $i from 1 through 11 {
+  .heading-size-#{$i} {
+    @include text-attributes('heading', $i);
+  }
+}
+
+@for $i from 6 through 11 {
+  .body-jetbrains-size-#{$i} {
+    @include text-attributes('body-jetbrains', $i);
+  }
+}
+
+@for $i from 8 through 11 {
+  .body-opensans-size-#{$i} {
+    @include text-attributes('body-opensans', $i);
+  }
+}
+
+h2.sbdocs {
+  @include text-attributes('heading', 1);
+  margin-top: 30vh;
+  margin-bottom: 100px;
+
+  &:before{
+    line-height: normal;
+  }
+} 

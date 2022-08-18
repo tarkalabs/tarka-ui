@@ -1,0 +1,351 @@
+@import "_vars.scss";
+/*Data REF: https://www.figma.com/file/LIspdwg5P2q8zntFsQstzf/Tarka-Labs---Website-design?node-id=0%3A1*/
+
+@font-face {
+  font-family: "body-opensans";
+  src: url("./fonts/OpenSans-Regular.woff");
+}
+
+@font-face {
+  font-family: "heading";
+  src: url("./fonts/JetBrainsMono-Bold.woff");
+}
+
+@font-face {
+  font-family: "body-jetbrains";
+  src: url("./fonts/JetBrainsMono-Regular.woff");
+}
+
+@font-face {
+  font-family: logo;
+  src: url("./fonts/JetBrainsMono-ExtraBold.woff");
+}
+
+@mixin text-attributes($type, $size) {
+  font-family: $type;
+  font-size: #{map-deep-get(
+      $attributes,
+      $type,
+      "size-#{$size}",
+      "mobile",
+      "font-size"
+    ) + "px"};
+  line-height: calc(
+    #{map-deep-get($attributes, $type, "size-#{$size}", "mobile", "line-height")} /
+      #{map-deep-get(
+        $attributes,
+        $type,
+        "size-#{$size}",
+        "mobile",
+        "font-size"
+      )} * 100%
+  );
+  letter-spacing: map-deep-get(
+    $attributes,
+    $type,
+    "size-#{$size}",
+    "mobile",
+    "letter-spacing"
+  );
+
+  @media #{$tablet-and-up} {
+    font-size: #{map-deep-get(
+        $attributes,
+        $type,
+        "size-#{$size}",
+        "desktop",
+        "font-size"
+      ) + "px"};
+    line-height: calc(
+      #{map-deep-get(
+          $attributes,
+          $type,
+          "size-#{$size}",
+          "desktop",
+          "line-height"
+        )} / #{map-deep-get(
+          $attributes,
+          $type,
+          "size-#{$size}",
+          "desktop",
+          "font-size"
+        )} * 100%
+    );
+    letter-spacing: map-deep-get(
+      $attributes,
+      $type,
+      "size-#{$size}",
+      "desktop",
+      "letter-spacing"
+    );
+  }
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+$attributes: (
+  "heading": (
+    "size-1": (
+      "desktop": (
+        "font-size": 136,
+        "line-height": 172,
+        "letter-spacing": -0.04em,
+      ),
+      "mobile": (
+        "font-size": 64,
+        "line-height": 82,
+        "letter-spacing": -0.03em,
+      ),
+    ),
+    "size-2": (
+      "desktop": (
+        "font-size": 90,
+        "line-height": 116,
+        "letter-spacing": -0.04em,
+      ),
+      "mobile": (
+        "font-size": 48,
+        "line-height": 64,
+        "letter-spacing": -0.03em,
+      ),
+    ),
+    "size-3": (
+      "desktop": (
+        "font-size": 72,
+        "line-height": 90,
+        "letter-spacing": -0.03em,
+      ),
+      "mobile": (
+        "font-size": 40,
+        "line-height": 70,
+        "letter-spacing": -0.03em,
+      ),
+    ),
+    "size-4": (
+      "desktop": (
+        "font-size": 64,
+        "line-height": 82,
+        "letter-spacing": -0.03em,
+      ),
+      "mobile": (
+        "font-size": 36,
+        "line-height": 54,
+        "letter-spacing": -0.03em,
+      ),
+    ),
+    "size-5": (
+      "desktop": (
+        "font-size": 56,
+        "line-height": 74,
+        "letter-spacing": -0.03em,
+      ),
+      "mobile": (
+        "font-size": 32,
+        "line-height": 48,
+        "letter-spacing": -0.03em,
+      ),
+    ),
+    "size-6": (
+      "desktop": (
+        "font-size": 40,
+        "line-height": 54,
+        "letter-spacing": -0.03em,
+      ),
+      "mobile": (
+        "font-size": 28,
+        "line-height": 42,
+        "letter-spacing": -0.02em,
+      ),
+    ),
+    "size-7": (
+      "desktop": (
+        "font-size": 32,
+        "line-height": 42,
+        "letter-spacing": -0.02em,
+      ),
+      "mobile": (
+        "font-size": 20,
+        "line-height": 28,
+        "letter-spacing": -0.01em,
+      ),
+    ),
+    "size-8": (
+      "desktop": (
+        "font-size": 26,
+        "line-height": 36,
+        "letter-spacing": -0.01em,
+      ),
+      "mobile": (
+        "font-size": 18,
+        "line-height": 24,
+        "letter-spacing": -0.01em,
+      ),
+    ),
+    "size-9": (
+      "desktop": (
+        "font-size": 20,
+        "line-height": 28,
+        "letter-spacing": -0.01em,
+      ),
+      "mobile": (
+        "font-size": 16,
+        "line-height": 22,
+        "letter-spacing": -0.01em,
+      ),
+    ),
+    "size-10": (
+      "desktop": (
+        "font-size": 14,
+        "line-height": 18,
+        "letter-spacing": -0.04em,
+      ),
+      "mobile": (
+        "font-size": 14,
+        "line-height": 18,
+        "letter-spacing": -0.04em,
+      ),
+    ),
+    "size-11": (
+      "desktop": (
+        "font-size": 12,
+        "line-height": 16,
+        "letter-spacing": -0.04em,
+      ),
+      "mobile": (
+        "font-size": 12,
+        "line-height": 16,
+        "letter-spacing": -0.04em,
+      ),
+    ),
+  ),
+  "body-jetbrains": (
+    "size-6": (
+      "desktop": (
+        "font-size": 40,
+        "line-height": 54,
+        "letter-spacing": -0.02em,
+      ),
+      "mobile": (
+        "font-size": 28,
+        "line-height": 42,
+        "letter-spacing": -0.02,
+      ),
+    ),
+    "size-7": (
+      "desktop": (
+        "font-size": 32,
+        "line-height": 42,
+        "letter-spacing": -0.02em,
+      ),
+      "mobile": (
+        "font-size": 20,
+        "line-height": 28,
+        "letter-spacing": -0.01em,
+      ),
+    ),
+    "size-8": (
+      "desktop": (
+        "font-size": 26,
+        "line-height": 36,
+        "letter-spacing": -0.02em,
+      ),
+      "mobile": (
+        "font-size": 18,
+        "line-height": 24,
+        "letter-spacing": -0.01em,
+      ),
+    ),
+    "size-9": (
+      "desktop": (
+        "font-size": 20,
+        "line-height": 28,
+        "letter-spacing": -0.01em,
+      ),
+      "mobile": (
+        "font-size": 16,
+        "line-height": 22,
+        "letter-spacing": -0.01em,
+      ),
+    ),
+    "size-10": (
+      "desktop": (
+        "font-size": 14,
+        "line-height": 18,
+        "letter-spacing": -0.04em,
+      ),
+      "mobile": (
+        "font-size": 14,
+        "line-height": 18,
+        "letter-spacing": -0.04em,
+      ),
+    ),
+    "size-11": (
+      "desktop": (
+        "font-size": 12,
+        "line-height": 16,
+        "letter-spacing": -0.04em,
+      ),
+      "mobile": (
+        "font-size": 12,
+        "line-height": 16,
+        "letter-spacing": -0.04em,
+      ),
+    ),
+  ),
+  "body-opensans": (
+    "size-8": (
+      "desktop": (
+        "font-size": 26,
+        "line-height": 36,
+        "letter-spacing": -0.01em,
+      ),
+      "mobile": (
+        "font-size": 18,
+        "line-height": 24,
+        "letter-spacing": -0.01em,
+      ),
+    ),
+    "size-9": (
+      "desktop": (
+        "font-size": 20,
+        "line-height": 28,
+        "letter-spacing": -0.01em,
+      ),
+      "mobile": (
+        "font-size": 16,
+        "line-height": 22,
+        "letter-spacing": -0.01em,
+      ),
+    ),
+    "size-10": (
+      "desktop": (
+        "font-size": 14,
+        "line-height": 18,
+        "letter-spacing": -0.04em,
+      ),
+      "mobile": (
+        "font-size": 14,
+        "line-height": 18,
+        "letter-spacing": -0.04em,
+      ),
+    ),
+    "size-11": (
+      "desktop": (
+        "font-size": 12,
+        "line-height": 16,
+        "letter-spacing": -0.04em,
+      ),
+      "mobile": (
+        "font-size": 12,
+        "line-height": 16,
+        "letter-spacing": -0.04em,
+      ),
+    ),
+  ),
+);
