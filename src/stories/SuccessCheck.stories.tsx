@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import SuccessCheck from '../components/SuccessCheck/SuccessCheck';
 
 export default {
-  title: 'Example/SuccessCheck',
+  title: 'Components/SuccessCheck',
   component: SuccessCheck,
 } as ComponentMeta<typeof SuccessCheck>;
 
