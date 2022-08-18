@@ -1,0 +1,46 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+
+<Meta title='Components/MediaThumbnail' />
+
+## Appearance
+###### [`| Figma Reference |`](https://www.figma.com/file/P38agSWlZGpxD68uQdcRmp/Tarka-kit?node-id=83%3A14023)
+![91df6a0df9f0f02476671b994011ab42](https://user-images.githubusercontent.com/77284270/185227213-7b0e4dbd-19ae-465b-8a70-1892dc154fba.png)
+
+## Properties
+###### `| MUI3 Reference |`
+<br/>
+
+* `active:` bool 
+    * default: false
+* `activeComponent:` ReactNode
+    * default: (eye icon)
+* `alt:` string
+* `children:` ReactNode
+* `classes:` object
+* `component:` elementType
+* `fileType:` 'photo' | 'video' | 'document' | 'audio'
+* `imgProps:` object
+* `placementIndicator:` ReactNode<[[OrderIndicator]]>
+* `playButton:` ReactNode
+    * default: (play button icon)
+* `showPlacementIndicator:` bool
+    * default: false
+* `src:` string
+* `sx:` Array<func | bool | bool> | func | object
+
+## Children
+* <DocLink kind="Components/OrderIndicator"/>
+
+## Implementation Uncertainties
+* Not sure about behavior when hovered vs selectable, need to ask design team. Could be opacity change or new image
+
+## Legend
+\*Requires default (see MUI Reference if not explicitly stated)<br/>
+\*\*Datatype not finalized
+
+## Demo
+<Canvas>
+    <Story name='Default'>
+        <div>Coming Soon</div>
+    </Story>
+</Canvas>
