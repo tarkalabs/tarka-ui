@@ -9,7 +9,7 @@ const SuccessCheck: React.FC= function ({}) {
 
     return (
         <div className="SuccessCheck">
-            <div className="badge">
+            <div className="success">
                 <CheckmarkIcon/>
             </div>
         </div>
