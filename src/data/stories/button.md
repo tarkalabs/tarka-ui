@@ -1,8 +1,3 @@
-import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
-import LinkTo from '@storybook/addon-links/react';
-
-<Meta title='Components/Button'  />
-
 ## Appearance
 ###### [`| Figma Reference |`](https://www.figma.com/file/P38agSWlZGpxD68uQdcRmp/Tarka-kit?node-id=2301%3A139928)
 ![514c208c749b346b156795394f6b806e](https://user-images.githubusercontent.com/77284270/185225562-9ec54c32-1a48-4233-9c3b-39a0ca9eacd0.png)
@@ -26,17 +21,10 @@ import LinkTo from '@storybook/addon-links/react';
 * `sx:` Array<func | object> | func | object\*\*
 
 ## Ancestors
-* &lt;<LinkTo kind='Components/BaseButton' target="_blank">BaseButton</LinkTo>/&gt;
+* <LinkTo kind='Components/BaseButton' target="_blank">BaseButton</LinkTo>
 
 ## Legend
 \**Requires default* (see MUI Reference if not explicitly stated)<br/>
 \*\**Datatype not finalized*
 
 ## Demo
-
-<Canvas>
-    <Story name='WIP'>
-        <div> WIP </div>
-    </Story>
-</Canvas>
-

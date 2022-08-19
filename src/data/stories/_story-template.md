@@ -1,7 +1,4 @@
-import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
-import LinkTo from '@storybook/addon-links/react';
-
-<Meta title='Components/$COMPONENT-NAME' />
+<!--NOTE: If you are unsure about this template, consult other stories for reference-->
 
 ### Appearance
 ###### [`| Figma Reference |`] (LINK)

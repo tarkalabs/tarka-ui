@@ -1,8 +1,3 @@
-import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
-
-
-<Meta title='Components/Breadcrumbs' />
-
 ## Appearance
 ###### [`| Figma Reference |`](https://www.figma.com/file/P38agSWlZGpxD68uQdcRmp/Tarka-kit?node-id=2301%3A139866)
 ![2911ff996a3ff06ff70e9e5fc3ed4d99](https://user-images.githubusercontent.com/77284270/185225460-250a30d4-2c3b-4042-9b62-c6e16da9ab0a.png)
@@ -26,9 +21,3 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 \*\**Datatype not finalized*
 
 ## Demo
-
-<Canvas>
-    <Story name='WIP'>
-        <div> WIP </div>
-    </Story>
-</Canvas>

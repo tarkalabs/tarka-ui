@@ -1,0 +1,18 @@
+import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
+import StoryTemplate from './components/StoryTemplate';
+
+<Meta title='Components/ComponentName' />
+
+<!--After writing corresponding Markdown file-->
+<StoryTemplate 
+    name="ComponentName"
+    children={['$ChildComponent']}
+    ancestors={['$AncestorComponent']}
+    dependencies={['$DependencyComponent']}
+/>
+
+<Canvas>
+    <Story name='$COMPONENT-STATE-1'>
+        
+    </Story>
+</Canvas>

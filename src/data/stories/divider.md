@@ -1,8 +1,3 @@
-import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
-
-
-<Meta title='Components/Divider' />
-
 ## Appearance
 ###### [`| Figma Reference |`](https://www.figma.com/file/P38agSWlZGpxD68uQdcRmp/Tarka-kit?node-id=2301%3A140209)
 ![f99e800147caf69dc6e81d8373c94cc5](https://user-images.githubusercontent.com/77284270/185225706-15ef6e88-9180-4322-a733-68a30a8289cc.png)
@@ -29,9 +24,3 @@ import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
 \*\**Datatype not finalized*
 
 ## Demo
-
-<Canvas>
-    <Story name='WIP'>
-        <div> WIP </div>
-    </Story>
-</Canvas>
