@@ -3,22 +3,22 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { FloatingActionButton } from '../components/FloatingActionButton/FloatingActionButton';
 
 export default {
-  title: 'Example/FloatingActionButton',
+  title: 'Components/FloatingActionButton',
   component: FloatingActionButton,
 } as ComponentMeta<typeof FloatingActionButton>;
 
 const Template: ComponentStory<typeof FloatingActionButton> = (args) => <FloatingActionButton {...args} />;
 
 
-export const NoIcon = Template.bind({});
+export const NoCustomIcon = Template.bind({});
 
-NoIcon.args = {
+NoCustomIcon.args = {
   size:'regular',
 };
 
-export const icon = Template.bind({});
+export const CustomIcon = Template.bind({});
 
-icon.args = {
+CustomIcon.args = {
   size:'large',
   icon: "https://www.w3schools.com/images/lamp.jpg"
 };
