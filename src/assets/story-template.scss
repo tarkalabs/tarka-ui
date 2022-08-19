@@ -11,7 +11,7 @@
   .body-jetbrains-size-#{$i} {
     @include text-attributes("body-jetbrains", $i);
   }
-}
+} 
 
 @for $i from 8 through 11 {
   .body-opensans-size-#{$i} {
