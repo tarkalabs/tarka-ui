@@ -10,10 +10,10 @@ const Badge: React.FC<props> = function ({ number, size }) {
     setUpTokens(['error/error', 'error/on-error', 'button/size-7']);
 
     return (
-        <div className={`badge ${size}`}>
-
-            {size != 'small' && <div>{number} </div>}
-
+        <div className="Badge">
+            <div className={`badge ${size}`}>
+                {size != 'small' && <div>{number}</div>}
+            </div>
         </div>
     )
 }
