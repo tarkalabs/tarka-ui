@@ -1,0 +1,175 @@
+.button {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 3200px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button.primary {
+  background-color: var(--primary-primary);
+  color: var(--primary-on-primary);
+  fill: var(--primary-on-primary);
+}
+
+.button.primary:hover {
+  background-color: var(--primary-primary-hover);
+  outline: 1.5px var(--surface-on-surface) solid;
+  outline-offset: -1.5px;
+}
+
+.button.secondary {
+  background-color: var(--secondary-secondary);
+  color: var(--secondary-on-secondary);
+  fill: var(--secondary-on-secondary);
+}
+
+.button.secondary:hover {
+  background-color: var(--secondary-secondary-hover);
+  outline: 1.5px var(--surface-on-surface) solid;
+  outline-offset: -1.5px;
+}
+
+.button.outlined {
+  background-color: transparent;
+  color: var(--surface-on-surface);
+  outline: 1.5px var(--surface-on-surface) solid;
+  outline-offset: -1.5px;
+  fill: var(--surface-on-surface);
+}
+
+.button.outlined:hover {
+  background-color: var(--surface-surface-hover);
+}
+
+.button.ghost {
+  background-color: transparent;
+  color: var(--surface-on-surface);
+  fill: var(--surface-on-surface);
+}
+
+.button.ghost:hover {
+  background-color: var(--surface-surface-hover);
+}
+
+.button.large {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  gap: 11px;
+}
+
+.button.large .start-icon-container {
+  margin-left: 19px;
+}
+
+.button.large .end-icon-container {
+  margin-right: 19px;
+}
+
+.button.large .text-container {
+  margin: 14px 24px;
+}
+
+.button.regular {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  gap: 8px;
+}
+
+.button.regular .start-icon-container {
+  margin-left: 19px;
+}
+
+.button.regular .end-icon-container {
+  margin-right: 19px;
+}
+
+.button.regular .text-container {
+  margin: 10px 24px;
+}
+
+.button.small {
+  /* Button Size-7 */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height, or 129% */
+  text-align: center;
+  letter-spacing: 0.01em;
+  gap: 4px;
+}
+
+.button.small .start-icon-container {
+  margin-left: 10px;
+}
+
+.button.small .end-icon-container {
+  margin-right: 10px;
+}
+
+.button.small .text-container {
+  margin: 7px 16px;
+}
+
+.button.XS {
+  /* button/size-8 */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height, or 117% */
+  text-align: center;
+  letter-spacing: 0.01em;
+  gap: 4px;
+}
+
+.button.XS .start-icon-container {
+  margin-left: 6px;
+}
+
+.button.XS .end-icon-container {
+  margin-right: 6px;
+}
+
+.button.XS .text-container {
+  margin: 5px 8px;
+}
+
+.button.start-icon .text-container {
+  margin-left: 0;
+}
+
+.button.end-icon .text-container {
+  margin-right: 0;
+}
+
+.button .start-icon-container, .button .end-icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=Button.css.map */

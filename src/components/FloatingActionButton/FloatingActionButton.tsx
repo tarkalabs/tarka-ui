@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import './FloatingActionButton.css';
 import { ConstructionOutlined } from '@mui/icons-material';
 import { setUpTokens } from '../../utils/ThemeParse'
-import { ReactComponent as PlusIcon } from '@icons/plus.svg';
+import { ReactComponent as PlusIcon } from '@icons/plus/plus-large.svg';
 
 interface props {
   size: "large" | "regular",
