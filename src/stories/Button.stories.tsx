@@ -1,20 +1,21 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from '../components/Button/Button';
+import { ReactComponent as Plus } from '@icons/plus/plus-regular.svg';
+import { ReactComponent as PlusSmall } from '@icons/plus/plus-small.svg';
 export default {
-    title: 'Example/Button',
+    title: 'Components/Button',
     component: Button,
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-console.log(__dirname);
 
 export const Primary = Template.bind({});
 Primary.args={
     size:'large',
     type:'primary',
-    startIcon: 'test'
+    startIcon: <Plus />
 }
 
 export const Secondary = Template.bind({});
@@ -33,5 +34,22 @@ export const Ghost = Template.bind({});
 Ghost.args={
     size:'XS',
     type:'ghost',
-    endIcon: 'test'
+    endIcon:<PlusSmall />
 }
+
+
+export const StartIcon = Template.bind({});
+StartIcon.args={
+    size:'large',
+    type:'primary',
+    startIcon: <Plus />
+}
+
+
+export const EndIcon = Template.bind({});
+EndIcon.args={
+    size:'XS',
+    type:'ghost',
+    endIcon:<PlusSmall />
+}
+
