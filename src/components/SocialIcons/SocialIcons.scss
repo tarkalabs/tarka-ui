@@ -1,0 +1,15 @@
+.socials {
+    background-color: transparent;
+    color: var(--surface-on-surface);
+    width: fit-content;
+    border-radius: 100px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 18px;
+
+    padding: 18px;
+}
