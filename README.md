@@ -17,7 +17,7 @@
 - [x] Badge
 - [ ] Mobile nav bar
 - [ ] Nav item
-- [ ] Social icons
+- [x] Social icons
 - [ ] Slider
 - [ ] Mobile overlay
   - [ ] Menu item
