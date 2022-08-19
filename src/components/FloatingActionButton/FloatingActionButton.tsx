@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import './FloatingActionButton.css';
 import { ConstructionOutlined } from '@mui/icons-material';
 import { setUpTokens } from '../../utils/ThemeParse'
-import { ReactComponent as PlusIcon } from '@icons/plus.svg';
+import { ReactComponent as PlusIcon } from '@icons/plus/plus-large.svg';
 
 interface props {
   size: "large" | "regular",
@@ -13,7 +13,7 @@ export const FloatingActionButton: React.FC<props> = ({ size, icon }) => {
   setUpTokens(['primary/primary','surface/on-surface','primary/primary-hover','primary/on-primary']);
 
   return (
-    <button className={`FloatingActionButton ${size}`} type="button">
+    <button className={`floating-action-button ${size}`} type="button">
       {!icon && <PlusIcon/>}
 
     <img src={icon} />

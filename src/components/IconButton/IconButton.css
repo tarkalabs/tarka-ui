@@ -81,7 +81,11 @@
   height: 48px;
 }
 
-.disabled .ghost path {
+.icon-button.disabled .icon-button-button {
+  cursor: not-allowed;
+}
+
+.icon-button.disabled .ghost path {
   fill: var(--utility-disabled-content);
 }
 /*# sourceMappingURL=IconButton.css.map */
