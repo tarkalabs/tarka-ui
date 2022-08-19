@@ -8,14 +8,13 @@ export default {
     component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button > = (args) => <Button {...args} />;
 
 
 export const Primary = Template.bind({});
 Primary.args={
     size:'large',
     type:'primary',
-    startIcon: <Plus />
 }
 
 export const Secondary = Template.bind({});
@@ -34,7 +33,6 @@ export const Ghost = Template.bind({});
 Ghost.args={
     size:'XS',
     type:'ghost',
-    endIcon:<PlusSmall />
 }
 
 
