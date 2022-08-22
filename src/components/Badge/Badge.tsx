@@ -2,6 +2,7 @@ import React from "react";
 import './Badge.css'
 import '../../utils/ThemeParse'
 import { setUpTokens } from "../../utils/ThemeParse";
+
 interface props {
     number?: number,
     size: 'small' | 'regular' | 'large'
