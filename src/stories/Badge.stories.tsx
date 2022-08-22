@@ -17,12 +17,16 @@ WithContent.args={
 
 export const Empty = Template.bind({});
 Empty.args={
-    size:'regular'
+    size:'regular',
+    badgeContent:<button>Hey there</button>
 }
+
+
 
 export const WithChild = Template.bind({});
 WithChild.args={
     size:'regular',
     badgeContent: 4,
-    children: <button>Hey there</button>
+    children: <button>Hey there</button>,
+    max:10000000000,
 };
