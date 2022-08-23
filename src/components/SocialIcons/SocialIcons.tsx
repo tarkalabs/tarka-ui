@@ -22,12 +22,12 @@ interface props {
 }
 const SocialIcons: React.FC<props> = function ({ classes, icons }) {
     setUpTokens(['surface/on-surface']);
-
+    
     return (
         <div className={`social-icons ${classes}`}>
-            <div className="socials">
-                {icons.map(icon => <img src={require(`@icons/social/${icon}.svg`)} alt=""></img>)}
-            </div>
+            {icons && <div className="socials">
+                {icons.map(icon => <img key={icon} src={require(`@icons/social/${icon}.svg`)} alt=""></img>)}
+            </div>}
         </div>
     )
 
