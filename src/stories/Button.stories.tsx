@@ -34,7 +34,7 @@ ClickTest.args={
     setStartIcon:'small',
     setEndIcon:'none',
     size:'large',
-    color:'primary',
+    colortype:'primary',
     onClick:()=> console.log('Clicked!')
 }
 
