@@ -38,9 +38,9 @@ const TarkaBadge = styled(BadgeUnstyled)`
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  }
+  
 
-  .small {
+  &.small {
     width: 12px;
     height: 12px;
     color: transparent; 
@@ -49,7 +49,7 @@ const TarkaBadge = styled(BadgeUnstyled)`
       display:none;
     }
   }
-  .regular  {
+  &.regular  {
     min-width: 12px;
     height: 12px;
 
@@ -61,7 +61,7 @@ const TarkaBadge = styled(BadgeUnstyled)`
       line-height: 14px;
       padding: 4px;
   }
-  .large{
+  &.large{
     min-width: 17px;
     height: 17px;
 
@@ -75,6 +75,7 @@ const TarkaBadge = styled(BadgeUnstyled)`
       padding: 7px;
     
   }
+}
 `;
 
 export default function Badge({ size, ...props }: BadgeProps) {

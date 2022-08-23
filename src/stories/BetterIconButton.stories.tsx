@@ -33,7 +33,8 @@ Basic.args ={
 export const BadgeIconButton = Template.bind({});
 BadgeIconButton.args = {
 	setIcon: 'large',
-    badgeIn: TestBadge
+	badgeIn: TestBadge,
+	size:'large'
 }
 
 export const BadgeTest = TestBadge;
