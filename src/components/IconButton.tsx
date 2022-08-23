@@ -1,19 +1,23 @@
-.badge-container {
-    position: relative;
-    width: fit-content;
+import React, { ReactNode } from "react";
+import {ButtonUnstyled, ButtonUnstyledProps as MUIProps} from '@mui/base';
+import {styled} from '@mui/system';
+import { setUpTokens } from "../utils/ThemeParse";
+import Badge from './Badge';
 
-    &.XL {
-        left: 36px;
-        top: 18px;
-    }
 
-    &.large {
-        left: 28px;
-        top: 12px;
-    }
+interface TarkaProps{
+	color?: 'primary' | 'secondary' | 'ghost',
+	size?: 'XS' | 'small' |  'regular' | 'large'| 'XL',
+	badgeIn?:  any
 }
 
-.icon-button-button {
+
+export type IconButtonProps = TarkaProps & MUIProps;
+
+
+const TarkaIconButton = styled(ButtonUnstyled)`
+
+    border:none;
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -73,7 +77,6 @@
     }
 
 
-}
 
 .icon-button.disabled {
     .icon-button-button {
@@ -86,3 +89,32 @@
         }
     }
 }
+
+&.badged{
+    position: relative;
+    top: -8px;
+    left: 6px;
+}
+`
+
+
+const IconButton:React.FC<IconButtonProps> = function({size = 'regular',color ='primary', badgeIn,...props}){
+
+	setUpTokens(['surface/on-surface', 'utility/disabled-content', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
+        'secondary/on-secondary', 'secondary/secondary-hover']);
+
+
+ 	let returnValue = <TarkaIconButton className={` ${size}  ${color} ${badgeIn? 'badged': ''}`}   {...props} />;
+
+    
+	if(badgeIn){
+		return <Badge {...badgeIn.props}>{returnValue}</Badge>
+	} 
+
+	return (
+		returnValue
+	)
+}
+
+
+export default IconButton;
