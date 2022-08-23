@@ -1,22 +1,22 @@
 import * as React from 'react';
 import ButtonUnstyled from '@mui/base/ButtonUnstyled';
-import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
+import { ButtonUnstyledProps as MUIProps } from '@mui/base/ButtonUnstyled';
 import { styled } from '@mui/system';
 import { ReactComponent as PlusIcon } from '@icons/plus/plus-large.svg';
 import { ReactNode } from 'react';
 import { setUpTokens } from '@/utils/ThemeParse';
 
 
-export interface ButtonProps {
+interface TarkaProps {
     size: 'large' | 'regular' | 'small' | 'XS',
     color: 'primary' | 'secondary' | 'outlined' | 'ghost',
     startIcon?: ReactNode,
     endIcon?: ReactNode
 }
 
+export type ButtonProps = TarkaProps & MUIProps;
 
-
-const TestButtonStyled = styled(ButtonUnstyled)`
+const ButtonStyled = styled(ButtonUnstyled)`
     padding:0;
     cursor: pointer;
     border: none;
@@ -77,7 +77,6 @@ const TestButtonStyled = styled(ButtonUnstyled)`
         font-weight: 600;
         font-size: 14px;
         line-height: 18px;
-        /* identical to box height, or 129% */
 
         text-align: center;
         letter-spacing: 0.01em;
@@ -104,7 +103,6 @@ const TestButtonStyled = styled(ButtonUnstyled)`
         font-weight: 600;
         font-size: 12px;
         line-height: 14px;
-        /* identical to box height, or 117% */
 
         text-align: center;
         letter-spacing: 0.01em;
@@ -127,7 +125,7 @@ const TestButtonStyled = styled(ButtonUnstyled)`
         &.primary {
             background-color: var(--primary-primary);
             color: var(--primary-on-primary);
-            fill:  var(--primary-on-primary); //MIGHT REMOVE WHEN ICON WORKS
+            fill:  var(--primary-on-primary); 
     
             &:hover {
                 background-color: var(--primary-primary-hover);
@@ -139,7 +137,7 @@ const TestButtonStyled = styled(ButtonUnstyled)`
         &.secondary {
             background-color: var(--secondary-secondary);
             color: var(--secondary-on-secondary);
-            fill:  var(--secondary-on-secondary); //MIGHT REMOVE WHEN ICON WORKS
+            fill:  var(--secondary-on-secondary); 
             &:hover {
                 background-color: var(--secondary-secondary-hover);
                 outline: 1.5px var(--surface-on-surface) solid;
@@ -152,7 +150,7 @@ const TestButtonStyled = styled(ButtonUnstyled)`
         color: var(--surface-on-surface);
         outline: 1.5px var(--surface-on-surface) solid;
         outline-offset: -1.5px;
-        fill:  var(--surface-on-surface); //MIGHT REMOVE WHEN ICON WORKS
+        fill:  var(--surface-on-surface); 
 
 
         &:hover {
@@ -163,7 +161,7 @@ const TestButtonStyled = styled(ButtonUnstyled)`
     &.ghost {
         background-color: transparent;
         color: var(--surface-on-surface);
-        fill:  var(--surface-on-surface); //MIGHT REMOVE WHEN ICON WORKS
+        fill:  var(--surface-on-surface); 
 
         &:hover {
             background-color: var(--surface-surface-hover);
@@ -190,20 +188,20 @@ const TestButtonStyled = styled(ButtonUnstyled)`
     }
 `
 
-const TestButton: React.FC<ButtonProps & ButtonUnstyledProps> = function ({ size = 'regular', color = 'primary', startIcon, endIcon, ...props }) {
+const Button: React.FC<ButtonProps> = function ({ size = 'regular', color = 'primary', startIcon, endIcon, ...props }) {
     setUpTokens(['surface/on-surface', 'surface/surface-hover', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
         'secondary/on-secondary', 'secondary/secondary-hover']);
 
     return (
-        <TestButtonStyled className={`${size} ${color} ${startIcon ? 'start-icon' : ''} ${endIcon ? 'end-icon' : ''}`} {...props} >
+        <ButtonStyled className={`${size} ${color} ${startIcon ? 'start-icon' : ''} ${endIcon ? 'end-icon' : ''}`} {...props} >
             {startIcon && <div className="start-icon-container"> {startIcon} </div>}
             <div className='text-container'>
                 {props.children}
             </div>
             {endIcon && <div className="end-icon-container"> {endIcon}</div>}
-        </TestButtonStyled>
+        </ButtonStyled>
     )
 }
 
 
-export default TestButton;
+export default Button;

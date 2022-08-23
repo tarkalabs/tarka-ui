@@ -1,18 +1,18 @@
 import React, { ReactNode } from "react";
-import {ButtonUnstyled, ButtonUnstyledProps} from '@mui/base';
+import {ButtonUnstyled, ButtonUnstyledProps as MUIProps} from '@mui/base';
 import {styled} from '@mui/system';
 import { setUpTokens } from "../utils/ThemeParse";
 import Badge from './Badge';
 
 
-interface props{
+interface TarkaProps{
 	color?: 'primary' | 'secondary' | 'ghost',
 	size?: 'XS' | 'small' |  'regular' | 'large'| 'XL',
 	badgeIn?:  any
 }
 
 
-export type IconButtonProps = props & ButtonUnstyledProps;
+export type IconButtonProps = TarkaProps & MUIProps;
 
 
 const TarkaIconButton = styled(ButtonUnstyled)`

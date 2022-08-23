@@ -1,15 +1,15 @@
 import React from "react";
-import { BadgeUnstyled, badgeUnstyledClasses, BadgeUnstyledProps } from "@mui/base";
+import { BadgeUnstyled, badgeUnstyledClasses, BadgeUnstyledProps as MUIProps } from "@mui/base";
 import { styled } from "@mui/system";
 import { setUpTokens } from "../utils/ThemeParse";
 
 setUpTokens(["error/error", "error/on-error", "button/size-7"]);
 
-interface props {
+interface TarkaProps {
   size?: "small" | "regular" | "large";
 }
 
-export type BadgeProps = props & BadgeUnstyledProps;
+export type BadgeProps = TarkaProps & MUIProps;
 
 const TarkaBadge = styled(BadgeUnstyled)`
   box-sizing: border-box;

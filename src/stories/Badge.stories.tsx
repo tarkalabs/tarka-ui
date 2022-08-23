@@ -18,7 +18,6 @@ WithContent.args={
 export const Empty = Template.bind({});
 Empty.args={
     size:'regular',
-    badgeContent:'h'
 }
 
 

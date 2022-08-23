@@ -1,47 +1,37 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import IconButton from '../components/IconButton/IconButton';
+import { Story, ComponentMeta } from '@storybook/react';
+import IconButton, {IconButtonProps} from '../components/IconButton';
+import {ReactComponent as SmallCross} from '@icons/close/close-small.svg';
+import {ReactComponent as LargeCross} from '@icons/close/close-large.svg';
+import Badge, { BadgeProps } from '../components/Badge';
+
+
+const TestBadge = <Badge size='regular' />
+
+const props = {
+	setIcon: {options:['small', 'large'], control:'radio'}
+
+}
+
 export default {
     title: 'Components/IconButton',
     component: IconButton,
+    argTypes: props
 } as ComponentMeta<typeof IconButton>;
 
-const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} />;
+const Template: Story<IconButtonProps & {setIcon: 'small' | 'large'}> = ({setIcon,...args}) => <IconButton {...args}  children={setIcon === 'small'? <SmallCross/> :<LargeCross/> }/>;
 
-export const NoBadge = Template.bind({});
-NoBadge.args = {
-    badge: null,
-    size:'XS'
-}   
-
-export const Badge = Template.bind({});
-Badge.args = {
-    badge: 'blank',
-    size: 'large'
+export const Basic = Template.bind({});
+Basic.args ={
+	setIcon: 'small',
+    onMouseOver: ()=> console.log('hellohello')
 }
 
-export const Numbered = Template.bind({});
-Numbered.args = {
-    badge: 2,
-    size:'XL'
+export const BadgeIconButton = Template.bind({});
+BadgeIconButton.args = {
+	setIcon: 'large',
+	badgeIn: TestBadge,
+	size:'large'
 }
 
-export const Ghost = Template.bind({});
-Ghost.args = {
-    type: 'ghost',
-    size: 'small'
-}
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-    type:'ghost',
-    size:'large',
-    disabled:true
-}
-
-export const CustomIcon = Template.bind({});
-CustomIcon.args ={
-    icon:'https://www.w3schools.com/images/lamp.jpg',
-    size:'XL',
-    type:'primary'
-}
+export const BadgeTest = TestBadge;
