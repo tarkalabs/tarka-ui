@@ -5,11 +5,13 @@ import { BadgeProps } from '@components/Badge';
 <Meta title='Components/Badge' />
 
 <StoryTemplate<BadgeProps> 
-    type={ BadgeProps } 
+    type={ } 
     typeDescs={
         {
             name: 'size',
-            desc: 'The size of the badge',
+            type: `'small' | 'regular' | 'large`,
+            default: 'regular'
+            desc: 'The size of the badge.',
         }
     }
 />

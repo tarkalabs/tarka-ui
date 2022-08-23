@@ -8,12 +8,14 @@ import {
 } from "@mui/material";
 
 interface StoryTemplateProps<T> {
-    type?: T | undefined;
-    typeDescs?: Array<TypeDesc<T>> | undefined;
+    type: T;
+    typeDescs: Array<TypeDesc<T>>;
 }
 
 type TypeDesc<T> = {
     name: keyof T;
+    type: string;
+    default: any;
     desc: string;
 }
 
@@ -22,7 +24,7 @@ export default function StoryTemplate<T>({ type, typeDescs }: StoryTemplateProps
         <Table sx={{ minWidth: "100%" }}>
             <TableHead>
                 <TableRow>
-                    {["Name", "T", "Default", "Description"].map(
+                    {["Name", "Type", "Default", "Description"].map(
                         (header) => (
                             <TableCell key={header}>{header}</TableCell>
                         )
@@ -31,10 +33,12 @@ export default function StoryTemplate<T>({ type, typeDescs }: StoryTemplateProps
             </TableHead>
             <TableBody>
                 { 
-                    typeDescs ? typeDescs.map((typeDesc) => (
+                    (type && typeDescs) ? typeDescs.map((typeDesc) => (
                     <TableRow>
                         <TableCell>{typeDesc.name as ReactNode}</TableCell>
-                        <TableCell>{type[typeDesc.name] as Node}</TableCell>
+                        <TableCell>{(type[typeDesc.name] as unknown) as ReactNode}</TableCell>
+                        <TableCell>{typeDesc.default as ReactNode}</TableCell>
+                        <TableCell>{typeDesc.desc as ReactNode}</TableCell>
                     </TableRow>
                 )) : null }
             </TableBody>
