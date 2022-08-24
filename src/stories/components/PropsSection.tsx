@@ -27,8 +27,8 @@ export default function PropsSection({ type, typeDescs }: PropsSectionProps) {
     }
 
     return (
-        <section className='props-table'>
-            <h1>Props</h1>
+        <section className='props-section'>
+            <h2>Props</h2>
             <Table
                 sx={{
                     minWidth: "100%",
