@@ -1,11 +1,18 @@
 import React from 'react';
-import TestButton from './components/Button';
+import TextField from './components/TextField';
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <>
+      <TextField label={'Label'} />
+      <TextField tarkastate={'success'} label={'Label'} InputProps={{
+          startAdornment: (
+            <div>hello</div>
+          ),
+        }}/>
+      <TextField tarkastate={'alert'} label={'Label'} />
+      <TextField tarkastate={'error'} label={'Label'} />
+    </>
   );
 }
 
