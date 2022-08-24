@@ -12,6 +12,7 @@ export default function StoryTemplate({ type, typeDescs }: StoryTemplateProps) {
         <div className="story-template">
             <ImportSection componentName='Badge' path='@tarkaui/example'/>
             <PropsSection type={type} typeDescs={typeDescs} />
+            <h2>Demos</h2>
         </div>
     );
 }
