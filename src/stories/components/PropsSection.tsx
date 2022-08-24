@@ -36,6 +36,7 @@ export default function PropsSection({ type, typeDescs }: PropsSectionProps) {
                     borderRadius: 10,
                     '& .MuiTableCell-root': {
                         color: '#f5f2ff',
+                        borderColor: '#584491',
                     },
                 }}
             >
