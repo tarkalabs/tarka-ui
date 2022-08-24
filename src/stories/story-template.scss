@@ -1,7 +1,7 @@
-$primary: #120042;
+$primary: #0f0230;
 $secondary: #f7f4ff;
-$tertiary: #372666;
-$tertiary-accent: #584491; 
+$tertiary: #160449;
+$tertiary-accent: #2a233f; 
 
 @font-face {
     font-family: 'Inter';
@@ -37,6 +37,11 @@ $tertiary-accent: #584491;
 
     * {
         font-family: 'Inter';
+    }
+
+    h1 {
+        font-size: 3em;
+        margin: 0;
     }
     
     h2 {

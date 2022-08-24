@@ -36,14 +36,19 @@ export default function PropsSection({ type, typeDescs }: PropsSectionProps) {
                     borderRadius: 10,
                     '& .MuiTableCell-root': {
                         color: '#f5f2ff',
-                        borderColor: '#584491',
+                        padding: '16px 0',
+                        borderColor: '#2a233f'
                     },
+                    '& .MuiTableRow-root': {
+                        borderWidth: '0 0 1px 0',
+                    }
                 }}
             >
                 <TableHead
                     sx={{
                         '& .MuiTableCell-head': {
                             fontWeight: 'bold',
+                            borderBottom: '1px solid #2a233f',
                         },
                     }}
                 >
