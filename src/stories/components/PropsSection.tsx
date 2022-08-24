@@ -8,12 +8,12 @@ import {
 } from "@mui/material";
 import { Type } from "typescript";
 
-interface PropsTableProps {
+interface PropsSectionProps {
     type: Type;
     typeDescs: Array<object>;
 }
 
-export default function PropsTable({ type, typeDescs }: PropsTableProps) {
+export default function PropsSection({ type, typeDescs }: PropsSectionProps) {
     function generateRows(data: Array<object>): ReactNode {
         return data
             ? data.map((rowData: object, index) => (
@@ -27,14 +27,15 @@ export default function PropsTable({ type, typeDescs }: PropsTableProps) {
     }
 
     return (
-        <>
+        <section className='props-table'>
+            <h1>Props</h1>
             <Table
                 sx={{
                     minWidth: "100%",
                     backgroundColor: "transparent",
                     borderRadius: 10,
                     '& .MuiTableCell-root': {
-                        color: '#fff',
+                        color: '#f5f2ff',
                     },
                 }}
             >
@@ -57,6 +58,6 @@ export default function PropsTable({ type, typeDescs }: PropsTableProps) {
                     {generateRows(typeDescs)}
                 </TableBody>
             </Table>
-        </>
+        </section>
     );
 }

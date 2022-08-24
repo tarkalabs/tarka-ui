@@ -1,6 +1,7 @@
 import { Type } from "typescript";
 import './story-template.scss'; 
-import PropsTable from "./components/PropsTable";
+import PropsSection from "./components/PropsSection";
+import ImportSection from "./components/ImportSection";
 
 interface StoryTemplateProps {
     type: Type;
@@ -10,7 +11,8 @@ interface StoryTemplateProps {
 export default function StoryTemplate({ type, typeDescs }: StoryTemplateProps) {
     return (
         <div className="story-template">
-            <PropsTable type={type} typeDescs={typeDescs} />
+            <ImportSection/>
+            <PropsSection type={type} typeDescs={typeDescs}/>
         </div>
     );
 }
