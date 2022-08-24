@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
+//import './story-template.scss';
 import {
     Table,
     TableRow,
@@ -6,42 +7,54 @@ import {
     TableHead,
     TableBody,
 } from "@mui/material";
+import { Type } from "typescript";
 
-interface StoryTemplateProps<T> {
-    type: T;
-    typeDescs: Array<TypeDesc<T>>;
+interface StoryTemplateProps {
+    type: Type;
+    typeDescs: Array<object>;
 }
 
-type TypeDesc<T> = {
-    name: keyof T;
-    type: string;
-    default: any;
-    desc: string;
-}
+export default function StoryTemplate({ type, typeDescs }: StoryTemplateProps) {
+    function generateRows(data: Array<object>): ReactNode {
+        return data
+            ? data.map((rowData: object, index) => (
+                  <TableRow key={index}>
+                      {Object.entries(rowData).map(([key, value]) => (
+                          <TableCell key={key}>{value}</TableCell>
+                      ))}
+                  </TableRow>
+              ))
+            : null;
+    }
 
-export default function StoryTemplate<T>({ type, typeDescs }: StoryTemplateProps<T>) {
     return (
-        <Table sx={{ minWidth: "100%" }}>
-            <TableHead>
-                <TableRow>
-                    {["Name", "Type", "Default", "Description"].map(
-                        (header) => (
-                            <TableCell key={header}>{header}</TableCell>
-                        )
-                    )}
-                </TableRow>
-            </TableHead>
-            <TableBody>
-                { 
-                    (type && typeDescs) ? typeDescs.map((typeDesc) => (
+        <div className="story-template">
+            <Table
+                sx={{
+                    minWidth: "100%",
+                    backgroundColor: "transparent",
+                    borderRadius: 10,
+                }}
+            >
+                <TableHead
+                    sx={{
+                        '& .MuiTableCell-head': {
+                            fontWeight: 'bold',
+                        },
+                    }}
+                >
                     <TableRow>
-                        <TableCell>{typeDesc.name as ReactNode}</TableCell>
-                        <TableCell>{(type[typeDesc.name] as unknown) as ReactNode}</TableCell>
-                        <TableCell>{typeDesc.default as ReactNode}</TableCell>
-                        <TableCell>{typeDesc.desc as ReactNode}</TableCell>
+                        {["Name", "Type", "Default", "Description"].map(
+                            (header) => (
+                                <TableCell key={header}>{header}</TableCell>
+                            )
+                        )}
                     </TableRow>
-                )) : null }
-            </TableBody>
-        </Table>
+                </TableHead>
+                <TableBody>
+                    {generateRows(typeDescs)}
+                </TableBody>
+            </Table>
+        </div>
     );
 }

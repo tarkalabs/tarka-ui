@@ -1,23 +1,23 @@
-import {Meta, Story, Canvas} from '@storybook/addon-docs/blocks';
-import StoryTemplate from './StoryTemplate';
-import { BadgeProps } from '@components/Badge';
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import StoryTemplate from "./StoryTemplate";
+import { BadgeProps } from "@components/Badge";
 
-<Meta title='Components/Badge' />
+<Meta title="Components/Badge" />
 
-<StoryTemplate<BadgeProps> 
-    type={ } 
-    typeDescs={
+<StoryTemplate
+    type={BadgeProps}
+    typeDescs={[
         {
-            name: 'size',
+            name: `size`,
             type: `'small' | 'regular' | 'large`,
-            default: 'regular'
-            desc: 'The size of the badge.',
-        }
-    }
+            default: `'regular'`,
+            desc: `The size of the badge.`,
+        },
+    ]}
 />
 
 <Canvas>
-    <Story name='WIP'>
-        <div> WIP </div>
+    <Story name="Default">
+        <div></div>
     </Story>
 </Canvas>
