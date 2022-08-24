@@ -15,7 +15,7 @@ setUpTokens(["success/success", "success/on-success", "secondary/secondary", "se
 
 interface TarkaProps{
     icon?:ReactNode,
-    type?:'success' | 'information' | 'warning' | 'error',
+    colortype?:'success' | 'information' | 'warning' | 'error',
     buttonProps?:ButtonUnstyledProps
     customButton?: ReactNode
 }
@@ -69,11 +69,11 @@ const TarkaPopper = styled(PopperUnstyled)`
 
 
 
-const Snackbar:React.FC<SnackbarProps> = function({type = 'success',buttonProps, customButton, open,...props}){
+const Snackbar:React.FC<SnackbarProps> = function({colortype = 'success',buttonProps, customButton, open,...props}){
 
     let defaultIcon = <Success />
     let color = 'success'
-    switch(type){
+    switch(colortype){
         case 'information': defaultIcon = <Info />; color='secondary'; break;
         case 'warning': defaultIcon = <Warning />; color='warning';break;
         case 'error': defaultIcon = <Error />; color='error';break;
@@ -87,7 +87,7 @@ const Snackbar:React.FC<SnackbarProps> = function({type = 'success',buttonProps,
     }
 
     return(
-        <TarkaPopper open={open} {...props} componentsProps={{ root: { className: `${type}` } }}>
+        <TarkaPopper open={open} {...props} componentsProps={{ root: { className: `${colortype}` } }}>
             <div className="content-container">
                 <div className="icon-container">{defaultIcon}</div>
 
@@ -97,9 +97,6 @@ const Snackbar:React.FC<SnackbarProps> = function({type = 'success',buttonProps,
 
                 {defaultButton && <div className="button-container">{defaultButton}</div>}
             </div>
-
-            
-
         </TarkaPopper>
 
     )

@@ -127,7 +127,7 @@ const ButtonStyled = styled(ButtonUnstyled)`
             color: var(--primary-on-primary);
             fill:  var(--primary-on-primary); 
     
-            &:hover {
+            :not(&.disableHover):hover {
                 background-color: var(--primary-primary-hover);
                 outline: 1.5px var(--surface-on-surface) solid;
                 outline-offset: -1.5px;
@@ -138,7 +138,7 @@ const ButtonStyled = styled(ButtonUnstyled)`
             background-color: var(--secondary-secondary);
             color: var(--secondary-on-secondary);
             fill:  var(--secondary-on-secondary); 
-            &:hover {
+            :not(&.disableHover):hover {
                 background-color: var(--secondary-secondary-hover);
                 outline: 1.5px var(--surface-on-surface) solid;
                 outline-offset: -1.5px;
@@ -163,7 +163,7 @@ const ButtonStyled = styled(ButtonUnstyled)`
         color: var(--surface-on-surface);
         fill:  var(--surface-on-surface); 
 
-        &:hover {
+        :not(&.disableHover):hover {
             background-color: var(--surface-surface-hover);
         }
     }
@@ -188,11 +188,11 @@ const ButtonStyled = styled(ButtonUnstyled)`
     }
 `
 
-const Button: React.FC<ButtonProps> = function ({ size = 'regular', color = 'primary', startIcon, endIcon, disableHover=false, ...props }) {
+const Button: React.FC<ButtonProps> = function ({ size = 'regular', colortype = 'primary', startIcon, endIcon, disableHover=false, ...props }) {
     setUpTokens(['surface/on-surface', 'surface/surface-hover', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
         'secondary/on-secondary', 'secondary/secondary-hover']);
 
-    const classes = `${size} ${color} ${startIcon ? 'start-icon' : ''} ${endIcon ? 'end-icon' : ''} ${disableHover? 'disableHover': ''}`
+    const classes = `${size} ${colortype} ${startIcon ? 'start-icon' : ''} ${endIcon ? 'end-icon' : ''} ${disableHover? 'disableHover': ''}`
 
     return (
         <ButtonStyled className={classes} {...props} >
