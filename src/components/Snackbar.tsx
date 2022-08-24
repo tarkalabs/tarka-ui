@@ -17,7 +17,8 @@ interface TarkaProps{
     icon?:ReactNode,
     colortype?:'success' | 'information' | 'warning' | 'error',
     buttonProps?:ButtonUnstyledProps
-    customButton?: ReactNode
+    customButton?: ReactNode,
+    startIcon?:ReactNode
 }
 
 export type SnackbarProps = TarkaProps & MUIProps;
@@ -69,7 +70,7 @@ const TarkaPopper = styled(PopperUnstyled)`
 
 
 
-const Snackbar:React.FC<SnackbarProps> = function({colortype = 'success',buttonProps, customButton, open,...props}){
+const Snackbar:React.FC<SnackbarProps> = function({colortype = 'success',buttonProps, customButton, open, startIcon,...props}){
 
     let defaultIcon = <Success />
     let color = 'success'
@@ -89,7 +90,7 @@ const Snackbar:React.FC<SnackbarProps> = function({colortype = 'success',buttonP
     return(
         <TarkaPopper open={open} {...props} componentsProps={{ root: { className: `${colortype}` } }}>
             <div className="content-container">
-                <div className="icon-container">{defaultIcon}</div>
+                <div className="icon-container">{startIcon? startIcon: defaultIcon}</div>
 
                 <div className="child-container">{typeof(props.children) ==='function'? props.children({
                     placement: props.placement? props.placement: 'bottom'
