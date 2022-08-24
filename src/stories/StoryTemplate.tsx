@@ -10,14 +10,23 @@ interface StoryTemplateProps {
     typeDescs: Array<object>;
 }
 
-export default function StoryTemplate({ componentName, path, type, typeDescs }: StoryTemplateProps) {
+export default function StoryTemplate({
+    componentName,
+    path,
+    type,
+    typeDescs,
+}: StoryTemplateProps) {
     return (
         <div className="story-template">
+            <span className="logo">
+                <h1>T</h1>
+                <h1>_UI</h1>
+            </span>
             <header>
                 <h1>{`${componentName} API`}</h1>
                 <p>{`API documentation for the Tarka UI React ${componentName} component. Learn about the available props and the CSS API.`}</p>
             </header>
-            <ImportSection componentName={componentName} path={path}/>
+            <ImportSection componentName={componentName} path={path} />
             <PropsSection type={type} typeDescs={typeDescs} />
             <h2>Demos</h2>
         </div>

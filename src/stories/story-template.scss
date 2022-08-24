@@ -1,11 +1,17 @@
 $primary: #0f0230;
 $secondary: #f7f4ff;
 $tertiary: #160449;
-$tertiary-accent: #2a233f; 
+$tertiary-accent: #2a233f;
+$accent: #ff006a;
 
 @font-face {
-    font-family: 'Inter';
-    src: url('../assets/fonts/Inter-Regular.woff');
+    font-family: "Inter";
+    src: url("../assets/fonts/Inter-Regular.woff");
+}
+
+@font-face {
+    font-family: "Logo";
+    src: url("../assets/fonts/JetBrainsMono-ExtraBold.woff");
 }
 
 #docs-root > .sbdocs {
@@ -32,21 +38,39 @@ $tertiary-accent: #2a233f;
 .story-template {
     display: flex;
     flex-flow: column nowrap;
-    row-gap: 144px;
+    row-gap: 50px;
     color: $secondary;
 
     * {
-        font-family: 'Inter';
+        font-family: "Inter";
+    }
+
+    .logo {
+        color: $accent;
+        width: min-content;
+        text-shadow: 0 0 8px $accent;
+        margin-bottom: 75px;
+
+        h1 {
+            font-size: 6em;
+            font-family: "Logo";
+            line-height: 50%;
+            letter-spacing: -0.05em;
+        }
     }
 
     h1 {
         font-size: 3em;
         margin: 0;
     }
-    
+
+    p {
+        margin: 1em 0 2em 0;
+    }
+
     h2 {
         font-size: 2em;
-         margin: 0 0 0.5em 0;
+        margin: 0 0 0.5em 0;
     }
 }
 
