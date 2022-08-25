@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import {ButtonUnstyled, ButtonUnstyledProps as MUIProps} from '@mui/base';
 import {styled} from '@mui/system';
 import { setUpTokens } from "../utils/ThemeParse";
-import Badge from './Badge';
+import Badge from './atoms/Badge';
 
 
 interface TarkaProps{

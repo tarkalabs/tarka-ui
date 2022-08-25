@@ -4,8 +4,8 @@ import ImportSection from "./sections/ImportSection";
 interface StoryTemplateProps {
     componentName: string;
     path: string;
-    typeDescs: Array<object>;
-    muiRef: string;
+    typeDescs?: Array<object>;
+    muiRef?: string;
 }
 
 export default function StoryTemplate({
@@ -25,8 +25,7 @@ export default function StoryTemplate({
                 <p>{`API documentation for the Tarka UI React ${componentName} component. Learn about the available props and the CSS API.`}</p>
             </header>
             <ImportSection componentName={componentName} path={path} />
-            <PropsSection muiRef={muiRef} typeDescs={typeDescs} />
-            <h2>Demos</h2>
+            {(muiRef || typeDescs) ? <PropsSection muiRef={muiRef} typeDescs={typeDescs} /> : null}
         </div>
     );
 }

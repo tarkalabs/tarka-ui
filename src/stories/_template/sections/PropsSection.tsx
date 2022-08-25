@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 
 interface PropsSectionProps {
-    typeDescs: Array<object>;
-    muiRef: string;
+    typeDescs?: Array<object>;
+    muiRef?: string;
 }
 
 export default function PropsSection({ typeDescs, muiRef }: PropsSectionProps) {
@@ -60,10 +60,10 @@ export default function PropsSection({ typeDescs, muiRef }: PropsSectionProps) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {generateRows(typeDescs)}
+                    {typeDescs ? generateRows(typeDescs) : null}
                 </TableBody>
             </Table>
-            <p>Remaining props inherited from <a href={muiRef} target="_blank" className="external">MUI</a></p>
+            { muiRef ? <p>Remaining props inherited from <a href={muiRef} target="_blank" className="external">MUI</a></p> : null }
         </section>
     );
 }
