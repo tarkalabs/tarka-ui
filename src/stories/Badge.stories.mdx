@@ -1,13 +1,11 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import StoryTemplate from "./StoryTemplate";
-import { BadgeProps } from "@components/Badge";
 
 <Meta title="Components/Badge" />
 
 <StoryTemplate
     componentName='Badge'
     path='@tarkaui/example'
-    type={BadgeProps}
     typeDescs={[
         {
             name: `size`,
@@ -16,6 +14,7 @@ import { BadgeProps } from "@components/Badge";
             desc: `The size of the badge.`,
         },
     ]}
+    muiRef='https://mui.com/base/api/badge-unstyled/'
 />
 
 <Canvas>

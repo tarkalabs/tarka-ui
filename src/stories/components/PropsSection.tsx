@@ -6,14 +6,13 @@ import {
     TableHead,
     TableBody,
 } from "@mui/material";
-import { Type } from "typescript";
 
 interface PropsSectionProps {
-    type: Type;
     typeDescs: Array<object>;
+    muiRef: string;
 }
 
-export default function PropsSection({ type, typeDescs }: PropsSectionProps) {
+export default function PropsSection({ typeDescs, muiRef }: PropsSectionProps) {
     function generateRows(data: Array<object>): ReactNode {
         return data
             ? data.map((rowData: object, index) => (
@@ -64,6 +63,7 @@ export default function PropsSection({ type, typeDescs }: PropsSectionProps) {
                     {generateRows(typeDescs)}
                 </TableBody>
             </Table>
+            <p>Remaining props inherited from <a href={muiRef} target="_blank">MUI</a></p>
         </section>
     );
 }

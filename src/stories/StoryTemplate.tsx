@@ -1,20 +1,18 @@
-import { Type } from "typescript";
 import "./story-template.scss";
 import PropsSection from "./components/PropsSection";
 import ImportSection from "./components/ImportSection";
-import { Sign } from "crypto";
 interface StoryTemplateProps {
     componentName: string;
     path: string;
-    type: Type;
     typeDescs: Array<object>;
+    muiRef: string;
 }
 
 export default function StoryTemplate({
     componentName,
     path,
-    type,
     typeDescs,
+    muiRef,
 }: StoryTemplateProps) {
     return (
         <div className="story-template">
@@ -27,7 +25,7 @@ export default function StoryTemplate({
                 <p>{`API documentation for the Tarka UI React ${componentName} component. Learn about the available props and the CSS API.`}</p>
             </header>
             <ImportSection componentName={componentName} path={path} />
-            <PropsSection type={type} typeDescs={typeDescs} />
+            <PropsSection muiRef={muiRef} typeDescs={typeDescs} />
             <h2>Demos</h2>
         </div>
     );

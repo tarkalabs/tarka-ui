@@ -48,7 +48,7 @@ $accent: #ff006a;
     .logo {
         color: $accent;
         width: min-content;
-        text-shadow: 0 0 8px $accent;
+        text-shadow: 0 0 4px $accent;
         margin-bottom: 75px;
 
         h1 {
@@ -72,22 +72,54 @@ $accent: #ff006a;
         font-size: 2em;
         margin: 0 0 0.5em 0;
     }
-}
 
-.import-section {
-    > div {
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 0.25em;
-        min-width: max-content;
-        background-color: $tertiary;
-        padding: 1.5em 1em;
-        border: 1px solid $tertiary-accent;
-        border-radius: 8px;
+    .import-section {
+        > div {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 0.25em;
+            min-width: max-content;
+            background-color: $tertiary;
+            padding: 1.5em 1em;
+            border: 1px solid $tertiary-accent;
+            border-radius: 8px;
+    
+            span {
+                font-family: monospace;
+                width: max-content;
+            }
 
-        > span {
-            font-family: monospace;
+            .default {
+                color: $secondary;
+            }
+    
+            .keyword {
+                color: #ff006a;
+            }
+    
+            .string {
+                color: #ffeb59;
+            }
+    
+            .comment {
+                color: #bbb8c2;
+            }
+        }
+    }
+
+    .props-section {
+        p {
+            padding: 16px 0;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
             width: max-content;
+            color: $secondary;
+            font-size: 0.85em;
+        }
+
+        a {
+            color: $accent;
         }
     }
 }

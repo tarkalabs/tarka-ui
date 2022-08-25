@@ -10,9 +10,23 @@ export default function ImportSection({ componentName, path }: ImportSectionProp
         <section className='import-section'>
             <h2>Import</h2>
             <div>
-                <span>{`import ${componentName} from '${path}/${componentName}';`}</span>
-                <span>// or</span>
-                <span>{`import { ${componentName} } from '${path}';`}</span>
+                <span className="keyword">
+                    {`import `}   
+                    <span className="default">{componentName} </span>
+                    {`from `}
+                    <span className="string">{`'${path}/${componentName}'`}</span>
+                    <span className="default">;</span>
+                </span>
+                <span className="comment">
+                    // or
+                </span>
+                <span className="keyword">
+                    {`import `}
+                    <span className="default">{`{ ${componentName} }`} </span>
+                    {`from `}
+                    <span className="string">{`'${path}'`}</span>
+                    <span className="default">;</span>
+                </span>
             </div>
         </section>
     );
