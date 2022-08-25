@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta, Story } from '@storybook/react';
-import Button, {ButtonProps} from '../components/Button';
+import Button, {ButtonProps} from '@/components/Button';
 import { ReactComponent as Plus } from '@icons/plus/plus-regular.svg';
 import { ReactComponent as PlusSmall } from '@icons/plus/plus-small.svg';
 import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';

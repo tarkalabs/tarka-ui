@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story, ComponentMeta } from '@storybook/react';
-import IconButton, {IconButtonProps} from '../components/IconButton';
+import IconButton, {IconButtonProps} from '@/components/IconButton';
 import {ReactComponent as SmallCross} from '@icons/close/close-small.svg';
 import {ReactComponent as LargeCross} from '@icons/close/close-large.svg';
-import Badge, { BadgeProps } from '../components/Badge';
+import Badge, { BadgeProps } from '@/components/Badge';
 
 
 const TestBadge = <Badge size='regular' />

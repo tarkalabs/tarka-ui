@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import SuccessCheck from '../components/SuccessCheck/SuccessCheck';
+import SuccessCheck from '@/components/SuccessCheck/SuccessCheck';
 
 export default {
   title: 'Components/SuccessCheck',

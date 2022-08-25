@@ -63,7 +63,7 @@ export default function PropsSection({ typeDescs, muiRef }: PropsSectionProps) {
                     {generateRows(typeDescs)}
                 </TableBody>
             </Table>
-            <p>Remaining props inherited from <a href={muiRef} target="_blank">MUI</a></p>
+            <p>Remaining props inherited from <a href={muiRef} target="_blank" className="external">MUI</a></p>
         </section>
     );
 }

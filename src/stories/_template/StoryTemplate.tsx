@@ -1,6 +1,6 @@
 import "./story-template.scss";
-import PropsSection from "./components/PropsSection";
-import ImportSection from "./components/ImportSection";
+import PropsSection from "./sections/PropsSection";
+import ImportSection from "./sections/ImportSection";
 interface StoryTemplateProps {
     componentName: string;
     path: string;
