@@ -3,7 +3,7 @@ import { ComponentMeta, Story } from '@storybook/react';
 import Button, {ButtonProps} from '@/components/atoms/Button';
 import { ReactComponent as Plus } from '@icons/plus/plus-regular.svg';
 import { ReactComponent as PlusSmall } from '@icons/plus/plus-small.svg';
-import StoryTemplate from '../_template/StoryTemplate';
+import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
 
 
 const props  = {

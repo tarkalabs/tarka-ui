@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Badge, { BadgeProps } from "@/components/atoms/Badge";
-import StoryTemplate from "../_template/StoryTemplate";
+import StoryTemplate from "@/templates/storytemplate/StoryTemplate";
 
 export default {
     title: "Components/Atoms/Badge",
