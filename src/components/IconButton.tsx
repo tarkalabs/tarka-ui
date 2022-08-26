@@ -6,7 +6,7 @@ import Badge from './atoms/Badge';
 
 
 interface TarkaProps{
-	color?: 'primary' | 'secondary' | 'ghost',
+	colortype?: 'primary' | 'secondary' | 'ghost',
 	size?: 'XS' | 'small' |  'regular' | 'large'| 'XL',
 	badgeIn?:  any
 }
@@ -98,13 +98,13 @@ const TarkaIconButton = styled(ButtonUnstyled)`
 `
 
 
-const IconButton:React.FC<IconButtonProps> = function({size = 'regular',color ='primary', badgeIn,...props}){
+const IconButton:React.FC<IconButtonProps> = function({size = 'regular',colortype ='primary', badgeIn,...props}){
 
 	setUpTokens(['surface/on-surface', 'utility/disabled-content', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
         'secondary/on-secondary', 'secondary/secondary-hover']);
 
 
- 	let returnValue = <TarkaIconButton className={` ${size}  ${color} ${badgeIn? 'badged': ''}`}   {...props} />;
+ 	let returnValue = <TarkaIconButton className={` ${size}  ${colortype} ${badgeIn? 'badged': ''}`}   {...props} />;
 
     
 	if(badgeIn){

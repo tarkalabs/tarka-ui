@@ -42,7 +42,6 @@ export const BadgeIconButton = Template.bind({});
 BadgeIconButton.args = {
 	setIcon: 'large',
 	badgeIn: TestBadge,
-	size:'large'
+	size:'XL'
 }
 
-export const BadgeTest = TestBadge;
