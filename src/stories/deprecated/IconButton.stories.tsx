@@ -22,7 +22,7 @@ export default {
             page: () => (
                 <StoryTemplate
                     componentName="IconButton"
-                    path="@tarkaui/atoms"
+                    importPath="@tarkaui/atoms"
                     muiRef="https://mui.com/material-ui/api/icon-button/"
                 />
             ),

@@ -11,7 +11,7 @@ export default {
             page: () => (
                 <StoryTemplate
                     componentName="Badge"
-                    path="@tarkaui/atoms"
+                    importPath="@tarkaui/atoms"
                     typeDescs={[
                         {
                             name: `size`,

@@ -2,10 +2,10 @@ import { Type } from "typescript";
 
 interface ImportSectionProps {
     componentName: string;
-    path: string;
+    importPath: string;
 }
 
-export default function ImportSection({ componentName, path }: ImportSectionProps) {
+export default function ImportSection({ componentName, importPath }: ImportSectionProps) {
     return (
         <section className='import-section'>
             <h2>Import</h2>
@@ -14,7 +14,7 @@ export default function ImportSection({ componentName, path }: ImportSectionProp
                     {`import `}   
                     <span className="default">{componentName} </span>
                     {`from `}
-                    <span className="string">{`'${path}/${componentName}'`}</span>
+                    <span className="string">{`'${importPath}/${componentName}'`}</span>
                     <span className="default">;</span>
                 </span>
                 <span className="comment">
@@ -24,7 +24,7 @@ export default function ImportSection({ componentName, path }: ImportSectionProp
                     {`import `}
                     <span className="default">{`{ ${componentName} }`} </span>
                     {`from `}
-                    <span className="string">{`'${path}'`}</span>
+                    <span className="string">{`'${importPath}'`}</span>
                     <span className="default">;</span>
                 </span>
             </div>

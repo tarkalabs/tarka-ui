@@ -3,14 +3,14 @@ import PropsSection from "./sections/PropsSection";
 import ImportSection from "./sections/ImportSection";
 interface StoryTemplateProps {
     componentName: string;
-    path: string;
+    importPath: string;
     typeDescs?: Array<object>;
     muiRef?: string;
 }
 
 export default function StoryTemplate({
     componentName,
-    path,
+    importPath,
     typeDescs,
     muiRef,
 }: StoryTemplateProps) {
@@ -24,7 +24,7 @@ export default function StoryTemplate({
                 <h1>{`${componentName} API`}</h1>
                 <p>{`API documentation for the Tarka UI React ${componentName} component. Learn about the available props and the CSS API.`}</p>
             </header>
-            <ImportSection componentName={componentName} path={path} />
+            <ImportSection componentName={componentName} importPath={importPath} />
             {(muiRef || typeDescs) ? <PropsSection muiRef={muiRef} typeDescs={typeDescs} /> : null}
         </div>
     );
