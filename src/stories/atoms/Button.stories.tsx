@@ -1,9 +1,9 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta, Story } from '@storybook/react';
-import Button, {ButtonProps} from '../components/Button';
+import { ComponentMeta, Story } from '@storybook/react';
+import Button, {ButtonProps} from '@/components/atoms/Button';
 import { ReactComponent as Plus } from '@icons/plus/plus-regular.svg';
 import { ReactComponent as PlusSmall } from '@icons/plus/plus-small.svg';
-import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
+import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
 
 
 const props  = {
@@ -15,9 +15,20 @@ const props  = {
 
 
 export default {
-    title: 'Components/Button',
+    title: 'Components/Atoms/Button',
     component: Button,
-    argTypes:props
+    argTypes:props,
+    parameters: {
+        docs: {
+            page: () => (
+                <StoryTemplate
+                    componentName="Button"
+                    importPath="@tarkaui/atoms"
+                    muiRef="https://mui.com/material-ui/api/button/"
+                />
+            ),
+        },
+    },
 } as ComponentMeta<typeof Button>;
 
 

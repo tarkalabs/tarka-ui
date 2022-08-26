@@ -1,7 +1,7 @@
 import React from "react";
 import { BadgeUnstyled, badgeUnstyledClasses, BadgeUnstyledProps as MUIProps } from "@mui/base";
 import { styled } from "@mui/system";
-import { setUpTokens } from "../utils/ThemeParse";
+import { setUpTokens } from "@/utils/ThemeParse";
 
 setUpTokens(["error/error", "error/on-error", "button/size-7"]);
 

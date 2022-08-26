@@ -21,9 +21,6 @@ module.exports = {
       '@': path.resolve(__dirname, "../src"),
       '@icons': path.resolve(__dirname, "../src/assets/icons"),
       '@fonts': path.resolve(__dirname, "../src/assets/fonts"),
-      '@components': path.resolve(__dirname, "../src/components"),
-      '@utils': path.resolve(__dirname, "../src/utils"),
-      '@data': path.resolve(__dirname, "../src/data"),
     };
     return config;
   }
