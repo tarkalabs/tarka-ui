@@ -1,5 +1,5 @@
 import React from "react";
-import { BadgeUnstyled, badgeUnstyledClasses, BadgeUnstyledProps as MUIProps } from "@mui/base";
+import { BadgeUnstyled, badgeUnstyledClasses, BadgeUnstyledProps} from "@mui/base";
 import { styled } from "@mui/system";
 import { setUpTokens } from "@/utils/ThemeParse";
 
@@ -9,7 +9,7 @@ interface FrameProps {
   size?: "small" | "regular" | "large";
 }
 
-export type BadgeProps = FrameProps & MUIProps;
+export type BadgeProps = FrameProps & BadgeUnstyledProps;
 
 const BadgeFrame = styled(BadgeUnstyled)`
   box-sizing: border-box;

@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import ButtonUnstyled from '@mui/base/ButtonUnstyled';
-import { ButtonUnstyledProps as MUIProps } from '@mui/base/ButtonUnstyled';
+import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
 import { styled } from '@mui/system';
 import { ReactNode } from 'react';
 import { setUpTokens } from '@/utils/ThemeParse';
@@ -14,7 +14,7 @@ interface FrameProps {
     disableHover?: boolean
 }
 
-export type ButtonProps = FrameProps & MUIProps;
+export type ButtonProps = FrameProps & ButtonUnstyledProps;
 
 const ButtonFrame = styled(ButtonUnstyled)`
     padding:0;
