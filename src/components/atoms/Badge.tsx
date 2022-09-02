@@ -5,13 +5,13 @@ import { setUpTokens } from "@/utils/ThemeParse";
 
 setUpTokens(["error/error", "error/on-error", "button/size-7"]);
 
-interface TarkaProps {
+interface FrameProps {
   size?: "small" | "regular" | "large";
 }
 
-export type BadgeProps = TarkaProps & MUIProps;
+export type BadgeProps = FrameProps & MUIProps;
 
-const TarkaBadge = styled(BadgeUnstyled)`
+const BadgeFrame = styled(BadgeUnstyled)`
   box-sizing: border-box;
   position: relative;
   display: inline-block;
@@ -79,5 +79,5 @@ const TarkaBadge = styled(BadgeUnstyled)`
 `;
 
 export default function Badge({ size, ...props }: BadgeProps) {
-  return <TarkaBadge componentsProps={{ badge: { className: `${size}` } }} {...props} />;
+  return <BadgeFrame componentsProps={{ badge: { className: `${size}` } }} {...props} />;
 }

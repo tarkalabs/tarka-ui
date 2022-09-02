@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 import { setUpTokens } from '@/utils/ThemeParse';
 
 
-interface TarkaProps {
+interface FrameProps {
     size: 'large' | 'regular' | 'small' | 'XS',
     colortype: 'primary' | 'secondary' | 'outlined' | 'ghost',
     startIcon?: ReactNode,
@@ -14,9 +14,9 @@ interface TarkaProps {
     disableHover?: boolean
 }
 
-export type ButtonProps = TarkaProps & MUIProps;
+export type ButtonProps = FrameProps & MUIProps;
 
-const ButtonStyled = styled(ButtonUnstyled)`
+const ButtonFrame = styled(ButtonUnstyled)`
     padding:0;
     cursor: pointer;
     border: none;
@@ -195,15 +195,14 @@ const Button: React.FC<ButtonProps> = function ({ size = 'regular', colortype = 
     const classes = `${size} ${colortype} ${startIcon ? 'start-icon' : ''} ${endIcon ? 'end-icon' : ''} ${disableHover? 'disableHover': ''}`
 
     return (
-        <ButtonStyled className={classes} {...props} >
+        <ButtonFrame className={classes} {...props} >
             {startIcon && <div className="start-icon-container"> {startIcon} </div>}
             <div className='text-container'>
                 {props.children}
             </div>
             {endIcon && <div className="end-icon-container"> {endIcon}</div>}
-        </ButtonStyled>
+        </ButtonFrame>
     )
 }
-
 
 export default Button;
