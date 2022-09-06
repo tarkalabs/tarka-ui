@@ -189,7 +189,7 @@ const ButtonComponent: React.FC<ButtonProps> = function ({
     } ${disableHover ? "disableHover" : ""}`;
 
     return (
-        <ButtonFrame>
+        <ButtonFrame className='tarka-button'>
             <Button className={classes} {...props}>
                 {startIcon && (
                     <div className="start-icon-container"> {startIcon} </div>

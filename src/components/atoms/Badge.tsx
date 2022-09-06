@@ -84,7 +84,7 @@ const Badge = styled(BadgeUnstyled)`
 
 const BadgeComponent: React.FC<BadgeProps> = function ({ size, ...props }) {
     return (
-        <BadgeFrame>
+        <BadgeFrame className='tarka-badge'>
             <Badge componentsProps={{ badge: { className: `${size}` } }} {...props} />;
         </BadgeFrame>
     );
