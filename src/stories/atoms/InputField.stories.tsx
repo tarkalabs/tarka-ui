@@ -36,3 +36,5 @@ const Template: Story<typeof InputField> = (args: InputFieldProps) =>
     <InputField {...args}  
 />);
 
+export const Default = Template.bind({});
+
