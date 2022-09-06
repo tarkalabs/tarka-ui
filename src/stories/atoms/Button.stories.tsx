@@ -31,9 +31,9 @@ export default {
     },
 } as ComponentMeta<typeof Button>;
 
+type StoryProps = ButtonProps & {setStartIcon:'none' |'small'| 'large'} & {setEndIcon:'none' |'small'| 'large'}
 
-
-const Template: Story<ButtonProps & {setStartIcon:'none' |'small'| 'large'} & {setEndIcon:'none' |'small'| 'large'}> = ({setStartIcon,setEndIcon,...args}) =>
+const Template: Story<StoryProps> = ({setStartIcon,setEndIcon,...args}: StoryProps) =>
 (<Button {...args}  
     startIcon={setStartIcon != 'none'? (setStartIcon==='small'? <PlusSmall/>:<Plus/>): null} 
     endIcon={setEndIcon != 'none'? (setEndIcon==='small'? <PlusSmall/>:<Plus/>): null} 

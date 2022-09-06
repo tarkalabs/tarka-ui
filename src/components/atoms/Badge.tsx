@@ -11,7 +11,11 @@ interface FrameProps {
 
 export type BadgeProps = FrameProps & BadgeUnstyledProps;
 
-const BadgeFrame = styled(BadgeUnstyled)`
+const BadgeFrame = styled('div')`
+    
+`;
+
+const Badge = styled(BadgeUnstyled)`
   box-sizing: border-box;
   position: relative;
   display: inline-block;
@@ -78,6 +82,12 @@ const BadgeFrame = styled(BadgeUnstyled)`
 }
 `;
 
-export default function Badge({ size, ...props }: BadgeProps) {
-  return <BadgeFrame componentsProps={{ badge: { className: `${size}` } }} {...props} />;
-}
+const BadgeComponent: React.FC<BadgeProps> = function ({ size, ...props }) {
+    return (
+        <BadgeFrame>
+            <Badge componentsProps={{ badge: { className: `${size}` } }} {...props} />;
+        </BadgeFrame>
+    );
+};
+
+export default BadgeComponent;

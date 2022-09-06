@@ -3,19 +3,9 @@ import { ComponentMeta, Story } from '@storybook/react';
 import InputField, {InputFieldProps} from '@/components/atoms/InputField';
 import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
 
-
-const props  = {
-    size: {options:['XS','small','regular','large'],control:'radio'},
-    setStartIcon:{options:['none','small','large'],control:'radio'},
-    setEndIcon:{options:['none','small','large'],control:'radio'},
-    children:{control:'text',defaultValue:'Label'},
-}
-
-
 export default {
     title: 'Components/Atoms/InputField',
     component: InputField,
-    argTypes: props,
     parameters: {
         docs: {
             page: () => (
@@ -31,10 +21,11 @@ export default {
 
 
 
-const Template: Story<typeof InputField> = (args: InputFieldProps) =>
-(
-    <InputField {...args}  
-/>);
+const Template: Story<InputFieldProps> = (args: InputFieldProps) => (
+    <form>
+        <InputField required {...args}/>  
+    </form>
+);
 
 export const Default = Template.bind({});
 

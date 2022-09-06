@@ -4,19 +4,41 @@ import { InputUnstyledProps } from "@mui/base/InputUnstyled";
 import { styled } from "@mui/system";
 import { ReactNode } from "react";
 import { setUpTokens } from "@/utils/ThemeParse";
-import { bodySize5 } from "@/assets/fonts/fonts";
+import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 
-interface FrameProps {}
+interface FrameProps {
+    helperText?: string;
+}
 
 export type InputFieldProps = FrameProps & InputUnstyledProps;
 
-const InputFieldFrame = styled(InputUnstyled)`
+const InputFieldFrame = styled('div')`
+    display: flex;
+    flex-direction: column;
+    height: 56px;
+    width: 264px;
+    gap: 4px;
+    align-items: center;
+    
+    div.helper {
+        span {
+            ${bodySize7}
+            color: var(--input-text);
+        } 
+    }
+`;
+
+const InputField = styled(InputUnstyled)`
     input {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    input[type="text"] {
         background-color: var(--input-input-background);
-        border-width: 0;
+        border-width: 0 0 2px 0;
         border-radius: 8px;
-        min-height: 20px;
-        min-width: 175px;
         color: var(--input-text-dim);
         padding: 17px 16px;
         outline: none;
@@ -24,17 +46,28 @@ const InputFieldFrame = styled(InputUnstyled)`
 
         &:hover {
             border-color: var(--utility-disabled-content);
-            border-width: 0 0 2px 0;
+        }
 
-            &:focus {
-                border-color: var(--primary-primary);
-                border-width: 0 0 2px 0;
-            }
+        &:focus {
+            border-color: var(--primary-primary);
+        }
+
+        &:valid {
+            border-color: var(--success-success);
+        }
+
+        &:invalid {
+            border-color: var(--error-error);
+        }
+
+        &:disabled {
+            background-color: var(--utility-disabled-background);
+            color: var(--utility-disabled-content);
         }
     }
 `;
 
-const InputField: React.FC<InputFieldProps> = function ({ ...props }) {
+const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }) {
     setUpTokens([
         "input/input-background",
         "input/text-dim",
@@ -47,11 +80,18 @@ const InputField: React.FC<InputFieldProps> = function ({ ...props }) {
     ]);
 
     return (
-        <InputFieldFrame
-            className={props.className}
-            {...props}
-        ></InputFieldFrame>
+        <InputFieldFrame className='tarka-input-field'>
+            <InputField className={props.className} placeholder={props.placeholder} {...props} />
+            <div className="helper">
+                <span>{props.helperText}</span>
+            </div>
+        </InputFieldFrame>
     );
 };
 
-export default InputField;
+InputFieldComponent.defaultProps = {
+    placeholder: 'Label',
+    helperText: 'Helper/hint text goes here',
+}
+
+export default InputFieldComponent;

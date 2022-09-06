@@ -5,6 +5,13 @@ export const bodySize5 = `
     line-height: 22px;
 `;
 
+export const bodySize7 = `
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+`;
+
 export const buttonSize6 = `
     font-family: 'Inter';
     font-style: normal;
