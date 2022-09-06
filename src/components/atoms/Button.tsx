@@ -17,7 +17,7 @@ interface FrameProps {
 export type ButtonProps = FrameProps & ButtonUnstyledProps;
 
 const ButtonFrame = styled(ButtonUnstyled)`
-    padding:0;
+    padding: 0;
     cursor: pointer;
     border: none;
     border-radius: 3200px;

@@ -13,7 +13,9 @@ interface FrameProps {
 export type InputFieldProps = FrameProps & InputUnstyledProps;
 
 const InputFieldFrame = styled(InputUnstyled)`
-
+    input {
+        background-color: var(--input-input-background);
+    }
 `
 
 const InputField: React.FC<InputFieldProps> = function ({ ...props }) {
