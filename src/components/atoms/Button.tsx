@@ -4,6 +4,7 @@ import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
 import { styled } from '@mui/system';
 import { ReactNode } from 'react';
 import { setUpTokens } from '@/utils/ThemeParse';
+import { buttonSize6, buttonSize7, buttonSize8 } from '@/assets/fonts/fonts';
 
 
 interface FrameProps {
@@ -26,16 +27,11 @@ const ButtonFrame = styled(ButtonUnstyled)`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    ${buttonSize6}
+    gap: 8px;
     
     &.large {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px;
-        gap: 11px;
-
-
         .text-container {
             margin: 14px 24px;
         }
@@ -49,13 +45,6 @@ const ButtonFrame = styled(ButtonUnstyled)`
     }
 
     &.regular {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px;
-        gap: 8px;
-
         .start-icon-container {
             margin-left: 19px;
         }
@@ -71,16 +60,10 @@ const ButtonFrame = styled(ButtonUnstyled)`
 
 
     &.small {
-        /* Button Size-7 */
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 18px;
+        ${buttonSize7}
 
         text-align: center;
         letter-spacing: 0.01em;
-
         gap: 4px;
 
         .start-icon-container {
@@ -97,16 +80,9 @@ const ButtonFrame = styled(ButtonUnstyled)`
     }
 
     &.XS {
-        /* button/size-8 */
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 14px;
-
+        ${buttonSize8}
         text-align: center;
         letter-spacing: 0.01em;
-
         gap: 4px;
 
         .start-icon-container {

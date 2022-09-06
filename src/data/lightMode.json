@@ -197,17 +197,17 @@
       "type": "color"
     },
     "disabled-content": {
-      "value": "hsla({hue.primary}, 20%, 98%, 0.38)",
+      "value": "hsla({hue.primary}, 9%, 11%, 0.38)",
       "description": "Color for disabled content, like text inside a disabled field.",
       "type": "color"
     },
     "disabled-background": {
-      "value": "hsla({hue.primary}, 20%, 98%, 0.12)",
+      "value": "hsla({hue.primary}, 9%, 11%, 0.12)",
       "description": "Color for the background, or container of disabled items.",
       "type": "color"
     },
     "disabled-background-hover": {
-      "value": "hsla({hue.primary}, 20%, 98%, 0.20)",
+      "value": "hsla({hue.primary}, 9%, 11%, 0.20)",
       "description": "",
       "type": "color"
     },
@@ -224,12 +224,12 @@
       "description": "Background color for input fields."
     },
     "text": {
-      "value": "hsla({hue.primary}, 20%, 98%, 1)",
+      "value": "hsla({hue.primary}, 9%, 11%, 1)",
       "description": "Text color with strong contrast.",
       "type": "color"
     },
     "text-dim": {
-      "value": "hsla({hue.primary}, 20%, 98%, 0.70)",
+      "value": "hsla({hue.primary}, 9%, 11%, 0.70)",
       "description": "Dimmed text color for less contrast. Input field labels, and lower-contrast titles.",
       "type": "color"
     }
