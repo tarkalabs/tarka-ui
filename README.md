@@ -10,7 +10,7 @@
 ### Components TODO
 - [ ] Icon button
 - [ ] Floating Action Button
-- [ ] Button
+- [x] Button
 - [ ] Divider
 - [ ] Thumbnail
 - [ ] Breadcrumbs
