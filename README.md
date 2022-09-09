@@ -8,16 +8,16 @@
 - https://www.figma.com/file/P38agSWlZGpxD68uQdcRmp/Tarka-kit?node-id=2301%3A139560
 
 ### Components TODO
-- [x] Icon button
-- [x] Floating Action Button
+- [ ] Icon button
+- [ ] Floating Action Button
 - [ ] Button
-- [x] Divider
+- [ ] Divider
 - [ ] Thumbnail
 - [ ] Breadcrumbs
 - [x] Badge
 - [ ] Mobile nav bar
 - [ ] Nav item
-- [x] Social icons
+- [ ] Social icons
 - [ ] Slider
 - [ ] Mobile overlay
   - [ ] Menu item
