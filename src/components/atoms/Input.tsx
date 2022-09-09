@@ -7,28 +7,12 @@ import { setUpTokens } from "@/utils/ThemeParse";
 import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 
 interface FrameProps {
-    helperText?: string;
+
 }
 
-export type InputFieldProps = FrameProps & InputUnstyledProps;
+export type InputProps = FrameProps & InputUnstyledProps;
 
-const InputFieldFrame = styled('div')`
-    display: flex;
-    flex-direction: column;
-    height: 56px;
-    width: 264px;
-    gap: 4px;
-    align-items: center;
-    
-    div.helper {
-        span {
-            ${bodySize7}
-            color: var(--input-text);
-        } 
-    }
-`;
-
-const InputField = styled(InputUnstyled)`
+const InputFrame = styled(InputUnstyled)`
     input {
         width: 100%;
         height: 100%;
@@ -67,7 +51,7 @@ const InputField = styled(InputUnstyled)`
     }
 `;
 
-const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }) {
+const InputComponent: React.FC<InputProps> = function ({ ...props }) {
     setUpTokens([
         "input/input-background",
         "input/text-dim",
@@ -80,18 +64,16 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }) {
     ]);
 
     return (
-        <InputFieldFrame className='tarka-input-field'>
-            <InputField className={props.className} placeholder={props.placeholder} {...props} />
-            <div className="helper">
-                <span>{props.helperText}</span>
-            </div>
-        </InputFieldFrame>
+        <InputFrame 
+            className={`tarka-input-field ${props.className}`} 
+            placeholder={props.placeholder} 
+            {...props}
+        />
     );
 };
 
-InputFieldComponent.defaultProps = {
+InputComponent.defaultProps = {
     placeholder: 'Label',
-    helperText: 'Helper/hint text goes here',
 }
 
-export default InputFieldComponent;
+export default InputComponent;

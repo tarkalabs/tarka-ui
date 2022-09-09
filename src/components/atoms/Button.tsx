@@ -16,11 +16,7 @@ interface FrameProps {
 
 export type ButtonProps = FrameProps & ButtonUnstyledProps;
 
-const ButtonFrame = styled('div')`
-    
-`;
-
-const Button = styled(ButtonUnstyled)`
+const ButtonFrame = styled(ButtonUnstyled)`
     padding: 0;
     cursor: pointer;
     border: none;
@@ -189,16 +185,12 @@ const ButtonComponent: React.FC<ButtonProps> = function ({
     } ${disableHover ? "disableHover" : ""}`;
 
     return (
-        <ButtonFrame className='tarka-button'>
-            <Button className={classes} {...props}>
-                {startIcon && (
-                    <div className="start-icon-container"> {startIcon} </div>
-                )}
-                <div className="text-container">{props.children}</div>
-                {endIcon && (
-                    <div className="end-icon-container"> {endIcon}</div>
-                )}
-            </Button>
+        <ButtonFrame className={`tarka-button ${classes}`} {...props}>
+            {startIcon && (
+                <div className="start-icon-container"> {startIcon} </div>
+            )}
+            <div className="text-container">{props.children}</div>
+            {endIcon && <div className="end-icon-container"> {endIcon}</div>}
         </ButtonFrame>
     );
 };

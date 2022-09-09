@@ -1,29 +1,27 @@
 import React from 'react';
 import { ComponentMeta, Story } from '@storybook/react';
-import InputField, {InputFieldProps} from '@/components/atoms/InputField';
+import Input, {InputProps} from '@/components/atoms/Input';
 import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
 
 export default {
-    title: 'Components/Atoms/InputField',
-    component: InputField,
+    title: 'Components/Atoms/Input',
+    component: Input,
     parameters: {
         docs: {
             page: () => (
                 <StoryTemplate
-                    componentName="InputField"
+                    componentName="Input"
                     importPath="@tarkaui/atoms"
                     muiRef="https://mui.com/base/api/input-unstyled/"
                 />
             ),
         },
     },
-} as ComponentMeta<typeof InputField>;
+} as ComponentMeta<typeof Input>;
 
-
-
-const Template: Story<InputFieldProps> = (args: InputFieldProps) => (
+const Template: Story<InputProps> = (args: InputProps) => (
     <form>
-        <InputField required {...args}/>  
+        <Input required {...args}/>  
     </form>
 );
 
