@@ -1,4 +1,3 @@
-import React from 'react';
 import { ComponentMeta, Story } from '@storybook/react';
 import InputField, {InputFieldProps} from '@/components/organisms/InputField';
 import StoryTemplate from '@/templates/storytemplate/StoryTemplate';

@@ -1,20 +1,20 @@
 import React from "react";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
+import { TextFieldProps } from '@mui/material/TextField';
 import { setUpTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
+import FormControl from "@/components/atoms/FormControl";
+import InputLabel from "@/components/atoms/InputLabel";
+import Input from "@/components/atoms/Input";
+import FormHelperText from "@/components/atoms/FormHelperText";
 
-interface RootProps {}
+interface RootProps {
+
+}
 
 export type InputFieldProps = RootProps & TextFieldProps;
 
-const InputStyles = {
-        background-color: var(--input-input-background),
-        border-width: 0 0 2px 0,
-        border-radius: 8px,
-        color: var(--input-text-dim),
-        padding: 17px 16px,
-        outline: none,
-}
+const InputFieldRoot = styled(FormControl)`
+`;
 
 const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }) {
     setUpTokens([
@@ -29,13 +29,19 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }) {
     ]);
 
     return (
-        <InputFieldRoot></InputFieldRoot>;
+        <InputFieldRoot
+            className={`tui-input-field ${props.className}`}
+        >
+            <InputLabel></InputLabel>
+            <Input></Input>
+            <FormHelperText></FormHelperText>
+        </InputFieldRoot>
     );
 };
 
 InputFieldComponent.defaultProps = {
-    placeholder: "Label",
+    placeholder: 'Label',
     //helperText: 'Helper/hint text goes here',
-};
+}
 
 export default InputFieldComponent;

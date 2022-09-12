@@ -3,13 +3,13 @@ import { InputLabel, InputLabelProps as InputLabelUnstyledProps} from "@mui/mate
 import { styled } from "@mui/system";
 import { setUpTokens } from "@/utils/ThemeParse";
 
-interface FrameProps {
+interface RootProps {
 
 }
 
-export type InputLabelProps = FrameProps & InputLabelUnstyledProps;
+export type InputLabelProps = RootProps & InputLabelUnstyledProps;
 
-const InputLabelFrame = {
+const InputLabelRoot = {
     
 };
 
@@ -27,7 +27,7 @@ const InputLabelComponent: React.FC<InputLabelProps> = function ({ ...props }: I
 
     return (
         <InputLabel 
-            className={`tarka-input-label ${props.classes}`} 
+            className={`tui-input-label ${props.classes}`} 
             {...props}
         />
     );

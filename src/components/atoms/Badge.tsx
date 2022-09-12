@@ -5,13 +5,13 @@ import { setUpTokens } from "@/utils/ThemeParse";
 
 setUpTokens(["error/error", "error/on-error", "button/size-7"]);
 
-interface FrameProps {
+interface RootProps {
   size?: "small" | "regular" | "large";
 }
 
-export type BadgeProps = FrameProps & BadgeUnstyledProps;
+export type BadgeProps = RootProps & BadgeUnstyledProps;
 
-const BadgeFrame = styled(BadgeUnstyled)`
+const BadgeRoot = styled(BadgeUnstyled)`
   box-sizing: border-box;
   position: relative;
   display: inline-block;
@@ -80,7 +80,7 @@ const BadgeFrame = styled(BadgeUnstyled)`
 
 const BadgeComponent: React.FC<BadgeProps> = function ({ size, ...props }: BadgeProps) {
     return (
-        <BadgeFrame className={`tarka-badge ${size}`} {...props} />
+        <BadgeRoot className={`tui-badge ${size}`} {...props} />
     );
 };
 

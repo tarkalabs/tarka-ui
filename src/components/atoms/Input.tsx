@@ -5,14 +5,14 @@ import { setUpTokens } from "@/utils/ThemeParse";
 import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 import PropTypes from 'prop-types';
 
-interface FrameProps {
+interface RootProps {
 
 }
 
-export type InputProps = FrameProps & InputUnstyledProps;
+export type InputProps = RootProps & InputUnstyledProps;
 
-const InputFrame = styled(InputUnstyled)`
-    input[type="text"] {
+const InputRoot = styled(InputUnstyled)`
+    input {
         background-color: var(--input-input-background);
         border-width: 0 0 2px 0;
         border-radius: 8px;
@@ -57,8 +57,8 @@ const InputComponent: React.FC<InputProps> = function ({ ...props }: InputProps)
     ]);
 
     return (
-        <InputFrame 
-            className={`tarka-input ${props.className}`} 
+        <InputRoot 
+            className={`tui-input ${props.className}`} 
             placeholder={props.placeholder} 
             {...props}
         />

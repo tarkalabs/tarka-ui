@@ -3,14 +3,14 @@ import { FormHelperText, FormHelperTextProps as FormHelperTextUnstyledProps} fro
 import { styled } from "@mui/system";
 import { setUpTokens } from "@/utils/ThemeParse";
 
-interface FrameProps {
+interface RootProps {
 
 }
 
-export type FormHelperTextProps = FrameProps & FormHelperTextUnstyledProps;
+export type FormHelperTextProps = RootProps & FormHelperTextUnstyledProps;
 
-const FormHelperTextFrame = {
-    
+const FormHelperTextRoot = {
+
 };
 
 const FormHelperTextComponent: React.FC<FormHelperTextProps> = function ({ ...props }: FormHelperTextProps) {

@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 import { setUpTokens } from "@/utils/ThemeParse";
 import { buttonSize6, buttonSize7, buttonSize8 } from "@/assets/fonts/fonts";
 
-interface FrameProps {
+interface RootProps {
     size: "large" | "regular" | "small" | "XS";
     colortype: "primary" | "secondary" | "outlined" | "ghost";
     startIcon?: ReactNode;
@@ -14,9 +14,9 @@ interface FrameProps {
     disableHover?: boolean;
 }
 
-export type ButtonProps = FrameProps & ButtonUnstyledProps;
+export type ButtonProps = RootProps & ButtonUnstyledProps;
 
-const ButtonFrame = styled(ButtonUnstyled)`
+const ButtonRoot = styled(ButtonUnstyled)`
     padding: 0;
     cursor: pointer;
     border: none;
@@ -185,13 +185,13 @@ const ButtonComponent: React.FC<ButtonProps> = function ({
     } ${disableHover ? "disableHover" : ""}`;
 
     return (
-        <ButtonFrame className={`tarka-button ${classes}`} {...props}>
+        <ButtonRoot className={`tui-button ${classes}`} {...props}>
             {startIcon && (
                 <div className="start-icon-container"> {startIcon} </div>
             )}
             <div className="text-container">{props.children}</div>
             {endIcon && <div className="end-icon-container"> {endIcon}</div>}
-        </ButtonFrame>
+        </ButtonRoot>
     );
 };
 

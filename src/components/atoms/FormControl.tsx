@@ -3,13 +3,13 @@ import { FormControlUnstyled, FormControlUnstyledProps} from "@mui/base";
 import { styled } from "@mui/system";
 import { setUpTokens } from "@/utils/ThemeParse";
 
-interface FrameProps {
+interface RootProps {
 
 }
 
-export type FormControlProps = FrameProps & FormControlUnstyledProps;
+export type FormControlProps = RootProps & FormControlUnstyledProps;
 
-const FormControlFrame = styled(FormControlUnstyled)`
+const FormControlRoot = styled(FormControlUnstyled)`
 
 `;
 
@@ -26,8 +26,8 @@ const FormControlComponent: React.FC<FormControlProps> = function ({ ...props }:
     ]);
 
     return (
-        <FormControlFrame 
-            className={`tarka-form-control ${props.className}`} 
+        <FormControlRoot 
+            className={`tui-form-control ${props.className}`} 
             {...props}
         />
     );
