@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import {ButtonUnstyled, ButtonUnstyledProps as MUIProps} from '@mui/base';
 import {styled} from '@mui/system';
-import { setUpTokens } from "../utils/ThemeParse";
+import { setUpTokens } from "@/utils/ThemeParse";
 
 
 interface TarkaProps{

@@ -1,6 +1,6 @@
 import { styled } from "@mui/system";
 import React, { ReactNode } from "react";
-import { setUpTokens } from "../utils/ThemeParse";
+import { setUpTokens } from "@/utils/ThemeParse";
 
 
 setUpTokens(['surface/on-surface']);

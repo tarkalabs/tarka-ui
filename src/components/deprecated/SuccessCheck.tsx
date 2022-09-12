@@ -1,5 +1,5 @@
 import React from "react";
-import { setUpTokens } from "../utils/ThemeParse";
+import { setUpTokens } from "@/utils/ThemeParse";
 import { ReactComponent as CheckmarkIcon } from '@icons/checkmark.svg';
 import { styled } from "@mui/system";
 setUpTokens(['success/success', 'success/on-success']);
