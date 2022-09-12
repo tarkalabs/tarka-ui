@@ -1,7 +1,6 @@
 import React from "react";
 import { InputUnstyled, InputUnstyledProps } from "@mui/base";
 import { styled } from "@mui/system";
-import { ReactNode } from "react";
 import { setUpTokens } from "@/utils/ThemeParse";
 import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 import PropTypes from 'prop-types';
@@ -45,7 +44,7 @@ const InputFrame = styled(InputUnstyled)`
     }
 `;
 
-const InputComponent: React.FC<InputProps> = function ({ ...props }) {
+const InputComponent: React.FC<InputProps> = function ({ ...props }: InputProps) {
     setUpTokens([
         "input/input-background",
         "input/text-dim",
@@ -59,7 +58,7 @@ const InputComponent: React.FC<InputProps> = function ({ ...props }) {
 
     return (
         <InputFrame 
-            className={`tarka-input-field ${props.className}`} 
+            className={`tarka-input ${props.className}`} 
             placeholder={props.placeholder} 
             {...props}
         />
