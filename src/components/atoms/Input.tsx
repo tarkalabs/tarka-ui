@@ -1,10 +1,10 @@
 import React from "react";
-import InputUnstyled from "@mui/base/InputUnstyled";
-import { InputUnstyledProps } from "@mui/base/InputUnstyled";
+import { InputUnstyled, InputUnstyledProps } from "@mui/base";
 import { styled } from "@mui/system";
 import { ReactNode } from "react";
 import { setUpTokens } from "@/utils/ThemeParse";
 import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
+import PropTypes from 'prop-types';
 
 interface FrameProps {
 
@@ -13,12 +13,6 @@ interface FrameProps {
 export type InputProps = FrameProps & InputUnstyledProps;
 
 const InputFrame = styled(InputUnstyled)`
-    input {
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-    }
-
     input[type="text"] {
         background-color: var(--input-input-background);
         border-width: 0 0 2px 0;
@@ -70,6 +64,15 @@ const InputComponent: React.FC<InputProps> = function ({ ...props }) {
             {...props}
         />
     );
+};
+
+InputComponent.propTypes = {
+    /**
+     * 
+     * @default false
+     * 
+     * */
+    disabled: PropTypes.bool,
 };
 
 InputComponent.defaultProps = {

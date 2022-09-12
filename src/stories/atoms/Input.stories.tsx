@@ -25,5 +25,5 @@ const Template: Story<InputProps> = (args: InputProps) => (
     </form>
 );
 
-export const Default = Template.bind({});
+export const Default: Story<InputProps> = Template.bind({});
 

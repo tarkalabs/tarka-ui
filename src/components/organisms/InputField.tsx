@@ -1,8 +1,6 @@
 import React from "react";
-import InputUnstyled from "@mui/base/InputUnstyled";
-import { InputUnstyledProps } from "@mui/base/InputUnstyled";
+import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { styled } from "@mui/system";
-import { ReactNode } from "react";
 import { setUpTokens } from "@/utils/ThemeParse";
 import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 
@@ -10,9 +8,9 @@ interface FrameProps {
 
 }
 
-export type InputFieldProps = FrameProps & InputUnstyledProps;
+export type InputFieldProps = FrameProps & TextFieldProps;
 
-const InputFieldFrame = styled(InputUnstyled)`
+const InputFieldFrame = styled(TextField)`
 
 `;
 
@@ -31,6 +29,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }) {
     return (
         <InputFieldFrame 
             className='tarka-input-field'
+            { ...props }
         />
     );
 };
