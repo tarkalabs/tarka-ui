@@ -1,6 +1,7 @@
 import { ComponentMeta, Story } from '@storybook/react';
 import InputField, {InputFieldProps} from '@/components/organisms/InputField';
 import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 export default {
     title: 'Components/Organisms/InputField',
@@ -25,3 +26,10 @@ const Template: Story<InputFieldProps> = (args: InputFieldProps) => (
 );
 
 export const Default: Story<InputFieldProps> = Template.bind({});
+
+export const WithIcon: Story<InputFieldProps> = Template.bind({});
+WithIcon.args = {
+    InputProps: {
+        startAdornment: <CheckCircleOutlineIcon sx={{width: '20px'}}/>,
+    },
+};
