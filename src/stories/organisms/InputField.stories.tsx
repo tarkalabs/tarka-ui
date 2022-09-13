@@ -33,3 +33,8 @@ WithIcon.args = {
         startAdornment: <CheckCircleOutlineIcon sx={{width: '20px'}}/>,
     },
 };
+
+export const CreditCard: Story<InputFieldProps> = Template.bind({});
+CreditCard.args = {
+    type: 'creditcard',
+};

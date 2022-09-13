@@ -3,8 +3,11 @@ import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { setUpTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
 import { bodySize5 } from "@/assets/fonts/fonts";
+import { PaymentInputsWrapper, usePaymentInputs } from 'react-payment-inputs';
 
-interface RootProps {}
+interface RootProps {
+    type: 'creditcard' | TextFieldProps['type'];
+}
 
 export type InputFieldProps = RootProps & TextFieldProps;
 
@@ -43,11 +46,14 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }: I
         "utility/disabled-content",
     ]);
 
+    const { getCardNumberProps } = usePaymentInputs();
+
     return (
         <InputFieldRoot
             className={`tui-input-field ${props.classes}`}
             InputProps={ {sx: InputStyles, ...props.InputProps} }
             variant='standard'
+            inputProps={props.type === 'creditcard' ? getCardNumberProps({}) : props.inputProps}
         />
     );
 };
