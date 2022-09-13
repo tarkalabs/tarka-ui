@@ -1,5 +1,5 @@
 import React from "react";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
+import InputFieldRoot, { TextFieldProps } from "@mui/material/TextField";
 import { setUpTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
 
@@ -8,12 +8,17 @@ interface RootProps {}
 export type InputFieldProps = RootProps & TextFieldProps;
 
 const InputStyles = {
-        background-color: var(--input-input-background),
-        border-width: 0 0 2px 0,
-        border-radius: 8px,
-        color: var(--input-text-dim),
-        padding: 17px 16px,
-        outline: none,
+    backgroundColor: 'var(--input-input-background)',
+    borderWidth: '0 0 2px 0',
+    borderRadius: '8px',
+    color: 'var(--input-text-dim)',
+    outline: 'none',
+    '&:before': {
+        borderRadius: '8px',
+    },
+    '&:after': {
+        borderRadius: '8px',
+    },
 }
 
 const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }) {
@@ -29,7 +34,11 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }) {
     ]);
 
     return (
-        <InputFieldRoot></InputFieldRoot>;
+        <InputFieldRoot
+            className={`tui-input-field ${props.classes}`}
+            InputProps={{sx: InputStyles}}
+            variant='standard'
+        />
     );
 };
 
