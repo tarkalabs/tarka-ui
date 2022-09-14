@@ -34,6 +34,20 @@ WithIcon.args = {
     },
 };
 
+export const Disabled: Story<InputFieldProps> = Template.bind({});
+Disabled.args = {
+    InputProps: {
+        disabled: true,
+    }
+};
+
+export const Error: Story<InputFieldProps> = Template.bind({});
+Error.args = {
+    InputProps: {
+        error: true,
+    }
+};
+
 export const CreditCard: Story<InputFieldProps> = Template.bind({});
 CreditCard.args = {
     type: 'creditcard',
