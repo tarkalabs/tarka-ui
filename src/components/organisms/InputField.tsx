@@ -16,6 +16,7 @@ const InputFieldRoot = styled(TextField)`
 `;
 
 const InputStyles = {
+    position: 'relative',
     backgroundColor: 'var(--input-input-background)',
     borderWidth: '0 0 2px 0',
     borderRadius: '8px',
@@ -25,9 +26,11 @@ const InputStyles = {
     '&:before': {
         borderColor: 'transparent',
         borderRadius: '8px',
+        height: '100%',
     },
     '&:after': {
-        
+        borderRadius: '8px',
+        height: '100%',
     },
     '.MuiInput-input': {
         padding: '0 0 0 10px',
