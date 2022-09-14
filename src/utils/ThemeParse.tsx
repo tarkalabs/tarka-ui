@@ -55,6 +55,7 @@ export function getJSONValue(stringIn:string){
 export function setUpTokens(tokenNames:string[]){
     let float:any = document.querySelector(':root');
     for(let token of tokenNames){
+        console.log(`key: ${token} value: ${getJSONValue(token)}`);
         float.style.setProperty(`--${token.replaceAll('/','-')}`,getJSONValue(token));
     }
 }

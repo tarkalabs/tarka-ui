@@ -6,7 +6,8 @@ import { bodySize5 } from "@/assets/fonts/fonts";
 import { PaymentInputsWrapper, usePaymentInputs } from 'react-payment-inputs';
 
 interface RootProps {
-    type: 'creditcard' | TextFieldProps['type'];
+    palette?: 'default' | 'alt'
+    type?: 'creditcard' | TextFieldProps['type'];
 }
 
 export type InputFieldProps = RootProps & TextFieldProps;
@@ -64,6 +65,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({ ...props }: I
 InputFieldComponent.defaultProps = {
     label: 'Label',
     helperText: 'Helper/hint text goes here',
+    palette: 'default',
 };
 
 export default InputFieldComponent;
