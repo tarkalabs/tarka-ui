@@ -1,9 +1,9 @@
 import React from "react";
 import { BadgeUnstyled, badgeUnstyledClasses, BadgeUnstyledProps} from "@mui/base";
 import { styled } from "@mui/system";
-import { setUpTokens } from "@/utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 
-setUpTokens(["error/error", "error/on-error", "button/size-7"]);
+injectTokens(["error/error", "error/on-error", "button/size-7"]);
 
 interface RootProps {
   size?: "small" | "regular" | "large";

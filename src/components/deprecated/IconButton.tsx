@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import {ButtonUnstyled, ButtonUnstyledProps as MUIProps} from '@mui/base';
 import {styled} from '@mui/system';
-import { setUpTokens } from "@/utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 import Badge from '@/components/atoms/Badge';
 
 
@@ -100,7 +100,7 @@ const TarkaIconButton = styled(ButtonUnstyled)`
 
 const IconButton:React.FC<IconButtonProps> = function({size = 'regular',colortype ='primary', badgeIn,...props}){
 
-	setUpTokens(['surface/on-surface', 'utility/disabled-content', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
+	injectTokens(['surface/on-surface', 'utility/disabled-content', 'primary/primary', 'primary/on-primary', 'primary/primary-hover', 'secondary/secondary',
         'secondary/on-secondary', 'secondary/secondary-hover']);
 
 

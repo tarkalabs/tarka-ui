@@ -3,7 +3,7 @@ import ButtonUnstyled from "@mui/base/ButtonUnstyled";
 import { ButtonUnstyledProps } from "@mui/base/ButtonUnstyled";
 import { styled } from "@mui/system";
 import { ReactNode } from "react";
-import { setUpTokens } from "@/utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 import { buttonSize6, buttonSize7, buttonSize8 } from "@/assets/fonts/fonts";
 
 interface RootProps {
@@ -169,7 +169,7 @@ const ButtonComponent: React.FC<ButtonProps> = function ({
     disableHover = false,
     ...props
 }) {
-    setUpTokens([
+    injectTokens([
         "surface/on-surface",
         "surface/surface-hover",
         "primary/primary",

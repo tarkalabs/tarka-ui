@@ -1,8 +1,9 @@
 import React from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
-import { setUpTokens } from "@/utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
 import { bodySize5 } from "@/assets/fonts/fonts";
+import { SxProps, Theme } from "@mui/material/styles";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
 
 interface RootProps {
@@ -29,6 +30,9 @@ const inputStyles = [
             borderColor: "transparent",
             borderRadius: "8px",
             height: "100%",
+            "&:hover": {
+                borderColor: "var(--utility-disabled-content)",
+            }
         },
         "&:after": {
             borderRadius: "8px",
@@ -48,12 +52,12 @@ const inputStyles = [
             paddingRight: "10px",
         },
     },
-] as const;
+] as SxProps<Theme>;
 
 const InputFieldComponent: React.FC<InputFieldProps> = function ({
     ...props
 }: InputFieldProps) {
-    setUpTokens([
+    injectTokens([
         "input/input-background",
         "input/text-dim",
         "primary/primary",
