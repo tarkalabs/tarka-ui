@@ -80,7 +80,7 @@ const BadgeRoot = styled(BadgeUnstyled)`
 
 const BadgeComponent: React.FC<BadgeProps> = function ({ size, ...props }: BadgeProps) {
     return (
-        <BadgeRoot className={`tui-badge ${size}`} {...props} />
+        <BadgeRoot className={`TuiBadge ${size}`} {...props} />
     );
 };
 

@@ -185,7 +185,7 @@ const ButtonComponent: React.FC<ButtonProps> = function ({
     } ${disableHover ? "disableHover" : ""}`;
 
     return (
-        <ButtonRoot className={`tui-button ${classes}`} {...props}>
+        <ButtonRoot className={`TuiButton ${classes}`} {...props}>
             {startIcon && (
                 <div className="start-icon-container"> {startIcon} </div>
             )}

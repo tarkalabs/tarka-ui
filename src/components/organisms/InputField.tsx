@@ -5,16 +5,18 @@ import { styled } from "@mui/system";
 import { bodySize5 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material/styles";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
+import { NoEncryption } from "@mui/icons-material";
 
 interface RootProps {
     palette?: "default" | "alt";
     type?: "creditcard" | TextFieldProps["type"];
+    variant?: "standard";
 }
 
-export type InputFieldProps = RootProps & TextFieldProps;
+export type InputFieldProps = TextFieldProps & RootProps;
 
 const InputFieldRoot = styled(TextField)`
-    ${bodySize5}
+    ${bodySize5};
 `;
 
 const inputStyles = [
@@ -27,34 +29,42 @@ const inputStyles = [
         outline: "none",
         padding: "17px 16px",
         "&:before": {
-            borderColor: "transparent",
-            borderRadius: "8px",
-            height: "100%",
+            position: "absolute",
+            border: "none",
+            borderRadius: "0 0 8px 8px",
+            height: "2px",
+            backgroundColor: "var(--utility-disabled-content)",
+
             "&:hover": {
                 borderColor: "var(--utility-disabled-content)",
-            }
+            },
         },
         "&:after": {
-            borderRadius: "8px",
-            height: "100%",
+            content: "none",
         },
         ".MuiInput-input": {
             padding: "0",
         },
+        ".MuiInputBase-root": {
+            height: "calc(100% - 2px)"
+        }
     },
-    (props: InputFieldProps) => props.InputProps?.startAdornment && {
-        ".MuiInput-input": {
-            paddingLeft: "10px",
+    (props: InputFieldProps) =>
+        props.InputProps?.startAdornment && {
+            ".MuiInput-input": {
+                paddingLeft: "10px",
+            },
         },
-    },
-    (props: InputFieldProps) => props.InputProps?.endAdornment && {
-        ".MuiInput-input": {
-            paddingRight: "10px",
+    (props: InputFieldProps) =>
+        props.InputProps?.endAdornment && {
+            ".MuiInput-input": {
+                paddingRight: "10px",
+            },
         },
-    },
 ] as SxProps<Theme>;
 
 const InputFieldComponent: React.FC<InputFieldProps> = function ({
+    palette,
     ...props
 }: InputFieldProps) {
     injectTokens([
@@ -72,8 +82,13 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
 
     return (
         <InputFieldRoot
-            className={`tui-input-field ${props.classes}`}
-            InputProps={{ sx: inputStyles, ...props.InputProps }}
+            className={`TuiInputField ${props.classes}`}
+            children={<div className="TuiInputField-underline"></div>}
+            InputProps={{
+                placeholder: "Label",
+                sx: inputStyles,
+                ...props.InputProps,
+            }}
             variant="standard"
             inputProps={
                 props.type === "creditcard"
@@ -86,7 +101,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
 
 InputFieldComponent.defaultProps = {
     label: "Label",
-    placeholder: "Label",
     helperText: "Helper/hint text goes here",
     palette: "default",
 };

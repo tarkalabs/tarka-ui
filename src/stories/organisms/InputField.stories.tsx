@@ -44,6 +44,7 @@ export const Default: Story<InputFieldProps> = Template.bind({});
 export const WithIcon: Story<InputFieldProps> = Template.bind({});
 WithIcon.args = {
     InputProps: {
+        placeholder: 'With icon',
         startAdornment: <CheckCircleOutlineIcon sx={{width: '20px'}}/>,
     },
 };
@@ -51,6 +52,7 @@ WithIcon.args = {
 export const Disabled: Story<InputFieldProps> = Template.bind({});
 Disabled.args = {
     InputProps: {
+        placeholder: 'Disabled',
         disabled: true,
     }
 };
@@ -59,6 +61,14 @@ export const Error: Story<InputFieldProps> = Template.bind({});
 Error.args = {
     InputProps: {
         error: true,
+    }
+};
+
+export const Required: Story<InputFieldProps> = Template.bind({});
+Required.args = {
+    InputProps: {
+        placeholder: 'Required',
+        required: true,
     }
 };
 
