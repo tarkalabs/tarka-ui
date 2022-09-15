@@ -1,16 +1,11 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+const defaultTheme = createTheme({
     palette: {
         primary: {
             main: "#0000D6",
             light: "#0000F0",
             contrastText: "#F5F5FF",
-        },
-        'primary-alt': {
-            main: "#D5D5F6",
-            light: "#C4C4F3",
-            contrastText: "#000066",
         },
         secondary: {
             main: "#4D80B3",
@@ -57,7 +52,11 @@ const theme = createTheme({
         input: {
             background: "#EAEAF0",
             text: "#1A1A1F",
-            "text-dim": "hsla(240, 9%, 11%, 0.70)",
+            textDim: "hsla(240, 9%, 11%, 0.70)",
         },
     },
+});
+
+const altTheme = createTheme({
+
 });
