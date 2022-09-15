@@ -12,6 +12,20 @@ export default {
                 <StoryTemplate
                     componentName="InputField"
                     importPath="@tarkaui/organisms"
+                    typeDescs={[
+                        {
+                            name: `palette`,
+                            type: `'default' | 'alt'`,
+                            default: `'default'`,
+                            desc: `The color palette to use.`,
+                        },
+                        {
+                            name: `type`,
+                            type: `'creditcard'`,
+                            default: `'text'`,
+                            desc: `The type of input.`,
+                        }
+                    ]}
                     muiRef="https://mui.com/base/api/input-unstyled/"
                 />
             ),

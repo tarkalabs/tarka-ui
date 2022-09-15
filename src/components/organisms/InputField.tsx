@@ -16,6 +16,40 @@ const InputFieldRoot = styled(TextField)`
     ${bodySize5}
 `;
 
+const inputStyles = [
+    {
+        position: "relative",
+        backgroundColor: "var(--input-input-background)",
+        borderWidth: "0 0 2px 0",
+        borderRadius: "8px",
+        color: "var(--input-text-dim)",
+        outline: "none",
+        padding: "17px 16px",
+        "&:before": {
+            borderColor: "transparent",
+            borderRadius: "8px",
+            height: "100%",
+        },
+        "&:after": {
+            borderRadius: "8px",
+            height: "100%",
+        },
+        ".MuiInput-input": {
+            padding: "0",
+        },
+    },
+    (props: InputFieldProps) => props.InputProps?.startAdornment && {
+        ".MuiInput-input": {
+            paddingLeft: "10px",
+        },
+    },
+    (props: InputFieldProps) => props.InputProps?.endAdornment && {
+        ".MuiInput-input": {
+            paddingRight: "10px",
+        },
+    },
+] as const;
+
 const InputFieldComponent: React.FC<InputFieldProps> = function ({
     ...props
 }: InputFieldProps) {
@@ -29,40 +63,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         "utility/disabled-background",
         "utility/disabled-content",
     ]);
-
-    const inputStyles = [
-        {
-            position: "relative",
-            backgroundColor: "var(--input-input-background)",
-            borderWidth: "0 0 2px 0",
-            borderRadius: "8px",
-            color: "var(--input-text-dim)",
-            outline: "none",
-            padding: "17px 16px",
-            "&:before": {
-                borderColor: "transparent",
-                borderRadius: "8px",
-                height: "100%",
-            },
-            "&:after": {
-                borderRadius: "8px",
-                height: "100%",
-            },
-            ".MuiInput-input": {
-                padding: "0",
-            },
-        },
-        props.InputProps?.startAdornment && {
-            ".MuiInput-input": {
-                paddingLeft: "10px",
-            },
-        },
-        props.InputProps?.endAdornment && {
-            ".MuiInput-input": {
-                paddingRight: "10px",
-            },
-        },
-    ] as const;
 
     const { getCardNumberProps } = usePaymentInputs();
 
