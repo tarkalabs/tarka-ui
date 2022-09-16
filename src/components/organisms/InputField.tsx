@@ -5,7 +5,6 @@ import { styled } from "@mui/system";
 import { bodySize5 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material/styles";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
-import { NoEncryption } from "@mui/icons-material";
 
 interface RootProps {
     palette?: "default" | "alt";
