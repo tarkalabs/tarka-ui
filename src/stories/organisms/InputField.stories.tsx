@@ -67,23 +67,46 @@ Disabled.args = {
 
 export const Error: Story<InputFieldProps> = Template.bind({});
 Error.args = {
-    InputProps: {
-        error: true,
-    }
+    placeholder: "Error",
+    error: true,
+};
+
+export const ErrorHelperText: Story<InputFieldProps> = Template.bind({});
+ErrorHelperText.args = {
+    error: true,
+    placeholder: "Error",
+    helperText: "Error helper text",
 };
 
 export const Success: Story<InputFieldProps> = Template.bind({});
 Success.args = {
+    placeholder: "Success",
     success: true,
+};
+
+export const SuccessHelperText: Story<InputFieldProps> = Template.bind({});
+SuccessHelperText.args = {
+    success: true,
+    placeholder: "Success",
+    helperText: "Success helper text",
 };
 
 export const Warning: Story<InputFieldProps> = Template.bind({});
 Warning.args = {
+    placeholder: "Warning",
     warning: true,
+};
+
+export const WarningHelperText: Story<InputFieldProps> = Template.bind({});
+WarningHelperText.args = {
+    warning: true,
+    placeholder: "Warning",
+    helperText: "Warning helper text",
 };
 
 export const Required: Story<InputFieldProps> = Template.bind({});
 Required.args = {
+    placeholder: "Required",
     InputProps: {
         required: true,
     }

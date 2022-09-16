@@ -2,9 +2,10 @@ import React from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
-import { bodySize5 } from "@/assets/fonts/fonts";
+import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material/styles";
 import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -55,29 +56,47 @@ const InputFieldRoot = styled(TextField)`
                 border-bottom: 2px solid var(--utility-disabled-content);
             }
         }
+    }
 
-        &.Mui-error {
-            &:after,
-            &:before {
-                border-bottom-color: var(--error-error);
-            }
+    .MuiFormHelperText-root {
+        ${bodySize7};
+        margin-top: 4px;
+        padding: 0 16px;
+        color: var(--input-text);
+    }
+
+    .Mui-error {
+        &.MuiInput-root:after,
+        &.MuiInput-root:before {
+            border-bottom-color: var(--error-error);
         }
-
-        &.Tui-success {
-            &:after,
-            &:before {
-                border-bottom-color: var(--success-success);
-            }
+        &.MuiFormHelperText-root {
+            color: var(--input-text);
         }
+    }
 
-        &.Tui-warning {
-            &:after,
-            &:before {
-                border-bottom-color: var(--warning-warning);
-            }
+    .Tui-success {
+        &.MuiInput-root:after,
+        &.MuiInput-root:before {
+            border-bottom-color: var(--success-success);
         }
+        &.MuiFormHelperText-root {
 
-        &.Mui-disabled {
+        }
+    }
+
+    .Tui-warning {
+        &.MuiInput-root:after,
+        &.MuiInput-root:before {
+            border-bottom-color: var(--warning-warning);
+        }
+        &.MuiFormHelperText-root {
+
+        }
+    }
+
+    .Mui-disabled {
+        &.MuiInput-root {
             background-color: var(--utility-disabled-background);
 
             .MuiInput-input {
@@ -91,7 +110,7 @@ const InputFieldRoot = styled(TextField)`
 `;
 
 const InputFieldComponent: React.FC<InputFieldProps> = function ({
-    palette,
+    palette = "default",
     warning,
     success,
     variant = "standard",
@@ -126,8 +145,12 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     return (
         <InputFieldRoot
             className={`TuiInputField-root ${props.classes}`}
+            FormHelperTextProps={{
+                className: `${warning ? "Tui-warning" : ""} ${
+                    success ? "Tui-success" : ""
+                }`,
+            }}
             InputProps={{
-                placeholder: "Label",
                 className: `${warning ? "Tui-warning" : ""} ${
                     success ? "Tui-success" : ""
                 }`,
@@ -140,14 +163,13 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
                     ? getCardNumberProps({})
                     : props.inputProps
             }
+            {...props}
         />
     );
 };
 
 InputFieldComponent.defaultProps = {
-    label: "Label",
-    helperText: "Helper/hint text goes here",
-    palette: "default",
+    placeholder: "Placeholder",
 };
 
 export default InputFieldComponent;
