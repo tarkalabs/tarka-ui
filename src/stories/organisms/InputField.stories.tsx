@@ -21,9 +21,18 @@ export default {
                         },
                         {
                             name: `type`,
-                            type: `'creditcard'`,
+                            type: `'creditcard' | Valid HTML5 input type`,
                             default: `'text'`,
                             desc: `The type of input.`,
+                        },
+                        {
+                            name: `variant`,
+                            type: `'standard'`,
+                            default: `'standard'`,
+                            desc: `The variant to use.`,
+                        },
+                        {
+
                         }
                     ]}
                     muiRef="https://mui.com/base/api/input-unstyled/"

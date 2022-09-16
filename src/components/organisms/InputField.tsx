@@ -11,16 +11,88 @@ interface RootProps {
     palette?: "default" | "alt";
     type?: "creditcard" | TextFieldProps["type"];
     variant?: "standard";
+    warning?: boolean;
+    success?: boolean;
 }
 
-export type InputFieldProps = TextFieldProps & RootProps;
+export type InputFieldProps = Omit<TextFieldProps, "variant" | "type"> &
+    RootProps;
 
 const InputFieldRoot = styled(TextField)`
-    ${bodySize5};
+    .MuiInput-root {
+        position: relative;
+        background-color: var(--input-input-background);
+        border-radius: 8px;
+        border: 0 0 2px 0 solid transparent;
+        color: var(--input-text-dim);
+        outline: none;
+        padding: 17px 16px;
+        overflow: hidden;
+
+        &:after {
+            border-bottom-color: var(--primary-primary);
+        }
+
+        &:before {
+            position: absolute;
+            border-bottom: 2px solid transparent;
+            border-radius: 0 0 8px 8px;
+            height: 2px;
+        }
+
+        &.Mui-error {
+            &:after {
+                border-bottom-color: var(--error-error);
+            }
+        }
+
+        &.Tui-success {
+            &:after {
+                border-bottom-color: var(--success-success);
+            }
+        }
+
+        &.Tui-warning {
+            &:after {
+                border-bottom-color: var(--warning-warning);
+            }
+        }
+
+        &.Mui-disabled {
+            background-color: var(--utility-disabled-background);
+
+            .MuiInput-input {
+                &::placeholder {
+                    opacity: 0.38;
+                    color: var(--utility-disabled-content);
+                }
+            }
+        }
+
+        .MuiInput-input {
+            padding: 0;
+            ${bodySize5};
+            color: var(--input-text);
+
+            &::placeholder {
+                opacity: 0.70;
+                color: var(--input-text-dim);
+            }
+        }
+    }
+
+    .MuiInput-root:not(.Mui-disabled) {
+        &:hover:before {
+            border-bottom: 2px solid var(--utility-disabled-content);
+        }
+    }
 `;
 
 const InputFieldComponent: React.FC<InputFieldProps> = function ({
     palette,
+    warning,
+    success,
+    variant = "standard",
     ...props
 }: InputFieldProps) {
     injectTokens([
@@ -34,49 +106,17 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         "utility/disabled-content",
     ]);
 
-    const inputStyles = [
-        {
-            position: "relative",
-            backgroundColor: "var(--input-input-background)",
-            borderWidth: "0 0 2px 0",
-            borderRadius: "8px",
-            borderColor: "transparent",
-            color: "var(--input-text-dim)",
-            outline: "none",
-            padding: "17px 16px",
-            overflow: "hidden",
-            "&:before": {
-                position: "absolute",
-                borderBottom: "2px solid transparent",
-                borderRadius: "0 0 8px 8px",
-                height: "2px", 
-    
-                "&:hover &:not(.Mui-disabled)": {
-                    borderBottom: "2px solid red"
-                },
-            },
-            "&:after": {
-                
-            },
+    const inputConStyles = [
+        props.InputProps?.startAdornment && {
             ".MuiInput-input": {
-                padding: "0",
-                fontFamily: 'inherit',
-                fontStyle: 'inherit',
-                fontSize: 'inherit',
-                lineHeight: 'inherit',
-                color: 'inherit',
+                marginLeft: "10px",
             },
         },
-        props.InputProps?.startAdornment && {
-                ".MuiInput-input": {
-                    paddingLeft: "10px",
-                },
-            },
         props.InputProps?.endAdornment && {
-                ".MuiInput-input": {
-                    paddingRight: "10px",
-                },
+            ".MuiInput-input": {
+                marginRight: "10px",
             },
+        },
     ] as SxProps<Theme>;
 
     const { getCardNumberProps } = usePaymentInputs();
@@ -86,10 +126,13 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
             className={`TuiInputField-root ${props.classes}`}
             InputProps={{
                 placeholder: "Label",
-                sx: inputStyles,
+                className: `${warning ? "Tui-warning" : ""} ${
+                    success ? "Tui-success" : ""
+                }`,
+                sx: inputConStyles,
                 ...props.InputProps,
             }}
-            variant="standard"
+            variant={variant}
             inputProps={
                 props.type === "creditcard"
                     ? getCardNumberProps({})

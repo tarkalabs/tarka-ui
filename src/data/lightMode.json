@@ -197,7 +197,7 @@
       "type": "color"
     },
     "disabled-content": {
-      "value": "hsla({hue.primary}, 9%, 11%, 0.38)",
+      "value": "#949497",
       "description": "Color for disabled content, like text inside a disabled field.",
       "type": "color"
     },
@@ -229,7 +229,7 @@
       "type": "color"
     },
     "text-dim": {
-      "value": "hsla({hue.primary}, 9%, 11%, 0.70)",
+      "value": "#59595E",
       "description": "Dimmed text color for less contrast. Input field labels, and lower-contrast titles.",
       "type": "color"
     }
