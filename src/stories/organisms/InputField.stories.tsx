@@ -72,10 +72,19 @@ Error.args = {
     }
 };
 
+export const Success: Story<InputFieldProps> = Template.bind({});
+Success.args = {
+    success: true,
+};
+
+export const Warning: Story<InputFieldProps> = Template.bind({});
+Warning.args = {
+    warning: true,
+};
+
 export const Required: Story<InputFieldProps> = Template.bind({});
 Required.args = {
     InputProps: {
-        placeholder: 'Required',
         required: true,
     }
 };

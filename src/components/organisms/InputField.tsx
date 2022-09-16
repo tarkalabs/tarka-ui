@@ -40,20 +40,40 @@ const InputFieldRoot = styled(TextField)`
             height: 2px;
         }
 
+        .MuiInput-input {
+            padding: 0;
+            ${bodySize5};
+            color: var(--input-text);
+
+            &::placeholder {
+                opacity: 0.7;
+                color: var(--input-text-dim);
+            }
+        }
+
+        &:not(.Mui-disabled, .Mui-error, .Tui-success, .Tui-warning) {
+            &:hover:before {
+                border-bottom: 2px solid var(--utility-disabled-content);
+            }
+        }
+
         &.Mui-error {
-            &:after {
+            &:after,
+            &:before {
                 border-bottom-color: var(--error-error);
             }
         }
 
         &.Tui-success {
-            &:after {
+            &:after,
+            &:before {
                 border-bottom-color: var(--success-success);
             }
         }
 
         &.Tui-warning {
-            &:after {
+            &:after,
+            &:before {
                 border-bottom-color: var(--warning-warning);
             }
         }
@@ -67,23 +87,6 @@ const InputFieldRoot = styled(TextField)`
                     color: var(--utility-disabled-content);
                 }
             }
-        }
-
-        .MuiInput-input {
-            padding: 0;
-            ${bodySize5};
-            color: var(--input-text);
-
-            &::placeholder {
-                opacity: 0.70;
-                color: var(--input-text-dim);
-            }
-        }
-    }
-
-    .MuiInput-root:not(.Mui-disabled) {
-        &:hover:before {
-            border-bottom: 2px solid var(--utility-disabled-content);
         }
     }
 `;
