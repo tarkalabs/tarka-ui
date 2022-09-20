@@ -51,7 +51,7 @@ const InputFieldRoot = styled(TextField)`
             }
         }
 
-        &:not(.Mui-disabled, .Mui-error, .Tui-success, .Tui-warning) {
+        &:not(.Mui-disabled)&:not(.Mui-error)&:not(.Tui-success)&:not(.Tui-warning) {
             &:hover:before {
                 border-bottom: 2px solid var(--utility-disabled-content);
             }
