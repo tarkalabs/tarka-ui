@@ -5,7 +5,9 @@ import { styled } from "@mui/system";
 import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material/styles";
 import { usePaymentInputs } from "react-payment-inputs";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import SuccessIcon from "@/assets/icons/success.svg";
+import WarningIcon from "@/assets/icons/warning.svg";
+import {reactSvgComponentToMarkupString} from "@/utils/utils.mjs";
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -60,9 +62,18 @@ const InputFieldRoot = styled(TextField)`
 
     .MuiFormHelperText-root {
         ${bodySize7};
+        display: flex;
+        align-items: center;
         margin-top: 4px;
         padding: 0 16px;
         color: var(--input-text);
+
+        &:before {
+            display: inline-block;
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+        }
     }
 
     .Mui-error {
@@ -77,12 +88,21 @@ const InputFieldRoot = styled(TextField)`
         &.MuiInput-root:before {
             border-bottom-color: var(--success-success);
         }
+
+        &.MuiFormHelperText-root:before {
+            content: url(${SuccessIcon}); 
+        }
     }
 
     .Tui-warning {
         &.MuiInput-root:after,
         &.MuiInput-root:before {
             border-bottom-color: var(--warning-warning);
+        }
+
+        &.MuiFormHelperText-root:before {
+            content: url(${WarningIcon}); 
+            width: 12px;
         }
     }
 
