@@ -4,7 +4,7 @@ import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
 import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material/styles";
-import { PaymentInputsWrapper, usePaymentInputs } from "react-payment-inputs";
+import { usePaymentInputs } from "react-payment-inputs";
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 interface RootProps {
@@ -70,9 +70,6 @@ const InputFieldRoot = styled(TextField)`
         &.MuiInput-root:before {
             border-bottom-color: var(--error-error);
         }
-        &.MuiFormHelperText-root {
-            color: var(--input-text);
-        }
     }
 
     .Tui-success {
@@ -80,18 +77,12 @@ const InputFieldRoot = styled(TextField)`
         &.MuiInput-root:before {
             border-bottom-color: var(--success-success);
         }
-        &.MuiFormHelperText-root {
-
-        }
     }
 
     .Tui-warning {
         &.MuiInput-root:after,
         &.MuiInput-root:before {
             border-bottom-color: var(--warning-warning);
-        }
-        &.MuiFormHelperText-root {
-
         }
     }
 
@@ -127,7 +118,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         "utility/disabled-content",
     ]);
 
-    const inputConStyles = [
+    const conditionalStyles = [
         props.InputProps?.startAdornment && {
             ".MuiInput-input": {
                 marginLeft: "10px",
@@ -143,8 +134,8 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     const { getCardNumberProps } = usePaymentInputs();
 
     return (
-        <InputFieldRoot
-            className={`TuiInputField-root ${props.classes}`}
+        <InputFieldRoot sx={conditionalStyles}
+            className={`TuiInputField-root ${props.className}`}
             FormHelperTextProps={{
                 className: `${warning ? "Tui-warning" : ""} ${
                     success ? "Tui-success" : ""
@@ -154,8 +145,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
                 className: `${warning ? "Tui-warning" : ""} ${
                     success ? "Tui-success" : ""
                 }`,
-                sx: inputConStyles,
-                ...props.InputProps,
             }}
             variant={variant}
             inputProps={
