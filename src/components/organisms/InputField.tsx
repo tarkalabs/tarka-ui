@@ -7,7 +7,6 @@ import { SxProps, Theme } from "@mui/material/styles";
 import { usePaymentInputs } from "react-payment-inputs";
 import SuccessIcon from "@/assets/icons/success.svg";
 import WarningIcon from "@/assets/icons/warning.svg";
-import {reactSvgComponentToMarkupString} from "@/utils/utils.mjs";
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -53,7 +52,7 @@ const InputFieldRoot = styled(TextField)`
             }
         }
 
-        &:not(.Mui-disabled)&:not(.Mui-error)&:not(.Tui-success)&:not(.Tui-warning) {
+        &:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning) {
             &:hover:before {
                 border-bottom: 2px solid var(--utility-disabled-content);
             }
@@ -127,17 +126,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     variant = "standard",
     ...props
 }: InputFieldProps) {
-    injectTokens([
-        "input/input-background",
-        "input/text-dim",
-        "primary/primary",
-        "error/error",
-        "warning/warning",
-        "success/success",
-        "utility/disabled-background",
-        "utility/disabled-content",
-    ]);
-
     const conditionalStyles = [
         props.InputProps?.startAdornment && {
             ".MuiInput-input": {
@@ -152,6 +140,17 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     ] as SxProps<Theme>;
 
     const { getCardNumberProps } = usePaymentInputs();
+
+    injectTokens([
+        "input/input-background",
+        "input/text-dim",
+        "primary/primary",
+        "error/error",
+        "warning/warning",
+        "success/success",
+        "utility/disabled-background",
+        "utility/disabled-content",
+    ]);
 
     return (
         <InputFieldRoot sx={conditionalStyles}
