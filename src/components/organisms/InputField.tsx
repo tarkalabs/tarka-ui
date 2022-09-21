@@ -10,14 +10,14 @@ import WarningIcon from "@/assets/icons/warning.svg";
 
 interface RootProps {
     palette?: "default" | "alt";
-    type?: "creditcard" | TextFieldProps["type"];
     variant?: "standard";
     warning?: boolean;
     success?: boolean;
+    compact?: boolean;
 }
 
-export type InputFieldProps = Omit<TextFieldProps, "variant" | "type"> &
-    RootProps;
+export type InputFieldProps = RootProps &
+    Omit<TextFieldProps, "variant">;
 
 const InputFieldRoot = styled(TextField)`
     .MuiInput-root {
@@ -37,7 +37,6 @@ const InputFieldRoot = styled(TextField)`
         &:before {
             position: absolute;
             border-bottom: 2px solid transparent;
-            border-radius: 0 0 8px 8px;
             height: 2px;
         }
 
@@ -80,6 +79,10 @@ const InputFieldRoot = styled(TextField)`
         &.MuiInput-root:before {
             border-bottom-color: var(--error-error);
         }
+
+        &.MuiFormHelperText-root {
+            color: var(--input-text);
+        }
     }
 
     .Tui-success {
@@ -89,7 +92,7 @@ const InputFieldRoot = styled(TextField)`
         }
 
         &.MuiFormHelperText-root:before {
-            content: url(${SuccessIcon}); 
+            content: url(${SuccessIcon});
         }
     }
 
@@ -100,7 +103,7 @@ const InputFieldRoot = styled(TextField)`
         }
 
         &.MuiFormHelperText-root:before {
-            content: url(${WarningIcon}); 
+            content: url(${WarningIcon});
             width: 12px;
         }
     }
@@ -124,6 +127,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     warning,
     success,
     variant = "standard",
+    compact,
     ...props
 }: InputFieldProps) {
     const conditionalStyles = [
@@ -139,8 +143,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         },
     ] as SxProps<Theme>;
 
-    const { getCardNumberProps } = usePaymentInputs();
-
     injectTokens([
         "input/input-background",
         "input/text-dim",
@@ -153,8 +155,11 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     ]);
 
     return (
-        <InputFieldRoot sx={conditionalStyles}
-            className={`TuiInputField-root ${props.className}`}
+        <InputFieldRoot
+            sx={conditionalStyles}
+            className={`TuiInputField-root ${props.className} ${
+                compact ? "compact" : ""
+            }`}
             FormHelperTextProps={{
                 className: `${warning ? "Tui-warning" : ""} ${
                     success ? "Tui-success" : ""
@@ -166,11 +171,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
                 }`,
             }}
             variant={variant}
-            inputProps={
-                props.type === "creditcard"
-                    ? getCardNumberProps({})
-                    : props.inputProps
-            }
             {...props}
         />
     );

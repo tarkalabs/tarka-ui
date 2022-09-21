@@ -20,20 +20,23 @@ export default {
                             desc: `The color palette to use.`,
                         },
                         {
-                            name: `type`,
-                            type: `'creditcard' | Valid HTML5 input type`,
-                            default: `'text'`,
-                            desc: `The type of input.`,
-                        },
-                        {
-                            name: `variant`,
+                            name: `variant*`,
                             type: `'standard'`,
                             default: `'standard'`,
-                            desc: `The variant to use.`,
+                            desc: `The variant to use. Overrides MUI prop of the same name.`,
                         },
                         {
-
-                        }
+                            name: `warning`,
+                            type: `boolean`,
+                            default: `false`,
+                            desc: `If true, the input will indicate a warning.`,
+                        },
+                        {
+                            name: `success`,
+                            type: `boolean`,
+                            default: `false`,
+                            desc: `If true, the input will indicate success.`,
+                        },  
                     ]}
                     muiRef="https://mui.com/base/api/input-unstyled/"
                 />
@@ -114,5 +117,5 @@ Required.args = {
 
 export const CreditCard: Story<InputFieldProps> = Template.bind({});
 CreditCard.args = {
-    type: 'creditcard',
+    type: "creditcard",
 };
