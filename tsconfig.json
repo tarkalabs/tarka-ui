@@ -22,7 +22,7 @@
     "typeRoots": ["./src/@types", "./node_modules/@types"],
   },
   "include": [
-    "src"
+    "./src"
   ],
   "extends": "./tsconfig.paths.json"
 }

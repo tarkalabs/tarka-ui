@@ -4,7 +4,6 @@ import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
 import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material/styles";
-import { usePaymentInputs } from "react-payment-inputs";
 import SuccessIcon from "@/assets/icons/success.svg";
 import WarningIcon from "@/assets/icons/warning.svg";
 
