@@ -6,6 +6,7 @@ import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material/styles";
 import SuccessIcon from "@/assets/icons/success.svg";
 import WarningIcon from "@/assets/icons/warning.svg";
+import ErrorIcon from "@/assets/icons/error.svg";
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -81,6 +82,10 @@ const InputFieldRoot = styled(TextField)`
 
         &.MuiFormHelperText-root {
             color: var(--input-text);
+        }
+
+        &.MuiFormHelperText-root:before {
+            content: url(${ErrorIcon});
         }
     }
 
