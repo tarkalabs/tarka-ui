@@ -53,10 +53,17 @@ const Template: Story<InputFieldProps> = (args: InputFieldProps) => (
 
 export const Default: Story<InputFieldProps> = Template.bind({});
 
-export const WithIcon: Story<InputFieldProps> = Template.bind({});
-WithIcon.args = {
+export const Icon: Story<InputFieldProps> = Template.bind({});
+Icon.args = {
     InputProps: {
         startAdornment: <CheckCircleOutlineIcon sx={{width: '20px'}}/>,
+    },
+};
+
+export const StartText: Story<InputFieldProps> = Template.bind({});
+StartText.args = {
+    InputProps: {
+        startAdornment: '$',
     },
 };
 
