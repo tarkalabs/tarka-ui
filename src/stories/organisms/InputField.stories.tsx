@@ -114,8 +114,3 @@ Required.args = {
         required: true,
     }
 };
-
-export const CreditCard: Story<InputFieldProps> = Template.bind({});
-CreditCard.args = {
-    type: "creditcard",
-};
