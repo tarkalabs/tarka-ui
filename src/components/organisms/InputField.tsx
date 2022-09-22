@@ -51,10 +51,8 @@ const InputFieldRoot = styled(TextField)`
             }
         }
 
-        &:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning) {
-            &:hover:before {
-                border-bottom: 2px solid var(--utility-disabled-content);
-            }
+        &:hover:before:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning) {
+            border-bottom: 2px solid var(--utility-disabled-content);
         }
     }
 
