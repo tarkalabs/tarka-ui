@@ -1,8 +1,8 @@
 import React from "react";
-import { setUpTokens } from "../utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 import { ReactComponent as CheckmarkIcon } from '@icons/checkmark.svg';
 import { styled } from "@mui/system";
-setUpTokens(['success/success', 'success/on-success']);
+injectTokens(['success/success', 'success/on-success']);
 
 const TarkaSuccessCheck = styled('div')`
 .success{
@@ -23,7 +23,7 @@ const TarkaSuccessCheck = styled('div')`
 
 
 const SuccessCheck:React.FC<{}> = function({}){
-    setUpTokens(['success/success', 'success/on-success']);
+    injectTokens(['success/success', 'success/on-success']);
 
     return (
         <TarkaSuccessCheck className="success-check">

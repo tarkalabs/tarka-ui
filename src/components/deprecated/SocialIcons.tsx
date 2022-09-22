@@ -1,9 +1,9 @@
 import { styled } from "@mui/system";
 import React, { ReactNode } from "react";
-import { setUpTokens } from "../utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 
 
-setUpTokens(['surface/on-surface']);
+injectTokens(['surface/on-surface']);
 
 export interface SocialIconProps {
     children: ReactNode,

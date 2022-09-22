@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import {ButtonUnstyled, ButtonUnstyledProps as MUIProps} from '@mui/base';
 import {styled} from '@mui/system';
-import { setUpTokens } from "../utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 
 
 interface TarkaProps{
@@ -51,7 +51,7 @@ const TarkaMobileNavItem = styled(ButtonUnstyled)`
 
 const MobileNavItem:React.FC<NavItemProps> = function({icon, hideLabel= false, active=false,...props}){
 
-	setUpTokens(['surface/on-surface', 'secondary/secondary']);
+	injectTokens(['surface/on-surface', 'secondary/secondary']);
 
         return(
             <TarkaMobileNavItem componentsProps={{ root: { className: `${active?'active':''}` } }} {...props}>

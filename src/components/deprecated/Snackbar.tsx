@@ -1,17 +1,17 @@
 import React, { ReactNode } from "react";
 import { PopperUnstyled, PopperUnstyledProps as MUIProps } from "@mui/base";
 import { styled } from "@mui/system";
-import { setUpTokens } from "../utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
 
-import { ReactComponent as Success } from '../assets/icons/Success.svg';
-import { ReactComponent as Info } from '../assets/icons/Info.svg';
-import { ReactComponent as Warning } from '../assets/icons/Warning.svg';
-import { ReactComponent as Error } from '../assets/icons/Error.svg';
-import Button, {} from "./atoms/Button";
+import { ReactComponent as Success } from '@/assets/icons/Success.svg';
+import { ReactComponent as Info } from '@/assets/icons/Info.svg';
+import { ReactComponent as Warning } from '@/assets/icons/Warning.svg';
+import { ReactComponent as Error } from '@/assets/icons/Error.svg';
+import Button, {} from "@/components/atoms/Button";
 
 
-setUpTokens(["success/success", "success/on-success", "secondary/secondary", "secondary/on-secondary", "warning/warning", "warning/on-warning", "error/error", "error/on-error"]);
+injectTokens(["success/success", "success/on-success", "secondary/secondary", "secondary/on-secondary", "warning/warning", "warning/on-warning", "error/error", "error/on-error"]);
 
 interface TarkaProps{
     icon?:ReactNode,

@@ -1,17 +1,17 @@
 import React from "react";
-import { BadgeUnstyled, badgeUnstyledClasses, BadgeUnstyledProps as MUIProps } from "@mui/base";
+import { BadgeUnstyled, badgeUnstyledClasses, BadgeUnstyledProps} from "@mui/base";
 import { styled } from "@mui/system";
-import { setUpTokens } from "@/utils/ThemeParse";
+import { injectTokens } from "@/utils/ThemeParse";
 
-setUpTokens(["error/error", "error/on-error", "button/size-7"]);
+injectTokens(["error/error", "error/on-error", "button/size-7"]);
 
-interface FrameProps {
+interface RootProps {
   size?: "small" | "regular" | "large";
 }
 
-export type BadgeProps = FrameProps & MUIProps;
+export type BadgeProps = RootProps & BadgeUnstyledProps;
 
-const BadgeFrame = styled(BadgeUnstyled)`
+const BadgeRoot = styled(BadgeUnstyled)`
   box-sizing: border-box;
   position: relative;
   display: inline-block;
@@ -78,6 +78,10 @@ const BadgeFrame = styled(BadgeUnstyled)`
 }
 `;
 
-export default function Badge({ size, ...props }: BadgeProps) {
-  return <BadgeFrame componentsProps={{ badge: { className: `${size}` } }} {...props} />;
-}
+const BadgeComponent: React.FC<BadgeProps> = function ({ size, ...props }: BadgeProps) {
+    return (
+        <BadgeRoot className={`TuiBadge ${size}`} {...props} />
+    );
+};
+
+export default BadgeComponent;

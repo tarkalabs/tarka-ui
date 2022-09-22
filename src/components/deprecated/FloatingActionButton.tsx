@@ -3,9 +3,9 @@ import ButtonUnstyled from '@mui/base/ButtonUnstyled';
 import { ButtonUnstyledProps as MUIProps } from '@mui/base/ButtonUnstyled';
 import { styled } from '@mui/system';
 import { ReactNode } from 'react';
-import { setUpTokens } from '@/utils/ThemeParse';
+import { injectTokens } from '@/utils/ThemeParse';
 
-setUpTokens(['primary/primary','surface/on-surface','primary/primary-hover','primary/on-primary']);
+injectTokens(['primary/primary','surface/on-surface','primary/primary-hover','primary/on-primary']);
 
 interface TarkaProps {
     size: "large" | "regular",
