@@ -2,11 +2,12 @@ import React from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
-import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
+import { bodySize5, bodySize7, bodySize8 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material/styles";
 import SuccessIcon from "@/assets/icons/success.svg";
 import WarningIcon from "@/assets/icons/warning.svg";
 import ErrorIcon from "@/assets/icons/error.svg";
+import Input from "@/components/atoms/Input";
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -21,49 +22,6 @@ export type InputFieldProps = RootProps &
 
 const InputFieldRoot = styled(TextField)`
     height: 56px;
-
-    .MuiInput-root {
-        ${bodySize5};
-        color: var(--input-text);
-        position: relative;
-        background-color: var(--input-input-background);
-        border-radius: 8px;
-        border: 0 0 2px 0 solid transparent;
-        outline: none;
-        padding: 17px 16px;
-        overflow: hidden;
-
-        &:after {
-            border-bottom-color: var(--primary-primary);
-        }
-
-        &:before {
-            position: absolute;
-            border-bottom: 2px solid transparent;
-            height: 2px;
-        }
-
-        .MuiInput-input {
-            padding: 0;
-            color: var(--input-text);
-            width: 248px;
-
-            &::placeholder {
-                opacity: 0.7;
-                color: var(--input-text-dim);
-            }
-        }
-
-        &:hover:before:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning) {
-            border-bottom: 2px solid var(--utility-disabled-content);
-        }
-
-        &.MuiInputBase-adornedStart, &.MuiInputBase-adornedEnd {
-            svg path {
-                fill: var(--input-text);
-            }
-        }
-    }
 
     .MuiFormHelperText-root {
         ${bodySize7};
@@ -181,6 +139,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
                 className: `${warning ? "Tui-warning" : ""} ${
                     success ? "Tui-success" : ""
                 }`,
+                inputComponent: Input as React.FC,
             }}
             variant={variant}
             {...props}

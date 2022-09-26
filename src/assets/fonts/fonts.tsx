@@ -12,6 +12,13 @@ export const bodySize7 = `
     line-height: 18px;
 `;
 
+export const bodySize8 = `
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14px;
+`;
+
 export const buttonSize6 = `
     font-family: 'Inter';
     font-style: normal;
