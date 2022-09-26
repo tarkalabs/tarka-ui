@@ -54,6 +54,12 @@ const InputFieldRoot = styled(TextField)`
         &:hover:before:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning) {
             border-bottom: 2px solid var(--utility-disabled-content);
         }
+
+        &.MuiInputBase-adornedStart, &.MuiInputBase-adornedEnd {
+            svg path {
+                fill: var(--input-text);
+            }
+        }
     }
 
     .MuiFormHelperText-root {
@@ -147,6 +153,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
 
     injectTokens([
         "input/input-background",
+        "input/text",
         "input/text-dim",
         "primary/primary",
         "error/error",
