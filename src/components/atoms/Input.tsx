@@ -1,16 +1,22 @@
 import React from "react";
-import InputUnstyled from "@mui/material/InputBase";
-import { InputBaseProps as InputUnstyledProps } from "@mui/material/InputBase";
+import InputUnstyled from "@mui/material/Input";
+import { InputProps as InputUnstyledProps } from "@mui/material/Input";
 import { styled } from "@mui/system";
 import { injectTokens } from "@/utils/ThemeParse";
 import { bodySize5 } from "@/assets/fonts/fonts";
 
-interface RootProps {}
+interface RootProps {
+    palette?: "default" | "alt";
+    warning?: boolean;
+    success?: boolean;
+    compact?: boolean;
+}
 
 export type InputProps = RootProps & InputUnstyledProps;
 
 const InputRoot = styled(InputUnstyled)`
     ${bodySize5};
+    min-height: 56px;
     color: var(--input-text);
     position: relative;
     background-color: var(--input-input-background);
@@ -54,9 +60,41 @@ const InputRoot = styled(InputUnstyled)`
             fill: var(--input-text);
         }
     }
-`;
 
-const InputComponent: React.FC<InputProps> = function ({ ...props }) {
+    .Mui-disabled {
+        background-color: var(--utility-disabled-background);
+        .MuiInput-input::placeholder {
+            opacity: 0.38;
+            color: var(--utility-disabled-content);
+        }
+    }
+
+    .Tui-warning {
+        &:after,
+        &:before {
+            border-bottom-color: var(--warning-warning);
+        }
+    }
+
+    .Tui-success {
+        &:after,
+        &:before {
+            border-bottom-color: var(--success-success);
+        }
+    }
+
+    .Mui-error {
+        &:after,
+        &:before {
+            border-bottom-color: var(--error-error);
+        }
+    }
+` as React.FC<InputProps>;
+
+const InputComponent: React.FC<InputProps> = function (
+    { palette, warning, success }: RootProps,
+    { ...props }: InputUnstyledProps,
+) {
     injectTokens([
         "surface/on-surface",
         "surface/surface-hover",
@@ -68,7 +106,14 @@ const InputComponent: React.FC<InputProps> = function ({ ...props }) {
         "secondary/secondary-hover",
     ]);
 
-    return <InputRoot className={`TuiInput`}></InputRoot>;
+    return (
+        <InputRoot
+            className={`TuiInput-root ${warning ? "Tui-warning" : ""} ${
+                success ? "Tui-success" : ""
+            }`}
+            {...props}
+        />
+    );
 };
 
 export default InputComponent;
