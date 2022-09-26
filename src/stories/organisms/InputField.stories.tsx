@@ -46,9 +46,7 @@ export default {
 } as ComponentMeta<typeof InputField>;
 
 const Template: Story<InputFieldProps> = (args: InputFieldProps) => (
-    <form>
-        <InputField required {...args}/>  
-    </form>
+    <InputField required {...args}/>  
 );
 
 export const Default: Story<InputFieldProps> = Template.bind({});
@@ -120,4 +118,10 @@ Required.args = {
     InputProps: {
         required: true,
     }
+};
+
+export const FullWidth: Story<InputFieldProps> = Template.bind({});
+FullWidth.args = {
+    placeholder: "Full width",
+    fullWidth: true,
 };

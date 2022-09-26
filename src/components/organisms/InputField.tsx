@@ -20,9 +20,11 @@ export type InputFieldProps = RootProps &
     Omit<TextFieldProps, "variant">;
 
 const InputFieldRoot = styled(TextField)`
+    height: 56px;
+
     .MuiInput-root {
         ${bodySize5};
-        color: var(--input-text-dim);
+        color: var(--input-text);
         position: relative;
         background-color: var(--input-input-background);
         border-radius: 8px;
@@ -44,6 +46,7 @@ const InputFieldRoot = styled(TextField)`
         .MuiInput-input {
             padding: 0;
             color: var(--input-text);
+            width: 248px;
 
             &::placeholder {
                 opacity: 0.7;
