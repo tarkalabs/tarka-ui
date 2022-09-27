@@ -229,7 +229,7 @@
       "type": "color"
     },
     "text-dim": {
-      "value": "#59595E",
+      "value": "hsla({hue.primary}, 9%, 11%, 0.70)",
       "description": "Dimmed text color for less contrast. Input field labels, and lower-contrast titles.",
       "type": "color"
     }

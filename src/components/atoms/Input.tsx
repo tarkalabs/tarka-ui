@@ -43,7 +43,7 @@ const InputRoot = styled(InputUnstyled)`
         width: 248px;
 
         &::placeholder {
-            opacity: 0.7;
+            opacity: 1;
             color: var(--input-text-dim);
         }
 
@@ -51,21 +51,25 @@ const InputRoot = styled(InputUnstyled)`
         }
     }
 
-    &:hover:before:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning) {
+    &:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning):hover:before {
         border-bottom: 2px solid var(--utility-disabled-content);
     }
 
     &.MuiInputBase-adornedStart,
     &.MuiInputBase-adornedEnd {
-        svg path {
-            fill: var(--input-text);
+        svg {
+            width: 24px;
+            height: 24px;
+
+            path {
+                fill: var(--input-text);
+            }
         }
     }
 
     &.Mui-disabled {
         background-color: var(--utility-disabled-background);
         .MuiInput-input::placeholder {
-            opacity: 0.38;
             color: var(--utility-disabled-content);
         }
     }
@@ -127,7 +131,7 @@ const InputComponent: React.FC<InputProps> = function ({
 
     return (
         <InputRoot
-            className={`TuiInput-root${warning ? "Tui-warning" : ""} ${
+            className={`TuiInput-root ${warning ? "Tui-warning" : ""} ${
                 success ? "Tui-success" : ""
             }`}
             sx={conditionalStyles}
