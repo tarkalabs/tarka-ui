@@ -4,6 +4,7 @@ import { InputProps as InputUnstyledProps } from "@mui/material/Input";
 import { styled } from "@mui/system";
 import { injectTokens } from "@/utils/ThemeParse";
 import { bodySize5 } from "@/assets/fonts/fonts";
+import { SxProps, Theme } from "@mui/material";
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -61,7 +62,7 @@ const InputRoot = styled(InputUnstyled)`
         }
     }
 
-    .Mui-disabled {
+    &.Mui-disabled {
         background-color: var(--utility-disabled-background);
         .MuiInput-input::placeholder {
             opacity: 0.38;
@@ -69,21 +70,21 @@ const InputRoot = styled(InputUnstyled)`
         }
     }
 
-    .Tui-warning {
+    &.Tui-warning {
         &:after,
         &:before {
             border-bottom-color: var(--warning-warning);
         }
     }
 
-    .Tui-success {
+    &.Tui-success {
         &:after,
         &:before {
             border-bottom-color: var(--success-success);
         }
     }
 
-    .Mui-error {
+    &.Mui-error {
         &:after,
         &:before {
             border-bottom-color: var(--error-error);
@@ -91,29 +92,48 @@ const InputRoot = styled(InputUnstyled)`
     }
 ` as React.FC<InputProps>;
 
-const InputComponent: React.FC<InputProps> = function (
-    { palette, warning, success, ...props }
-) {
+const InputComponent: React.FC<InputProps> = function ({
+    palette,
+    warning,
+    success,
+    ...props
+}) {
     injectTokens([
-        "surface/on-surface",
-        "surface/surface-hover",
+        "input/input-background",
+        "input/text",
+        "input/text-dim",
         "primary/primary",
-        "primary/on-primary",
-        "primary/primary-hover",
-        "secondary/secondary",
-        "secondary/on-secondary",
-        "secondary/secondary-hover",
+        "error/error",
+        "warning/warning",
+        "success/success",
+        "utility/disabled-background",
+        "utility/disabled-content",
     ]);
+
+    const conditionalStyles = [
+        props.startAdornment && {
+            ".MuiInput-input": {
+                marginLeft: "10px",
+                width: "214px",
+            },
+        },
+        props.endAdornment && {
+            ".MuiInput-input": {
+                marginRight: "10px",
+                width: "214px",
+            },
+        },
+    ] as SxProps<Theme>;
 
     return (
         <InputRoot
-            className={`TuiInput-root ${warning ? "Tui-warning" : ""} ${
+            className={`TuiInput-root${warning ? "Tui-warning" : ""} ${
                 success ? "Tui-success" : ""
             }`}
+            sx={conditionalStyles}
             {...props}
         />
     );
 };
 
 export default InputComponent;
- 

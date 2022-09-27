@@ -7,7 +7,8 @@ import { SxProps, Theme } from "@mui/material/styles";
 import SuccessIcon from "@/assets/icons/success.svg";
 import WarningIcon from "@/assets/icons/warning.svg";
 import ErrorIcon from "@/assets/icons/error.svg";
-import Input, {InputProps} from "@/components/atoms/Input";
+import InputComponent from "@/components/atoms/Input";
+import { unstable_useId as useId } from '@mui/utils';
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -84,26 +85,39 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         "utility/disabled-content",
     ]);
 
-    const conditionalStyles = [
-        InputProps?.startAdornment && {
-            ".MuiInput-input": {
-                marginLeft: "10px",
-            },
-        },
-        InputProps?.endAdornment && {
-            ".MuiInput-input": {
-                marginRight: "10px",
-            },
-        },
-    ] as SxProps<Theme>;
-
-    const InputComponent = () => (
-        <Input/>
+    const id = useId(undefined);
+    const helperTextId = props.helperText && id ? `${id}-helper-text` : undefined;
+    const inputLabelId = props.label && id ? `${id}-label` : undefined;
+    const InputElement = () => (
+        <InputComponent 
+            palette={palette}
+            warning={warning}
+            success={success}
+            compact={compact}
+            aria-describedby={helperTextId}
+            autoComplete={props.autoComplete}
+            autoFocus={props.autoFocus}
+            defaultValue={props.defaultValue}
+            fullWidth={props.fullWidth}
+            multiline={props.multiline}
+            name={props.name}
+            rows={props.rows}
+            maxRows={props.maxRows}
+            minRows={props.minRows}
+            value={props.value}
+            id={props.id}
+            inputRef={props.inputRef}
+            onBlur={props.onBlur}
+            onChange={props.onChange}
+            onFocus={props.onFocus}
+            placeholder={props.placeholder}
+            inputProps={props.inputProps}
+            {...InputProps}
+        />
     );
     
     return (
         <InputFieldRoot
-            sx={conditionalStyles}
             className={`TuiInputField-root ${props.className} ${
                 compact ? "compact" : ""
             }`}
@@ -113,7 +127,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
                 }`,
             }}
             InputProps={{
-                components: {Root: InputComponent},
+                components: {Root: InputElement},
             }}
             variant={variant}
             {...props}
