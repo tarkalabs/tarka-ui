@@ -92,8 +92,7 @@ const InputRoot = styled(InputUnstyled)`
 ` as React.FC<InputProps>;
 
 const InputComponent: React.FC<InputProps> = function (
-    { palette, warning, success }: RootProps,
-    { ...props }: InputUnstyledProps,
+    { palette, warning, success, ...props }
 ) {
     injectTokens([
         "surface/on-surface",
@@ -117,3 +116,4 @@ const InputComponent: React.FC<InputProps> = function (
 };
 
 export default InputComponent;
+ 

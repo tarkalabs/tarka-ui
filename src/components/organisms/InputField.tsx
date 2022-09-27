@@ -98,7 +98,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     ] as SxProps<Theme>;
 
     const InputComponent = () => (
-        <Input error/>
+        <Input/>
     );
     
     return (
