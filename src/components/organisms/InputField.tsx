@@ -18,17 +18,18 @@ export type InputFieldProps = RootProps &
     Omit<TextFieldProps, "variant" | "color" | "type" | "palette">;
 
 const InputFieldRoot = styled(TextField)`
+    width: 264px;
     height: 56px;
 `;
 
 const InputFieldComponent: React.FC<InputFieldProps> = function ({
     palette = "default",
-    warning,
-    success,
+    warning = false,
+    success = false,
     variant = "standard",
-    compact,
-    InputProps,
-    FormHelperTextProps,
+    compact = false,
+    InputProps = {},
+    FormHelperTextProps = {},
     ...props
 }: InputFieldProps) {
     injectTokens([

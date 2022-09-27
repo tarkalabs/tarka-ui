@@ -10,6 +10,7 @@ import ErrorIcon from "@/assets/icons/error.svg";
 
 interface RootProps {
     palette?: "default" | "alt";
+    icon?: boolean;
     warning?: boolean;
     success?: boolean;
     compact?: boolean;
@@ -35,19 +36,19 @@ const FormHelperTextRoot = styled(FormHelperTextUnstyled)`
     &.Mui-error {
         color: var(--input-text);
 
-        &:before {
+        &.icon:before {
             content: url(${ErrorIcon});
         }
     }
 
     &.Tui-success {
-        &:before {
+        &.icon:before {
             content: url(${SuccessIcon});
         }
     }
 
     &.Tui-warning {
-        &:before {
+        &.icon:before {
             content: url(${WarningIcon});
             width: 12px;
         }
@@ -56,8 +57,10 @@ const FormHelperTextRoot = styled(FormHelperTextUnstyled)`
 
 const FormHelperTextComponent: React.FC<FormHelperTextProps> = function ({
     palette,
-    warning,
-    success,
+    warning = false,
+    success = false,
+    icon = true,
+    compact = false,
     ...props
 }) {
     injectTokens([
@@ -74,9 +77,7 @@ const FormHelperTextComponent: React.FC<FormHelperTextProps> = function ({
 
     return (
         <FormHelperTextRoot
-            className={`TuiFormHelperText-root ${warning ? "Tui-warning" : ""} ${
-                success ? "Tui-success" : ""
-            }`}
+            className={`TuiFormHelperText-root ${warning ? "Tui-warning" : ""} ${success ? "Tui-success" : ""} ${icon ? "icon" : ""}`}
             {...props}
         />
     );
