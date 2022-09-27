@@ -3,7 +3,7 @@ import IconButton, {IconButtonProps} from '@/components/deprecated/IconButton';
 import {ReactComponent as SmallCross} from '@icons/close/close-small.svg';
 import {ReactComponent as LargeCross} from '@icons/close/close-large.svg';
 import Badge from '@/components/atoms/Badge';
-import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
+import StoryTemplate from '@/templates/storytemplate/DocsTemplate';
 
 
 const TestBadge = <Badge size='regular' />

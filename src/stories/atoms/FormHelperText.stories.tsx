@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, Story } from "@storybook/react";
 import FormHelperText, { FormHelperTextProps } from "@/components/atoms/FormHelperText";
-import StoryTemplate from "@/templates/storytemplate/StoryTemplate";
+import DocsTemplate from "@/templates/storytemplate/DocsTemplate";
 
 export default {
     title: 'Components/Atoms/FormHelperText',
@@ -9,7 +9,7 @@ export default {
     parameters: {
         docs: {
             page: () => (
-                <StoryTemplate
+                <DocsTemplate
                     componentName="FormHelperText"
                     importPath="@tarkaui/atoms"
                     typeDescs={[
@@ -38,6 +38,6 @@ Default.args = {
 
 export const Error = Template.bind({});
 Error.args = {
-    children: "Helper text",
+    children: "Error helper text",
     error: true,
 };

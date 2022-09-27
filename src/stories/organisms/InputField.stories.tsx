@@ -1,6 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react';
 import InputField, {InputFieldProps} from '@/components/organisms/InputField';
-import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
+import DocsTemplate from '@/templates/storytemplate/DocsTemplate';
 import { ReactComponent as CheckCircleOutlineIcon } from '@/assets/icons/checkmarkcircle.svg';
 
 export default {
@@ -9,7 +9,7 @@ export default {
     parameters: {
         docs: {
             page: () => (
-                <StoryTemplate
+                <DocsTemplate
                     componentName="InputField"
                     importPath="@tarkaui/organisms"
                     typeDescs={[

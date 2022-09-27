@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, Story } from "@storybook/react";
 import Input, { InputProps } from "@/components/atoms/Input";
-import StoryTemplate from "@/templates/storytemplate/StoryTemplate";
+import DocsTemplate from "@/templates/storytemplate/DocsTemplate";
 
 export default {
     title: 'Components/Atoms/Input',
@@ -9,7 +9,7 @@ export default {
     parameters: {
         docs: {
             page: () => (
-                <StoryTemplate
+                <DocsTemplate
                     componentName="Input"
                     importPath="@tarkaui/atoms"
                     typeDescs={[

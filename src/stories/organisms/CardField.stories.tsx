@@ -1,6 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react';
 import CardField, {CardFieldProps} from '@/components/organisms/CardField';
-import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
+import DocsTemplate from '@/templates/storytemplate/DocsTemplate';
 
 export default {
     title: 'Components/Organisms/CardField',
@@ -8,7 +8,7 @@ export default {
     parameters: {
         docs: {
             page: () => (
-                <StoryTemplate
+                <DocsTemplate
                     componentName="CardField"
                     importPath="@tarkaui/organisms"
                     typeDescs={[

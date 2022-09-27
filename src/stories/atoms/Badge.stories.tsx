@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, Story } from "@storybook/react";
 import Badge, { BadgeProps } from "@/components/atoms/Badge";
-import StoryTemplate from "@/templates/storytemplate/StoryTemplate";
+import DocsTemplate from "@/templates/storytemplate/DocsTemplate";
 
 export default {
     title: 'Components/Atoms/Badge',
@@ -9,7 +9,7 @@ export default {
     parameters: {
         docs: {
             page: () => (
-                <StoryTemplate
+                <DocsTemplate
                     componentName="Badge"
                     importPath="@tarkaui/atoms"
                     typeDescs={[
