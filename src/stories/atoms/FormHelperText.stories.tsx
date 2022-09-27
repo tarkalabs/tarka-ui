@@ -1,16 +1,16 @@
 import React from 'react';
 import { ComponentMeta, Story } from "@storybook/react";
-import Input, { InputProps } from "@/components/atoms/Input";
+import FormHelperText, { FormHelperTextProps } from "@/components/atoms/FormHelperText";
 import StoryTemplate from "@/templates/storytemplate/StoryTemplate";
 
 export default {
-    title: 'Components/Atoms/Input',
-    component: Input,
+    title: 'Components/Atoms/FormHelperText',
+    component: FormHelperText,
     parameters: {
         docs: {
             page: () => (
                 <StoryTemplate
-                    componentName="Input"
+                    componentName="FormHelperText"
                     importPath="@tarkaui/atoms"
                     typeDescs={[
                         {
@@ -25,25 +25,19 @@ export default {
             ),
         },
     },
-} as ComponentMeta<typeof Input>;
+} as ComponentMeta<typeof FormHelperText>;
 
-const Template: Story<InputProps> = (args: InputProps) => (
-    <Input {...args} />
+const Template: Story<FormHelperTextProps> = (args: FormHelperTextProps) => (
+    <FormHelperText {...args} />
 );
 
 export const Default = Template.bind({});
 Default.args = {
-    placeholder: 'Default',
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-    placeholder: 'Disabled',
-    disabled: true,
+    children: "Helper text",
 };
 
 export const Error = Template.bind({});
 Error.args = {
-    placeholder: 'Error',
+    children: "Helper text",
     error: true,
 };
