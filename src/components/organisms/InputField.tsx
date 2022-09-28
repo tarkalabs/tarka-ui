@@ -18,7 +18,9 @@ export type InputFieldProps = RootProps &
     Omit<TextFieldProps, "variant" | "color" | "type" | "palette">;
 
 const InputFieldRoot = styled(TextField)`
-    width: 264px;
+    &:not(.MuiFormControl-fullWidth) {
+        width: 264px;
+    }
     height: 56px;
 `;
 
