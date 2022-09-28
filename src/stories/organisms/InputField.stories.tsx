@@ -46,14 +46,13 @@ export default {
 } as ComponentMeta<typeof InputField>;
 
 const Template: Story<InputFieldProps> = (args: InputFieldProps) => (
-    <InputField required {...args}/>  
+    <InputField {...args}/>  
 );
 
 export const Default: Story<InputFieldProps> = Template.bind({});
 
 export const Icon: Story<InputFieldProps> = Template.bind({});
 Icon.args = {
-    placeholder: 'Placeholder',
     InputProps: {
         startAdornment: <CheckCircleOutlineIcon/>,
     },
@@ -126,3 +125,4 @@ FullWidth.args = {
     placeholder: "Full width",
     fullWidth: true,
 };
+

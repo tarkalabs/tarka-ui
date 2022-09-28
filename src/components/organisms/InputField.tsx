@@ -1,8 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
 import InputComponent, { InputProps } from "@/components/atoms/Input";
+import InputLabel, { InputLabelProps } from "@/components/atoms/InputLabel";
 import FormHelperTextComponent, { FormHelperTextProps } from "@/components/atoms/FormHelperText";
 import { unstable_useId as useId } from '@mui/utils';
 
@@ -15,7 +16,7 @@ interface RootProps {
 }
 
 export type InputFieldProps = RootProps &
-    Omit<TextFieldProps, "variant" | "color" | "type" | "palette">;
+    Omit<TextFieldProps, "variant" | "color" | "type" | "palette" | "multiline" | "label">;
 
 const InputFieldRoot = styled(TextField)`
     &:not(.MuiFormControl-fullWidth) {
@@ -48,7 +49,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
 
     const id = useId(props.id);
     const helperTextId = props.helperText && id ? `${id}-helper-text` : undefined;
-    const inputLabelId = props.label && id ? `${id}-label` : undefined;
+    const inputLabelId = props.placeholder && id ? `${id}-label` : undefined;
 
     const InputElement = () => (
         <InputComponent 
@@ -73,6 +74,17 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         </FormHelperTextComponent>
     );
 
+    const InputLabelElement = () => (
+        <InputLabel
+            id={inputLabelId}
+            warning={warning}
+            success={success}
+            {...props as InputLabelProps}
+        >
+            {props.placeholder}
+        </InputLabel>
+    );
+
     return (
         <InputFieldRoot
             className={`TuiInputField-root ${props.className} ${
@@ -84,6 +96,11 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
             }}
             InputProps={{
                 components: {Root: InputElement},
+            }}
+            label={props.placeholder ? props.placeholder : undefined}
+            InputLabelProps={{
+                // @ts-ignore
+                component: InputLabelElement,
             }}
             variant={variant}
             {...props}

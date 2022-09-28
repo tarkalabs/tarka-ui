@@ -13,7 +13,7 @@ interface RootProps {
     compact?: boolean;
 }
 
-export type InputProps = RootProps & Omit<InputUnstyledProps, "underline">;
+export type InputProps = RootProps & Omit<InputUnstyledProps, "underline" | "multiline">;
 
 const InputRoot = styled(InputUnstyled)`
     ${bodySize5};
@@ -50,9 +50,6 @@ const InputRoot = styled(InputUnstyled)`
         &::placeholder {
             opacity: 1;
             color: var(--input-text-dim);
-        }
-
-        &:focus::placeholder {
         }
     }
 
@@ -126,14 +123,14 @@ const InputComponent: React.FC<InputProps> = function ({
     const conditionalStyles = [
         props.startAdornment && {
             ".MuiInput-input": {
-                marginLeft: "10px",
-                width: "198px",
+                marginLeft: "8px",
+                width: "200px",
             },
         },
         props.endAdornment && {
             ".MuiInput-input": {
-                marginRight: "10px",
-                width: "198px",
+                marginRight: "8px",
+                width: "200px",
             },
         },
     ] as SxProps<Theme>;
