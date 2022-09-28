@@ -2,7 +2,7 @@ import React from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
-import InputComponent from "@/components/atoms/Input";
+import InputComponent, { InputProps } from "@/components/atoms/Input";
 import FormHelperTextComponent, { FormHelperTextProps } from "@/components/atoms/FormHelperText";
 import { unstable_useId as useId } from '@mui/utils';
 
@@ -54,24 +54,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
             warning={warning}
             success={success}
             compact={compact}
-            aria-describedby={helperTextId}
-            autoComplete={props.autoComplete}
-            autoFocus={props.autoFocus}
-            defaultValue={props.defaultValue}
-            fullWidth={props.fullWidth}
-            multiline={props.multiline}
-            name={props.name}
-            rows={props.rows}
-            maxRows={props.maxRows}
-            minRows={props.minRows}
-            value={props.value}
-            id={props.id}
-            inputRef={props.inputRef}
-            onBlur={props.onBlur}
-            onChange={props.onChange}
-            onFocus={props.onFocus}
-            placeholder={props.placeholder}
-            inputProps={props.inputProps}
+            {...props as InputProps}
             {...InputProps}
         />
     );
@@ -81,6 +64,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
             id={helperTextId}
             warning={warning}
             success={success}
+            {...props as FormHelperTextProps}
             {...FormHelperTextProps}
         >
             {props.helperText}

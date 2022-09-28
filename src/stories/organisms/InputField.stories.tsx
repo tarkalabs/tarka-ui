@@ -53,6 +53,7 @@ export const Default: Story<InputFieldProps> = Template.bind({});
 
 export const Icon: Story<InputFieldProps> = Template.bind({});
 Icon.args = {
+    placeholder: 'Placeholder',
     InputProps: {
         startAdornment: <CheckCircleOutlineIcon/>,
     },
