@@ -8,6 +8,7 @@ import { SxProps, Theme } from "@mui/material";
 
 interface RootProps {
     palette?: "default" | "alt";
+    labelElement?: JSX.Element | (() => JSX.Element);
     warning?: boolean;
     success?: boolean;
     compact?: boolean;
@@ -26,6 +27,7 @@ const InputRoot = styled(InputUnstyled)`
     outline: none;
     padding: 17px 16px;
     overflow: hidden;
+    gap: 8px;
 
     &:after {
         border-bottom-color: var(--primary-primary);
@@ -106,6 +108,7 @@ const InputComponent: React.FC<InputProps> = function ({
     warning = false,
     success = false,
     compact = false,
+    labelElement,
     ...props
 }) {
     injectTokens([
@@ -123,13 +126,11 @@ const InputComponent: React.FC<InputProps> = function ({
     const conditionalStyles = [
         props.startAdornment && {
             ".MuiInput-input": {
-                marginLeft: "8px",
                 width: "200px",
             },
         },
         props.endAdornment && {
             ".MuiInput-input": {
-                marginRight: "8px",
                 width: "200px",
             },
         },

@@ -80,6 +80,11 @@ EndText.args = {
     },
 };
 
+export const Label: Story<InputFieldProps> = Template.bind({});
+Label.args = {
+    label: 'Label',
+};
+
 export const Disabled: Story<InputFieldProps> = Template.bind({});
 Disabled.args = {
     InputProps: {
@@ -92,7 +97,7 @@ export const Error: Story<InputFieldProps> = Template.bind({});
 Error.args = {
     placeholder: "Error",
     error: true,
-};
+}; 
 
 export const ErrorHelperText: Story<InputFieldProps> = Template.bind({});
 ErrorHelperText.args = {

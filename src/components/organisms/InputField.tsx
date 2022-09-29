@@ -15,6 +15,7 @@ interface RootProps {
     warning?: boolean;
     success?: boolean;
     compact?: boolean;
+    label?: string; 
 }
 
 export type InputFieldProps = RootProps &
@@ -56,7 +57,19 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
 
     const id = useId(props.id);
     const helperTextId = props.helperText && id ? `${id}-helper-text` : undefined;
-    const inputLabelId = props.placeholder && id ? `${id}-label` : undefined;
+    const inputLabelId = props.label && id ? `${id}-label` : undefined;
+
+    const InputLabelElement = () => (
+        <InputLabel
+            id={inputLabelId}
+            warning={warning}
+            success={success}
+            compact={compact}
+            {...props as InputLabelProps}
+        >
+            {props.label}
+        </InputLabel>
+    );
 
     const InputElement = () => (
         <InputComponent
@@ -64,6 +77,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
             warning={warning}
             success={success}
             compact={compact}
+            labelElement={InputLabelElement}
             {...props as InputProps}
             {...InputProps}
         />
@@ -82,18 +96,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
         </FormHelperTextComponent>
     );
 
-    const InputLabelElement = () => (
-        <InputLabel
-            id={inputLabelId}
-            warning={warning}
-            success={success}
-            compact={compact}
-            {...props as InputLabelProps}
-        >
-            {props.placeholder}
-        </InputLabel>
-    );
-
     return (
         <InputFieldRoot
             className={`TuiInputField-root ${props.className} ${
@@ -106,7 +108,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
             InputProps={{
                 components: { Root: InputElement },
             }}
-            label={props.placeholder ? props.placeholder : undefined}
             InputLabelProps={{
                 // @ts-ignore
                 component: () => (<></>),
