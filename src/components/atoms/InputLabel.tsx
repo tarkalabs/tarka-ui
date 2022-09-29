@@ -30,8 +30,6 @@ const InputLabelRoot = styled(InputLabelUnstyled)<InputLabelProps>`
 
     &.Mui-focused {
         ${bodySize8}
-        top: 10px;
-        left: 16px;
         color: var(--input-text-dim);
     }
 
