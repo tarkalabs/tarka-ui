@@ -1,5 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react';
 import InputField, {InputFieldProps} from '@/components/organisms/InputField';
+import TextField from '@mui/material/TextField';
 import DocsTemplate from '@/templates/storytemplate/DocsTemplate';
 import { ReactComponent as CheckCircleOutlineIcon } from '@/assets/icons/checkmarkcircle.svg';
 
@@ -51,10 +52,17 @@ const Template: Story<InputFieldProps> = (args: InputFieldProps) => (
 
 export const Default: Story<InputFieldProps> = Template.bind({});
 
-export const Icon: Story<InputFieldProps> = Template.bind({});
-Icon.args = {
+export const StartIcon: Story<InputFieldProps> = Template.bind({});
+StartIcon.args = {
     InputProps: {
         startAdornment: <CheckCircleOutlineIcon/>,
+    },
+};
+
+export const EndIcon: Story<InputFieldProps> = Template.bind({});
+EndIcon.args = {
+    InputProps: {
+        endAdornment: <CheckCircleOutlineIcon/>,
     },
 };
 
@@ -62,6 +70,13 @@ export const StartText: Story<InputFieldProps> = Template.bind({});
 StartText.args = {
     InputProps: {
         startAdornment: '$',
+    },
+};
+
+export const EndText: Story<InputFieldProps> = Template.bind({});
+EndText.args = {
+    InputProps: {
+        endAdornment: '.00',
     },
 };
 
@@ -125,4 +140,8 @@ FullWidth.args = {
     placeholder: "Full width",
     fullWidth: true,
 };
+
+export const TextFieldTemplate: Story<InputFieldProps> = (args: InputFieldProps) => (
+    <TextField InputProps={{startAdornment: '$'}} label="hi" placeholder="hello" {...args}/>  
+);
 
