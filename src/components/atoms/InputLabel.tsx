@@ -14,11 +14,12 @@ interface RootProps {
 export type InputLabelProps = RootProps & InputLabelUnstyledProps;
 
 const InputLabelRoot = styled(InputLabelUnstyled)`
-    position: relative;
-
-    &:not(.Mui-focused) {
-        display: none;
-    }
+    ${bodySize5};
+    color: var(--input-text-dim);
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
 ` as React.FC<InputLabelProps>;
 
 const InputLabelComponent: React.FC<InputLabelProps> = function ({

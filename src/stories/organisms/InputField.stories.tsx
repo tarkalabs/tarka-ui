@@ -146,7 +146,7 @@ FullWidth.args = {
     fullWidth: true,
 };
 
-export const TextFieldTemplate: Story<InputFieldProps> = (args: InputFieldProps) => (
-    <TextField InputProps={{startAdornment: '$'}} label="hi" placeholder="hello" {...args}/>  
+export const MUITextField: Story<InputFieldProps> = (args: InputFieldProps) => (
+    <TextField InputProps={{startAdornment: '$'}} label="Label" placeholder="Placeholder" {...args}/>  
 );
 

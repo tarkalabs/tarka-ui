@@ -15,34 +15,31 @@ interface RootProps {
     warning?: boolean;
     success?: boolean;
     compact?: boolean;
-    label?: string; 
 }
 
 export type InputFieldProps = RootProps &
     Omit<
         TextFieldProps,
-        "variant" | "color" | "type" | "palette" | "multiline" | "label"
+        "variant" | "color" | "type" | "palette" | "multiline"
     >;
 
 const InputFieldRoot = styled(TextField)`
+    height: 56px;
     &:not(.MuiFormControl-fullWidth) {
         width: 264px;
     }
-    height: 56px;
 `;
 
-const InputFieldComponent: React.FC<InputFieldProps> = function (
-    {
-        palette = "default",
-        warning = false,
-        success = false,
-        variant = "standard",
-        compact = false,
-        InputProps = {},
-        FormHelperTextProps = {},
-        ...props
-    }: InputFieldProps,
-) {
+const InputFieldComponent: React.FC<InputFieldProps> = function ({
+    palette = "default",
+    warning = false,
+    success = false,
+    variant = "standard",
+    compact = false,
+    InputProps = {},
+    FormHelperTextProps = {},
+    ...props
+}: InputFieldProps) {
     injectTokens([
         "input/input-background",
         "input/text",
@@ -56,7 +53,8 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
     ]);
 
     const id = useId(props.id);
-    const helperTextId = props.helperText && id ? `${id}-helper-text` : undefined;
+    const helperTextId =
+        props.helperText && id ? `${id}-helper-text` : undefined;
     const inputLabelId = props.label && id ? `${id}-label` : undefined;
 
     const InputLabelElement = () => (
@@ -65,7 +63,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
             warning={warning}
             success={success}
             compact={compact}
-            {...props as InputLabelProps}
+            {...(props as InputLabelProps)}
         >
             {props.label}
         </InputLabel>
@@ -78,7 +76,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
             success={success}
             compact={compact}
             labelElement={InputLabelElement}
-            {...props as InputProps}
+            {...(props as InputProps)}
             {...InputProps}
         />
     );
@@ -89,7 +87,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
             warning={warning}
             success={success}
             compact={compact}
-            {...props as FormHelperTextProps}
+            {...(props as FormHelperTextProps)}
             {...FormHelperTextProps}
         >
             {props.helperText}
@@ -110,7 +108,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function (
             }}
             InputLabelProps={{
                 // @ts-ignore
-                component: () => (<></>),
+                component: InputLabelElement,
             }}
             variant={variant}
             {...props}

@@ -12,11 +12,12 @@ interface RootProps {
     warning?: boolean;
     success?: boolean;
     compact?: boolean;
+    children?: React.ReactNode;
 }
 
 export type InputProps = RootProps & Omit<InputUnstyledProps, "underline" | "multiline">;
 
-const InputRoot = styled(InputUnstyled)`
+const InputRoot = styled(InputUnstyled as React.FC<InputProps>)`
     ${bodySize5};
     min-height: 56px;
     color: var(--input-text);
@@ -53,6 +54,10 @@ const InputRoot = styled(InputUnstyled)`
             opacity: 1;
             color: var(--input-text-dim);
         }
+    }
+
+    label + &.MuiInput-root {
+        margin: 0;
     }
 
     &:hover:before:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning) {
@@ -141,7 +146,9 @@ const InputComponent: React.FC<InputProps> = function ({
             className={`TuiInput-root ${warning ? "Tui-warning" : ""} ${success ? "Tui-success" : ""}`}
             sx={conditionalStyles}
             {...props}
-        />
+        >
+            hi
+        </InputRoot>
     );
 };
 
