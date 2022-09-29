@@ -8,16 +8,16 @@ import { SxProps, Theme } from "@mui/material";
 
 interface RootProps {
     palette?: "default" | "alt";
-    labelElement?: JSX.Element | (() => JSX.Element);
     warning?: boolean;
     success?: boolean;
     compact?: boolean;
     children?: React.ReactNode;
 }
 
-export type InputProps = RootProps & Omit<InputUnstyledProps, "underline" | "multiline">;
+export type InputProps = RootProps &
+    Omit<InputUnstyledProps, "underline" | "multiline">;
 
-const InputRoot = styled(InputUnstyled as React.FC<InputProps>)`
+const InputRoot = styled(InputUnstyled)<InputProps>`
     ${bodySize5};
     min-height: 56px;
     color: var(--input-text);
@@ -113,7 +113,6 @@ const InputComponent: React.FC<InputProps> = function ({
     warning = false,
     success = false,
     compact = false,
-    labelElement,
     ...props
 }) {
     injectTokens([
@@ -143,12 +142,12 @@ const InputComponent: React.FC<InputProps> = function ({
 
     return (
         <InputRoot
-            className={`TuiInput-root ${warning ? "Tui-warning" : ""} ${success ? "Tui-success" : ""}`}
+            className={`${warning ? "Tui-warning" : ""} ${
+                success ? "Tui-success" : ""
+            }`}
             sx={conditionalStyles}
             {...props}
-        >
-            hi
-        </InputRoot>
+        />
     );
 };
 

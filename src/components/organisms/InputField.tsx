@@ -8,6 +8,7 @@ import FormHelperTextComponent, {
     FormHelperTextProps,
 } from "@/components/atoms/FormHelperText";
 import { unstable_useId as useId } from "@mui/utils";
+import { SxProps, Theme } from "@mui/material";
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -23,7 +24,7 @@ export type InputFieldProps = RootProps &
         "variant" | "color" | "type" | "palette" | "multiline"
     >;
 
-const InputFieldRoot = styled(TextField)`
+const InputFieldRoot = styled(TextField)<InputFieldProps>`
     height: 56px;
     &:not(.MuiFormControl-fullWidth) {
         width: 264px;
@@ -57,6 +58,15 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         props.helperText && id ? `${id}-helper-text` : undefined;
     const inputLabelId = props.label && id ? `${id}-label` : undefined;
 
+    const conditionalStyles = [
+        props.label && {
+            ".MuiInput-input": {
+                paddingTop: "24px",
+                paddingBottom: "10px",
+            },
+        },
+    ] as SxProps<Theme>;
+
     const InputLabelElement = () => (
         <InputLabel
             id={inputLabelId}
@@ -75,7 +85,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
             warning={warning}
             success={success}
             compact={compact}
-            labelElement={InputLabelElement}
+            sx={conditionalStyles}
             {...(props as InputProps)}
             {...InputProps}
         />
