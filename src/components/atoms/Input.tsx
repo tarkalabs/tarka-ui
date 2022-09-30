@@ -47,8 +47,7 @@ const InputRoot = styled(InputUnstyled)<InputProps>`
     .MuiInput-input {
         padding: 0;
         color: var(--input-text);
-        width: 232px;
-        flex: 1 0 auto;
+        flex: 0 1 100%;
 
         &::placeholder {
             opacity: 1;
@@ -67,8 +66,7 @@ const InputRoot = styled(InputUnstyled)<InputProps>`
     &.MuiInputBase-adornedStart,
     &.MuiInputBase-adornedEnd {
         svg {
-            width: 24px;
-            height: 24px;
+            flex: 0 0 24px;
 
             path {
                 fill: var(--input-text);
@@ -127,25 +125,11 @@ const InputComponent: React.FC<InputProps> = function ({
         "utility/disabled-content",
     ]);
 
-    const conditionalStyles = [
-        props.startAdornment && {
-            ".MuiInput-input": {
-                width: "200px",
-            },
-        },
-        props.endAdornment && {
-            ".MuiInput-input": {
-                width: "200px",
-            },
-        },
-    ] as SxProps<Theme>;
-
     return (
         <InputRoot
             className={`${warning ? "Tui-warning" : ""} ${
                 success ? "Tui-success" : ""
             }`}
-            sx={conditionalStyles}
             {...props}
         />
     );
