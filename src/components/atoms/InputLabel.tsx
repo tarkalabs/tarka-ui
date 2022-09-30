@@ -23,16 +23,15 @@ const InputLabelRoot = styled(InputLabelUnstyled)<InputLabelProps>`
     z-index: 1;
     transition: top cubic-bezier(0.4, 0, 0.2, 1) 0.25s, transform cubic-bezier(0.4, 0, 0.2, 1) 0.25s, font-size cubic-bezier(0.4, 0, 0.2, 1) 0.25s;
 
-    &:not(.Mui-focused) {
+    &:not(.Mui-focused):not(.MuiFormLabel-filled) {
         top: 50%;
         transform: translateY(-50%);
     }
 
-    &.Mui-focused {
+    &.Mui-focused, &.MuiFormLabel-filled {
         ${bodySize8}
         color: var(--input-text-dim);
     }
-
 ` as React.FC<InputLabelProps>;
 
 const InputLabelComponent: React.FC<InputLabelProps> = function ({
