@@ -70,6 +70,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     const InputLabelElement = () => (
         <InputLabel
             id={inputLabelId}
+            htmlFor={id}
             warning={warning}
             success={success}
             compact={compact}
@@ -81,6 +82,7 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
 
     const InputElement = () => (
         <InputComponent
+            id={id}
             palette={palette}
             warning={warning}
             success={success}

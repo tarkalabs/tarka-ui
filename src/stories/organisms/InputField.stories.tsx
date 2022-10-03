@@ -146,6 +146,14 @@ FullWidth.args = {
     fullWidth: true,
 };
 
+export const LabelIcon: Story<InputFieldProps> = Template.bind({});
+LabelIcon.args = {
+    label: 'Label',
+    InputProps: {
+        startAdornment: <CheckCircleOutlineIcon/>,
+    },
+};
+
 export const MUITextField: Story<InputFieldProps> = (args: InputFieldProps) => (
     <TextField InputProps={{startAdornment: '$'}} label="Label" placeholder="Placeholder" {...args}/>  
 );
