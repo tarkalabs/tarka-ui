@@ -58,14 +58,18 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         props.helperText && id ? `${id}-helper-text` : undefined;
     const inputLabelId = props.label && id ? `${id}-label` : undefined;
 
-    const conditionalStyles = [
-        props.label && {
-            ".MuiInput-input": {
-                paddingTop: "24px",
-                paddingBottom: "10px",
-            },
-        },
-    ] as SxProps<Theme>;
+    const InputElement = () => (
+        <InputComponent
+            id={id}
+            palette={palette}
+            warning={warning}
+            success={success}
+            compact={compact}
+            /*sx={conditionalStyles}*/
+            {...(props as InputProps)}
+            {...InputProps}
+        />
+    );
 
     const InputLabelElement = () => (
         <InputLabel
@@ -74,23 +78,11 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
             warning={warning}
             success={success}
             compact={compact}
+            startAdornment={InputProps.startAdornment ? true : false}
             {...(props as InputLabelProps)}
         >
             {props.label}
         </InputLabel>
-    );
-
-    const InputElement = () => (
-        <InputComponent
-            id={id}
-            palette={palette}
-            warning={warning}
-            success={success}
-            compact={compact}
-            sx={conditionalStyles}
-            {...(props as InputProps)}
-            {...InputProps}
-        />
     );
 
     const FormHelperTextElement = () => (

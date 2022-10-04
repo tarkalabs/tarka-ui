@@ -65,9 +65,10 @@ const InputRoot = styled(InputUnstyled)<InputProps>`
 
     &.MuiInputBase-adornedStart,
     &.MuiInputBase-adornedEnd {
-        svg {
+        > * &:not(.MuiInput-root) {
             flex: 0 0 24px;
-
+        }
+        svg {
             path {
                 fill: var(--input-text);
             }

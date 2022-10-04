@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentMeta, Story } from "@storybook/react";
 import Input, { InputProps } from "@/components/atoms/Input";
+import { Input as MUIInput, InputLabel } from '@mui/material';
 import DocsTemplate from "@/templates/storytemplate/DocsTemplate";
 
 export default {
@@ -47,3 +48,18 @@ Error.args = {
     placeholder: 'Error',
     error: true,
 };
+
+export const Label = () => (
+    <>
+        <InputLabel htmlFor="input-with-label">Label</InputLabel>
+        <Input id="input-with-label" />
+    </>
+)
+
+export const MUIWithLabel = () => (
+    <>
+        <InputLabel htmlFor="input-with-label">Label</InputLabel>
+        <MUIInput id="input-with-label" placeholder="Placeholder" />
+    </>
+);
+
