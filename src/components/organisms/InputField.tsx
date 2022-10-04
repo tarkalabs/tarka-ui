@@ -1,14 +1,14 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
 import InputComponent, { InputProps } from "@/components/atoms/Input";
 import InputLabel, { InputLabelProps } from "@/components/atoms/InputLabel";
+import MUISelect, { SelectProps } from "@mui/material/Select";
 import FormHelperTextComponent, {
     FormHelperTextProps,
 } from "@/components/atoms/FormHelperText";
 import { unstable_useId as useId } from "@mui/utils";
-import { SxProps, Theme } from "@mui/material";
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -39,6 +39,8 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     compact = false,
     InputProps = {},
     FormHelperTextProps = {},
+    InputLabelProps = {},
+    SelectProps = {},
     ...props
 }: InputFieldProps) {
     injectTokens([
@@ -65,7 +67,6 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
             warning={warning}
             success={success}
             compact={compact}
-            /*sx={conditionalStyles}*/
             {...(props as InputProps)}
             {...InputProps}
         />
@@ -98,20 +99,36 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         </FormHelperTextComponent>
     );
 
+    /* Todo: Implement Select functionality*/
+    const SelectElement = () => (
+        <MUISelect
+        aria-describedby={helperTextId}
+        id={id}
+        labelId={inputLabelId}
+        value={props.value}
+        input={ <InputElement/> }
+        {...SelectProps}
+      >
+        {SelectProps.children}
+      </MUISelect>
+    )
+
     return (
         <InputFieldRoot
             className={`TuiInputField-root ${props.className} ${
                 compact ? "compact" : ""
             }`}
             FormHelperTextProps={{
-                // @ts-ignore
+                /* Property 'component' does not exist in the type definition, but still functions as intended, so this line is needed */
+                /* @ts-ignore */
                 component: FormHelperTextElement,
             }}
             InputProps={{
                 components: { Root: InputElement },
             }}
             InputLabelProps={{
-                // @ts-ignore
+                /* Property 'component' does not exist in the type definition, but still functions as intended, so this line is needed */
+                /* @ts-ignore */
                 component: InputLabelElement,
             }}
             variant={variant}
