@@ -9,13 +9,16 @@
 
 ### Components TODO
 #### Atoms
+- [x] Input
+- [x] InputLabel
+- [x] FormHelperText
+- [x] Button
+- [x] Badge
 - [ ] Icon button
 - [ ] Floating Action Button
-- [x] Button
 - [ ] Divider
 - [ ] Thumbnail
 - [ ] Breadcrumbs
-- [x] Badge
 - [ ] Mobile nav bar
 - [ ] Nav item
 - [ ] Social icons
@@ -45,9 +48,6 @@
 - [ ] Chat bubble
 - [ ] InputField
 - [ ] Calendar
-- [x] Input
-- [x] InputLabel
-- [x] FormHelperText
 
 #### Organisms
 - [x] InputField
