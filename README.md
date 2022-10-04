@@ -8,6 +8,7 @@
 - https://www.figma.com/file/P38agSWlZGpxD68uQdcRmp/Tarka-kit?node-id=2301%3A139560
 
 ### Components TODO
+#### Atoms
 - [ ] Icon button
 - [ ] Floating Action Button
 - [x] Button
@@ -42,5 +43,11 @@
 - [ ] Mobile page header
 - [ ] Mobile page header - stepper
 - [ ] Chat bubble
-- [ ] Text Input
+- [ ] InputField
 - [ ] Calendar
+- [x] Input
+- [x] InputLabel
+- [x] FormHelperText
+
+#### Organisms
+- [x] InputField
