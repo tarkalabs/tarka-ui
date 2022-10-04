@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import SuccessCheck from '@/components/deprecated/SuccessCheck';
-import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
+import DocsTemplate from '@/templates/storytemplate/DocsTemplate';
 
 export default {
   title: 'Components/Deprecated/SuccessCheck',
@@ -9,7 +9,7 @@ export default {
   parameters: {
     docs: {
         page: () => (
-            <StoryTemplate
+            <DocsTemplate
                 componentName="SuccessCheck"
                 importPath="@tarkaui/atoms"
             />

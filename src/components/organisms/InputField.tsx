@@ -2,11 +2,13 @@ import React from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
-import { bodySize5, bodySize7 } from "@/assets/fonts/fonts";
-import { SxProps, Theme } from "@mui/material/styles";
-import SuccessIcon from "@/assets/icons/success.svg";
-import WarningIcon from "@/assets/icons/warning.svg";
-import ErrorIcon from "@/assets/icons/error.svg";
+import InputComponent, { InputProps } from "@/components/atoms/Input";
+import InputLabel, { InputLabelProps } from "@/components/atoms/InputLabel";
+import MUISelect from "@mui/material/Select";
+import FormHelperTextComponent, {
+    FormHelperTextProps,
+} from "@/components/atoms/FormHelperText";
+import { unstable_useId as useId } from "@mui/utils";
 
 interface RootProps {
     palette?: "default" | "alt";
@@ -17,136 +19,37 @@ interface RootProps {
 }
 
 export type InputFieldProps = RootProps &
-    Omit<TextFieldProps, "variant">;
+    Omit<
+        TextFieldProps,
+        "variant" | "color" | "type" | "palette" | "multiline"
+    >;
 
-const InputFieldRoot = styled(TextField)`
-    .MuiInput-root {
-        position: relative;
-        background-color: var(--input-input-background);
-        border-radius: 8px;
-        border: 0 0 2px 0 solid transparent;
-        color: var(--input-text-dim);
-        outline: none;
-        padding: 17px 16px;
-        overflow: hidden;
+const InputFieldRoot = styled(TextField)<InputFieldProps>`
+    height: 56px;
 
-        &:after {
-            border-bottom-color: var(--primary-primary);
-        }
-
-        &:before {
-            position: absolute;
-            border-bottom: 2px solid transparent;
-            height: 2px;
-        }
-
-        .MuiInput-input {
-            padding: 0;
-            ${bodySize5};
-            color: var(--input-text);
-
-            &::placeholder {
-                opacity: 0.7;
-                color: var(--input-text-dim);
-            }
-        }
-
-        &:hover:before:not(.Mui-disabled):not(.Mui-error):not(.Tui-success):not(.Tui-warning) {
-            border-bottom: 2px solid var(--utility-disabled-content);
-        }
+    &.TuiInputField-compact {
+        height: 22px;
     }
-
-    .MuiFormHelperText-root {
-        ${bodySize7};
-        display: flex;
-        align-items: center;
-        margin-top: 4px;
-        padding: 0 16px;
-        color: var(--input-text);
-
-        &:before {
-            display: inline-block;
-            margin-right: 4px;
-            width: 16px;
-            height: 16px;
-        }
-    }
-
-    .Mui-error {
-        &.MuiInput-root:after,
-        &.MuiInput-root:before {
-            border-bottom-color: var(--error-error);
-        }
-
-        &.MuiFormHelperText-root {
-            color: var(--input-text);
-        }
-
-        &.MuiFormHelperText-root:before {
-            content: url(${ErrorIcon});
-        }
-    }
-
-    .Tui-success {
-        &.MuiInput-root:after,
-        &.MuiInput-root:before {
-            border-bottom-color: var(--success-success);
-        }
-
-        &.MuiFormHelperText-root:before {
-            content: url(${SuccessIcon});
-        }
-    }
-
-    .Tui-warning {
-        &.MuiInput-root:after,
-        &.MuiInput-root:before {
-            border-bottom-color: var(--warning-warning);
-        }
-
-        &.MuiFormHelperText-root:before {
-            content: url(${WarningIcon});
-            width: 12px;
-        }
-    }
-
-    .Mui-disabled {
-        &.MuiInput-root {
-            background-color: var(--utility-disabled-background);
-
-            .MuiInput-input {
-                &::placeholder {
-                    opacity: 0.38;
-                    color: var(--utility-disabled-content);
-                }
-            }
-        }
+    &:not(.MuiFormControl-fullWidth) {
+        width: 264px;
     }
 `;
 
 const InputFieldComponent: React.FC<InputFieldProps> = function ({
     palette = "default",
-    warning,
-    success,
+    warning = false,
+    success = false,
     variant = "standard",
-    compact,
+    compact = false,
+    InputProps = {},
+    FormHelperTextProps = {},
+    InputLabelProps = {},
+    SelectProps = {},
     ...props
 }: InputFieldProps) {
-    const conditionalStyles = [
-        props.InputProps?.startAdornment && {
-            ".MuiInput-input": {
-                marginLeft: "10px",
-            },
-        },
-        props.InputProps?.endAdornment && {
-            ".MuiInput-input": {
-                marginRight: "10px",
-            },
-        },
-    ] as SxProps<Theme>;
-
     injectTokens([
         "input/input-background",
+        "input/text",
         "input/text-dim",
         "primary/primary",
         "error/error",
@@ -156,21 +59,80 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         "utility/disabled-content",
     ]);
 
+    const id = useId(props.id);
+    const helperTextId =
+        props.helperText && id ? `${id}-helper-text` : undefined;
+    const inputLabelId = props.label && id ? `${id}-label` : undefined;
+
+    const InputElement = () => (
+        <InputComponent
+            id={id}
+            palette={palette}
+            warning={warning}
+            success={success}
+            compact={compact}
+            {...(props as InputProps)}
+            {...InputProps}
+        />
+    );
+
+    const InputLabelElement = () =>
+        !compact ? (
+            <InputLabel
+                id={inputLabelId}
+                htmlFor={id}
+                warning={warning}
+                success={success}
+                startAdornment={InputProps.startAdornment ? true : false}
+                {...(props as InputLabelProps)}
+            >
+                {props.label}
+            </InputLabel>
+        ) : undefined;
+
+    const FormHelperTextElement = () => (
+        <FormHelperTextComponent
+            id={helperTextId}
+            warning={warning}
+            success={success}
+            {...(props as FormHelperTextProps)}
+            {...FormHelperTextProps}
+        >
+            {props.helperText}
+        </FormHelperTextComponent>
+    );
+
+    /* Todo: Implement Select functionality*/
+    const SelectElement = () => (
+        <MUISelect
+            aria-describedby={helperTextId}
+            id={id}
+            labelId={inputLabelId}
+            value={props.value}
+            input={<InputElement />}
+            {...SelectProps}
+        >
+            {SelectProps.children}
+        </MUISelect>
+    );
+
     return (
         <InputFieldRoot
-            sx={conditionalStyles}
-            className={`TuiInputField-root ${props.className} ${
-                compact ? "compact" : ""
-            }`}
+            className={`TuiInputField-root ${compact ? "compact" : ""} ${
+                props.className
+            } ${compact ? "TuiInputField-compact" : ""}`}
             FormHelperTextProps={{
-                className: `${warning ? "Tui-warning" : ""} ${
-                    success ? "Tui-success" : ""
-                }`,
+                /* Property 'component' does not exist in the type definition, but still functions as intended, so this line is needed */
+                /* @ts-ignore */
+                component: FormHelperTextElement,
             }}
             InputProps={{
-                className: `${warning ? "Tui-warning" : ""} ${
-                    success ? "Tui-success" : ""
-                }`,
+                components: { Root: InputElement },
+            }}
+            InputLabelProps={{
+                /* Property 'component' does not exist in the type definition, but still functions as intended, so this line is needed */
+                /* @ts-ignore */
+                component: InputLabelElement,
             }}
             variant={variant}
             {...props}

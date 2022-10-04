@@ -15,7 +15,7 @@ $accent: #ff006a;
 }
 
 #docs-root > .sbdocs {
-    background-color: $primary;
+    background-color: var(--primary-primary);
     padding: 7.5em;
 
     .sbdocs-preview {
@@ -32,103 +32,5 @@ $accent: #ff006a;
         user-select: none;
         background-color: $secondary;
         color: $primary;
-    }
-}
-
-.story-template {
-    display: flex;
-    flex-flow: column nowrap;
-    row-gap: 50px;
-    color: $secondary;
-
-    * {
-        font-family: "Inter";
-    }
-
-    .logo {
-        color: $accent;
-        width: min-content;
-        text-shadow: 0 0 4px $accent;
-        margin-bottom: 75px;
-
-        h1 {
-            font-size: 6em;
-            font-family: "Logo";
-            line-height: 50%;
-            letter-spacing: -0.05em;
-        }
-    }
-
-    h1 {
-        font-size: 3em;
-        margin: 0;
-    }
-
-    p {
-        margin: 1em 0 2em 0;
-    }
-
-    h2 {
-        font-size: 2em;
-        margin: 0 0 0.5em 0;
-    }
-
-    .import-section {
-        > div {
-            display: flex;
-            flex-flow: column nowrap;
-            gap: 0.25em;
-            min-width: max-content;
-            background-color: $tertiary;
-            padding: 1.5em 1em;
-            border: 1px solid $tertiary-accent;
-            border-radius: 8px;
-    
-            span {
-                font-family: monospace;
-                width: max-content;
-            }
-
-            .default {
-                color: $secondary;
-            }
-    
-            .keyword {
-                color: #ff006a;
-            }
-    
-            .string {
-                color: #ffeb59;
-            }
-    
-            .comment {
-                color: #bbb8c2;
-            }
-        }
-    }
-
-    .props-section {
-        p {
-            padding: 16px 0;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            width: max-content;
-            color: $secondary;
-            font-size: 0.85em;
-            margin: 0;
-        }
-
-        a {
-            color: $accent;
-            font-weight: bold;
-            text-decoration: none;
-
-            &.external:after {
-                content: "↗";
-                padding-left: 3px;
-                font-size: 0.75rem;
-            }
-        }
     }
 }

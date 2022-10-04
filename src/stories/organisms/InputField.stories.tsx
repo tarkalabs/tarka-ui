@@ -1,7 +1,8 @@
 import { ComponentMeta, Story } from '@storybook/react';
 import InputField, {InputFieldProps} from '@/components/organisms/InputField';
-import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import TextField from '@mui/material/TextField';
+import DocsTemplate from '@/templates/storytemplate/DocsTemplate';
+import { ReactComponent as CheckCircleOutlineIcon } from '@/assets/icons/checkmarkcircle.svg';
 
 export default {
     title: 'Components/Organisms/InputField',
@@ -9,7 +10,7 @@ export default {
     parameters: {
         docs: {
             page: () => (
-                <StoryTemplate
+                <DocsTemplate
                     componentName="InputField"
                     importPath="@tarkaui/organisms"
                     typeDescs={[
@@ -46,18 +47,42 @@ export default {
 } as ComponentMeta<typeof InputField>;
 
 const Template: Story<InputFieldProps> = (args: InputFieldProps) => (
-    <form>
-        <InputField required {...args}/>  
-    </form>
+    <InputField {...args}/>  
 );
 
 export const Default: Story<InputFieldProps> = Template.bind({});
 
-export const WithIcon: Story<InputFieldProps> = Template.bind({});
-WithIcon.args = {
+export const StartIcon: Story<InputFieldProps> = Template.bind({});
+StartIcon.args = {
     InputProps: {
-        startAdornment: <CheckCircleOutlineIcon sx={{width: '20px'}}/>,
+        startAdornment: <CheckCircleOutlineIcon/>,
     },
+};
+
+export const EndIcon: Story<InputFieldProps> = Template.bind({});
+EndIcon.args = {
+    InputProps: {
+        endAdornment: <CheckCircleOutlineIcon/>,
+    },
+};
+
+export const StartText: Story<InputFieldProps> = Template.bind({});
+StartText.args = {
+    InputProps: {
+        startAdornment: '$',
+    },
+};
+
+export const EndText: Story<InputFieldProps> = Template.bind({});
+EndText.args = {
+    InputProps: {
+        endAdornment: '.00',
+    },
+};
+
+export const Label: Story<InputFieldProps> = Template.bind({});
+Label.args = {
+    label: 'Label',
 };
 
 export const Disabled: Story<InputFieldProps> = Template.bind({});
@@ -72,7 +97,7 @@ export const Error: Story<InputFieldProps> = Template.bind({});
 Error.args = {
     placeholder: "Error",
     error: true,
-};
+}; 
 
 export const ErrorHelperText: Story<InputFieldProps> = Template.bind({});
 ErrorHelperText.args = {
@@ -114,3 +139,45 @@ Required.args = {
         required: true,
     }
 };
+
+export const FullWidth: Story<InputFieldProps> = Template.bind({});
+FullWidth.args = {
+    placeholder: "Full width",
+    fullWidth: true,
+};
+
+export const LabelIcon: Story<InputFieldProps> = Template.bind({});
+LabelIcon.args = {
+    label: 'Label',
+    InputProps: {
+        startAdornment: <CheckCircleOutlineIcon/>,
+    },
+};
+
+export const Compact: Story<InputFieldProps> = Template.bind({});
+Compact.args = {
+    placeholder: "Compact",
+    compact: true,
+    success: true,
+    label: 'Label',
+};
+
+export const Select: Story<InputFieldProps> = Template.bind({});
+Select.args = {
+    select: true,
+    SelectProps: {
+        native: true,
+    },
+    children: (
+        <>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </>
+    ),
+};
+
+export const MUITextField: Story<InputFieldProps> = (args: InputFieldProps) => (
+    <TextField InputProps={{startAdornment: '$'}} label="Label" placeholder="Placeholder" {...args}/>  
+);
+

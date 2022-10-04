@@ -1,16 +1,16 @@
 import React from 'react';
 import { ComponentMeta, Story } from "@storybook/react";
-import Badge, { BadgeProps } from "@/components/atoms/Badge";
+import InputLabel, { InputLabelProps } from "@/components/atoms/InputLabel";
 import DocsTemplate from "@/templates/storytemplate/DocsTemplate";
 
 export default {
-    title: 'Components/Atoms/Badge',
-    component: Badge,
+    title: 'Components/Atoms/InputLabel',
+    component: InputLabel,
     parameters: {
         docs: {
             page: () => (
                 <DocsTemplate
-                    componentName="Badge"
+                    componentName="InputLabel"
                     importPath="@tarkaui/atoms"
                     typeDescs={[
                         {
@@ -25,28 +25,10 @@ export default {
             ),
         },
     },
-} as ComponentMeta<typeof Badge>;
+} as ComponentMeta<typeof InputLabel>;
 
-const Template: Story<BadgeProps> = (args: BadgeProps) => (
-    <Badge {...args} />
+const Template: Story<InputLabelProps> = (args: InputLabelProps) => (
+    <InputLabel {...args} >Label</InputLabel>
 );
 
 export const Default = Template.bind({});
-
-export const WithContent = Template.bind({});
-WithContent.args = {
-    size: "large",
-    badgeContent: 4,
-};
-
-export const Empty = Template.bind({});
-Empty.args = {
-    size: "regular",
-};
-
-export const WithChild = Template.bind({});
-WithChild.args = {
-    size: "regular",
-    badgeContent: 4,
-    children: <button>Button</button>,
-};

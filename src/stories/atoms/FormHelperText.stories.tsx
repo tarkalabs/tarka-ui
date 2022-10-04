@@ -1,16 +1,16 @@
 import React from 'react';
 import { ComponentMeta, Story } from "@storybook/react";
-import Badge, { BadgeProps } from "@/components/atoms/Badge";
+import FormHelperText, { FormHelperTextProps } from "@/components/atoms/FormHelperText";
 import DocsTemplate from "@/templates/storytemplate/DocsTemplate";
 
 export default {
-    title: 'Components/Atoms/Badge',
-    component: Badge,
+    title: 'Components/Atoms/FormHelperText',
+    component: FormHelperText,
     parameters: {
         docs: {
             page: () => (
                 <DocsTemplate
-                    componentName="Badge"
+                    componentName="FormHelperText"
                     importPath="@tarkaui/atoms"
                     typeDescs={[
                         {
@@ -25,28 +25,19 @@ export default {
             ),
         },
     },
-} as ComponentMeta<typeof Badge>;
+} as ComponentMeta<typeof FormHelperText>;
 
-const Template: Story<BadgeProps> = (args: BadgeProps) => (
-    <Badge {...args} />
+const Template: Story<FormHelperTextProps> = (args: FormHelperTextProps) => (
+    <FormHelperText {...args} />
 );
 
 export const Default = Template.bind({});
-
-export const WithContent = Template.bind({});
-WithContent.args = {
-    size: "large",
-    badgeContent: 4,
+Default.args = {
+    children: "Helper text",
 };
 
-export const Empty = Template.bind({});
-Empty.args = {
-    size: "regular",
-};
-
-export const WithChild = Template.bind({});
-WithChild.args = {
-    size: "regular",
-    badgeContent: 4,
-    children: <button>Button</button>,
+export const Error = Template.bind({});
+Error.args = {
+    children: "Error helper text",
+    error: true,
 };

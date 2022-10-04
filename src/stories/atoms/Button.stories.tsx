@@ -3,7 +3,7 @@ import { ComponentMeta, Story } from '@storybook/react';
 import Button, {ButtonProps} from '@/components/atoms/Button';
 import { ReactComponent as Plus } from '@icons/plus/plus-regular.svg';
 import { ReactComponent as PlusSmall } from '@icons/plus/plus-small.svg';
-import StoryTemplate from '@/templates/storytemplate/StoryTemplate';
+import DocsTemplate from '@/templates/storytemplate/DocsTemplate';
 
 
 const props  = {
@@ -21,7 +21,7 @@ export default {
     parameters: {
         docs: {
             page: () => (
-                <StoryTemplate
+                <DocsTemplate
                     componentName="Button"
                     importPath="@tarkaui/atoms"
                     muiRef="https://mui.com/material-ui/api/button/"
