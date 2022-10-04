@@ -30,6 +30,11 @@ const InputRoot = styled(InputUnstyled)<InputProps>`
     overflow: hidden;
     gap: 8px;
 
+    &.TuiInput-compact {
+        padding: 13px 16px;
+        min-height: 48px;
+    }
+
     &:after {
         border-bottom-color: var(--primary-primary);
     }
@@ -130,7 +135,8 @@ const InputComponent: React.FC<InputProps> = function ({
         <InputRoot
             className={`${warning ? "Tui-warning" : ""} ${
                 success ? "Tui-success" : ""
-            }`}
+            }
+            ${compact ? "TuiInput-compact" : ""}`}
             {...props}
         />
     );

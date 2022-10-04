@@ -13,7 +13,6 @@ interface RootProps {
     icon?: boolean;
     warning?: boolean;
     success?: boolean;
-    compact?: boolean;
 }
 
 export type FormHelperTextProps = RootProps & FormHelperTextUnstyledProps;
@@ -60,7 +59,6 @@ const FormHelperTextComponent: React.FC<FormHelperTextProps> = function ({
     warning = false,
     success = false,
     icon = true,
-    compact = false,
     ...props
 }) {
     injectTokens([

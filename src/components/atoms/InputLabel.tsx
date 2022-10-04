@@ -7,7 +7,6 @@ import { bodySize5, bodySize8 } from "@/assets/fonts/fonts";
 import { SxProps, Theme } from "@mui/material";
 
 interface RootProps {
-    compact?: boolean;
     success?: boolean;
     warning?: boolean;
     startAdornment?: boolean;
@@ -48,7 +47,6 @@ const InputLabelRoot = styled(InputLabelUnstyled)<InputLabelProps>`
 ` as React.FC<InputLabelProps>;
 
 const InputLabelComponent: React.FC<InputLabelProps> = function ({
-    compact = false,
     success = false,
     warning = false,
     startAdornment = false,
@@ -68,7 +66,7 @@ const InputLabelComponent: React.FC<InputLabelProps> = function ({
 
     return (
         <InputLabelRoot
-            className={`TuiInputLabel-root ${compact ? "compact" : ""} ${warning ? "Tui-warning" : ""} ${success ? "Tui-success" : ""} ${startAdornment ? "TuiInputLabel-adornedStart" : ""}`}
+            className={`TuiInputLabel-root ${warning ? "Tui-warning" : ""} ${success ? "Tui-success" : ""} ${startAdornment ? "TuiInputLabel-adornedStart" : ""}`}
             {...props}
         >
             {props.children}

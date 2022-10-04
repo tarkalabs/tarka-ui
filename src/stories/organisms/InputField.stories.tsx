@@ -154,6 +154,14 @@ LabelIcon.args = {
     },
 };
 
+export const Compact: Story<InputFieldProps> = Template.bind({});
+Compact.args = {
+    placeholder: "Compact",
+    compact: true,
+    success: true,
+    label: 'Label',
+};
+
 export const Select: Story<InputFieldProps> = Template.bind({});
 Select.args = {
     select: true,

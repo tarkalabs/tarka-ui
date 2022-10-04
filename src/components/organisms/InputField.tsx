@@ -26,6 +26,10 @@ export type InputFieldProps = RootProps &
 
 const InputFieldRoot = styled(TextField)<InputFieldProps>`
     height: 56px;
+
+    &.TuiInputField-compact {
+        height: 22px;
+    }
     &:not(.MuiFormControl-fullWidth) {
         width: 264px;
     }
@@ -72,26 +76,25 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
         />
     );
 
-    const InputLabelElement = () => (
-        <InputLabel
-            id={inputLabelId}
-            htmlFor={id}
-            warning={warning}
-            success={success}
-            compact={compact}
-            startAdornment={InputProps.startAdornment ? true : false}
-            {...(props as InputLabelProps)}
-        >
-            {props.label}
-        </InputLabel>
-    );
+    const InputLabelElement = () =>
+        !compact ? (
+            <InputLabel
+                id={inputLabelId}
+                htmlFor={id}
+                warning={warning}
+                success={success}
+                startAdornment={InputProps.startAdornment ? true : false}
+                {...(props as InputLabelProps)}
+            >
+                {props.label}
+            </InputLabel>
+        ) : undefined;
 
     const FormHelperTextElement = () => (
         <FormHelperTextComponent
             id={helperTextId}
             warning={warning}
             success={success}
-            compact={compact}
             {...(props as FormHelperTextProps)}
             {...FormHelperTextProps}
         >
@@ -102,22 +105,22 @@ const InputFieldComponent: React.FC<InputFieldProps> = function ({
     /* Todo: Implement Select functionality*/
     const SelectElement = () => (
         <MUISelect
-        aria-describedby={helperTextId}
-        id={id}
-        labelId={inputLabelId}
-        value={props.value}
-        input={ <InputElement/> }
-        {...SelectProps}
-      >
-        {SelectProps.children}
-      </MUISelect>
-    )
+            aria-describedby={helperTextId}
+            id={id}
+            labelId={inputLabelId}
+            value={props.value}
+            input={<InputElement />}
+            {...SelectProps}
+        >
+            {SelectProps.children}
+        </MUISelect>
+    );
 
     return (
         <InputFieldRoot
-            className={`TuiInputField-root ${props.className} ${
-                compact ? "compact" : ""
-            }`}
+            className={`TuiInputField-root ${compact ? "compact" : ""} ${
+                props.className
+            } ${compact ? "TuiInputField-compact" : ""}`}
             FormHelperTextProps={{
                 /* Property 'component' does not exist in the type definition, but still functions as intended, so this line is needed */
                 /* @ts-ignore */
