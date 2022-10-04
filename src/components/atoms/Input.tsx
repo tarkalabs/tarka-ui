@@ -4,7 +4,6 @@ import { InputProps as InputUnstyledProps } from "@mui/material/Input";
 import { styled } from "@mui/system";
 import { injectTokens } from "@/utils/ThemeParse";
 import { bodySize5 } from "@/assets/fonts/fonts";
-import { SxProps, Theme } from "@mui/material";
 
 interface RootProps {
     palette?: "default" | "alt";

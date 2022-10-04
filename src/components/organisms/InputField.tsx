@@ -4,7 +4,7 @@ import { injectTokens } from "@/utils/ThemeParse";
 import { styled } from "@mui/system";
 import InputComponent, { InputProps } from "@/components/atoms/Input";
 import InputLabel, { InputLabelProps } from "@/components/atoms/InputLabel";
-import MUISelect, { SelectProps } from "@mui/material/Select";
+import MUISelect from "@mui/material/Select";
 import FormHelperTextComponent, {
     FormHelperTextProps,
 } from "@/components/atoms/FormHelperText";

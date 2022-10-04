@@ -4,7 +4,6 @@ import { InputLabelProps as InputLabelUnstyledProps } from "@mui/material/InputL
 import { styled } from "@mui/system";
 import { injectTokens } from "@/utils/ThemeParse";
 import { bodySize5, bodySize8 } from "@/assets/fonts/fonts";
-import { SxProps, Theme } from "@mui/material";
 
 interface RootProps {
     success?: boolean;
